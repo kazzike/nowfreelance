@@ -1,0 +1,14 @@
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Hugo
+.hugo_build.lock
+public/
+resources/
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
