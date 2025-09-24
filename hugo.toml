@@ -1,7 +1,12 @@
 baseURL = "https://nowfreelance.com/"
 languageCode = "es-es"
-title = "BLOG"
+title = "nowfreelance"
 theme = "ananke"
+
+[languages.es]
+languageName = "Español"
+weight = 1
+contentDir = "content/es"
 
 [params]
 custom_css = ["custom.css"]
