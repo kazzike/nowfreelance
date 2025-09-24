@@ -20,6 +20,7 @@
   --color-text-secondary: rgb(73, 61, 61);
   --color-accent: rgb(207, 76, 53);
   --color-code-bg: #f0f0f0; /* Un gris muy claro para el código inline */
+  --color-header-bg: #000000;
 
   /* Familias Tipográficas */
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -169,4 +170,97 @@ blockquote {
 /* Texto secundario */
 .mid-gray, .gray {
   color: var(--color-text-secondary) !important;
+}
+
+
+
+
+/* ================================================
+   CABECERA PERSONALIZADA - REEMPLAZANDO ANANKE
+   ================================================ */
+/* ================================================
+   CABECERA FUTURISTA - CONSISTENTE CON TU STYLE
+   ================================================ */
+
+.custom-site-header {
+ background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+    border: none !important;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Efecto de grid sutil en el fondo */
+.custom-site-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(207, 76, 53, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(207, 76, 53, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events: none;
+    
+}
+
+.custom-header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-base);
+    position: relative;
+    z-index: 2;
+
+
+
+}
+
+.custom-title-container {
+    text-align: center;
+    padding: var(--spacing-large) 0;
+
+}
+
+.custom-site-title {
+color: white;
+}
+
+/* Línea decorativa con efecto glow */
+.custom-site-title::after {
+    content: '' !important;
+    display: block !important;
+    width: 100px !important;
+    height: 3px !important;
+    background: linear-gradient(90deg, transparent, var(--color-accent), transparent) !important;
+    margin: var(--spacing-medium) auto 0 !important;
+    border-radius: 2px !important;
+    box-shadow: 0 0 15px rgba(207, 76, 53, 0.5) !important;
+}
+
+/* Efecto hover sutil */
+.custom-site-title:hover {
+    text-shadow: 0 4px 30px rgba(207, 76, 53, 0.5) !important;
+    transform: translateY(-1px) !important;
+    transition: all 0.3s ease !important;
+}
+
+.custom-site-description {
+    font-family: var(--font-body) !important;
+    font-size: 1.3rem !important;
+    font-weight: 400 !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    margin-top: var(--spacing-base) !important;
+    line-height: 1.4 !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    font-size: 0.9rem !important;
+}
+
+/* Ajustar la navegación para modo oscuro */
+.custom-site-header .nav-menu a {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.custom-site-header .nav-menu a:hover {
+    color: var(--color-accent) !important;
 }
