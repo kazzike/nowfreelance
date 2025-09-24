@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Claude Code on miproyecto Blog</title>
+    <link>http://localhost:1313/tags/claude-code/</link>
+    <description>Recent content in Claude Code on miproyecto Blog</description>
+    <generator>Hugo</generator>
+    <language>es-es</language>
+    <lastBuildDate>Tue, 23 Sep 2025 09:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/claude-code/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cómo Anthropic creó Claude Code: arquitectura, permisos y el futuro del desarrollo con IA</title>
+      <link>http://localhost:1313/posts/como-anthropic-creo-claude-code/</link>
+      <pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/como-anthropic-creo-claude-code/</guid>
+      <description>&lt;h1 id=&#34;introducción&#34;&gt;Introducción&lt;/h1&gt;&#xA;&lt;p&gt;Claude Code representa una nueva era en el desarrollo asistido por IA. Pero, ¿cómo logró Anthropic crear una herramienta tan revolucionaria?&lt;/p&gt;&#xA;&lt;h2 id=&#34;la-arquitectura-detrás-de-claude-code&#34;&gt;La arquitectura detrás de Claude Code&lt;/h2&gt;&#xA;&lt;p&gt;Aquí comienza tu análisis&amp;hellip;&lt;/p&gt;&#xA;&lt;h2 id=&#34;stack-tecnológico&#34;&gt;Stack tecnológico&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;TypeScript para la lógica principal&lt;/li&gt;&#xA;&lt;li&gt;React para interfaces&lt;/li&gt;&#xA;&lt;li&gt;Ink para CLI interactivas&lt;/li&gt;&#xA;&lt;li&gt;MCP (Model Context Protocol) para comunicación&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;el-enfoque-ai-first-de-anthropic&#34;&gt;El enfoque AI-first de Anthropic&lt;/h2&gt;&#xA;&lt;p&gt;Tu contenido continúa aquí&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

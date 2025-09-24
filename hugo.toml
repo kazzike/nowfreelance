@@ -1,0 +1,7 @@
+baseURL = "http://localhost:1313/"
+languageCode = "es-es"
+title = "nowfreelance"
+theme = "ananke"
+
+[params]
+custom_css = ["custom.css"]
