@@ -6,7 +6,6 @@ theme = "ananke"
 [languages.es]
 languageName = "Español"
 weight = 1
-contentDir = "content/es"
 
 [params]
 custom_css = ["custom.css"]
