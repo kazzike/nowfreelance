@@ -1,7 +1,10 @@
-baseURL = "http://localhost:1313/"
+baseURL = "https://nowfreelance.com/"
 languageCode = "es-es"
-title = "nowfreelance"
+title = "BLOG"
 theme = "ananke"
 
 [params]
 custom_css = ["custom.css"]
+
+[development]
+baseURL = "http://localhost:1313/"
