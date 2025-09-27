@@ -1,7 +1,7 @@
 ---
 title: "Guía Completa de Migración a la Privacidad Digital: De Google a Alternativas Libres y Seguras (2025) - 1/2"
 description: "Aprende paso a paso cómo dejar los servicios de Google y migrar hacia alternativas libres, seguras y respetuosas con tu privacidad digital."
-date: 2025-09-23T09:00:00Z
+date: 2025-09-27T09:00:00Z
 categories:
   - Privacidad Digital
   - Tecnología
