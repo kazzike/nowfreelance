@@ -264,3 +264,914 @@ color: white;
 .custom-site-header .nav-menu a:hover {
     color: var(--color-accent) !important;
 }
+
+
+
+
+
+
+
+
+
+/* LANDING PAGE STYLES */
+.custom-hero-section {
+  display: flex;
+  align-items: center;
+  min-height: 60vh;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-image {
+  flex: 0 0 300px;
+}
+
+.custom-hero-placeholder {
+  width: 300px;
+  height: 200px;
+  background: linear-gradient(45deg, #F59E0B, #D97706);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.custom-cta-button {
+  display: inline-block !important;
+  background-color: #F59E0B !important;
+  color: white !important;
+  padding: 1rem 2rem !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3) !important;
+}
+
+.custom-cta-button:hover {
+  background-color: #D97706 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4) !important;
+}
+
+.custom-features-section {
+  background-color: #F9FAFB;
+  padding: 4rem 0;
+  margin: 3rem 0;
+}
+
+.custom-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.custom-feature-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.custom-feature-item:hover {
+  transform: translateY(-5px);
+}
+
+.custom-feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .custom-hero-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .hero-image {
+    flex: none;
+  }
+  
+  .custom-hero-placeholder {
+    width: 250px;
+    height: 150px;
+  }
+}
+
+
+/* ================================================
+   SECCIÓN DE PLANES (HOMEPAGE)
+   ================================================ */
+
+/* 1. Cabecera de la sección */
+.plans-header {
+  text-align: center;
+  margin-bottom: var(--spacing-large);
+}
+
+/* El subtítulo bajo el h2 */
+.plans-header p {
+  max-width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--color-text-secondary);
+}
+
+/* 2. Rejilla (Grid) de Planes */
+.plans-grid {
+  display: grid;
+  /* Creamos 3 columnas en escritorio, que se ajustan automáticamente */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-medium);
+}
+
+/* 3. Tarjeta de Plan Individual */
+.plan-card {
+  background-color: #ffffff; /* Un fondo blanco limpio que contrasta con el --color-bg */
+  border: 1px solid #e0e0e0; /* Un borde sutil */
+  border-radius: 8px; /* Bordes redondeados consistentes */
+  padding: var(--spacing-medium);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative; /* Para la insignia */
+  overflow: hidden; /* Para que la insignia no se salga */
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Cabecera dentro de la tarjeta */
+.plan-header-card {
+  text-align: center;
+  padding-bottom: var(--spacing-base);
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* Precio del plan */
+.plan-price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-top: var(--spacing-small);
+  margin-bottom: var(--spacing-base);
+}
+
+/* Lista de características */
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin: var(--spacing-base) 0;
+  flex-grow: 1; /* Esto empuja el botón al fondo */
+  text-align: left;
+}
+
+.plan-features li {
+  padding: var(--spacing-small) 0;
+  display: flex;
+  align-items: center;
+  font-size: 0.95em; /* Ligeramente más pequeño que el cuerpo para no saturar */
+}
+
+/* Icono de check para cada característica */
+.plan-features li::before {
+  content: '✓';
+  color: var(--color-accent); /* Usamos tu color de acento */
+  font-weight: bold;
+  margin-right: var(--spacing-small);
+  font-size: 1.1em;
+}
+
+/* 4. Botón de Llamada a la Acción (CTA) del Plan */
+.plan-cta-button {
+  display: block;
+  width: 100%;
+  padding: var(--spacing-base) var(--spacing-medium);
+  background-color: var(--color-text) !important; /* Fondo oscuro, alto contraste */
+  color: var(--color-bg) !important; /* Texto claro */
+  border-radius: 6px !important;
+  text-decoration: none !important;
+  text-align: center;
+  font-weight: 500 !important;
+  margin-top: var(--spacing-medium);
+  transition: background-color 0.3s ease, transform 0.3s ease !important;
+  background-image: none !important; /* Quitamos el efecto de subrayado del 'a' global */
+}
+
+.plan-cta-button:hover {
+  background-color: #333 !important; /* Un poco más claro en hover */
+  transform: translateY(-2px);
+}
+
+/* 5. Estilos para el Plan Recomendado */
+.plan-card.is-recommended {
+  border: 2px solid var(--color-accent);
+  transform: scale(1.03); /* Ligeramente más grande */
+}
+
+.plan-card.is-recommended:hover {
+  transform: scale(1.03) translateY(-5px);
+}
+
+/* Botón destacado del plan recomendado */
+.is-recommended .plan-cta-button {
+  background-color: var(--color-accent) !important;
+  color: white !important;
+}
+
+.is-recommended .plan-cta-button:hover {
+  background-color: rgb(180, 60, 40) !important; /* Un tono más oscuro de tu acento */
+}
+
+/* Insignia "Más Popular" */
+.plan-badge {
+  position: absolute;
+  top: 15px;
+  right: -40px;
+  background-color: var(--color-accent);
+  color: white;
+  padding: var(--spacing-small) 40px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transform: rotate(45deg);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 6. Responsividad */
+@media (max-width: 900px) {
+  .plan-card.is-recommended {
+    transform: scale(1); /* Reseteamos la escala en móviles */
+  }
+}
+
+@media (max-width: 600px) {
+  .plans-grid {
+    /* Mantenemos una sola columna en móviles pequeños */
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================================================
+   SECCIÓN DE ÚLTIMOS POSTS (HOMEPAGE)
+   ================================================ */
+
+/* 1. Cabecera de la sección */
+.posts-header {
+  text-align: center;
+  margin-bottom: var(--spacing-large);
+}
+
+.posts-header p {
+  max-width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--color-text-secondary);
+}
+
+/* 2. Rejilla (Grid) de Posts */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-medium);
+}
+
+/* 3. Tarjeta de Post Individual */
+.post-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden; /* Para asegurar que todo quede dentro de los bordes redondeados */
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.post-card-content {
+  padding: var(--spacing-medium);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Asegura que todas las tarjetas tengan la misma altura */
+}
+
+/* 4. Elementos dentro de la tarjeta */
+.post-card-date {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--spacing-small);
+  display: block;
+}
+
+.post-card-title {
+  margin-top: 0;
+  margin-bottom: var(--spacing-base);
+}
+
+/* El enlace del título hereda el estilo global de 'a', pero lo refinamos */
+.post-card-title a {
+  color: var(--color-text) !important;
+  background-image: linear-gradient(var(--color-accent), var(--color-accent));
+}
+
+.post-card-description {
+  color: var(--color-text-secondary);
+  flex-grow: 1; /* Empuja el footer hacia abajo */
+  max-width: 100%; /* Sobreescribe el --content-width para que ocupe toda la tarjeta */
+  margin-bottom: var(--spacing-medium);
+}
+
+.post-card-footer {
+  margin-top: auto; /* Se alinea al fondo gracias al flex-grow del p */
+}
+
+.post-card-readmore {
+  font-weight: 500;
+  color: var(--color-accent) !important;
+  text-decoration: none !important;
+  /* Mantenemos el efecto de subrayado hover que ya definiste */
+}
+
+/* 5. Botón para ver todos los posts */
+.all-posts-link {
+  margin-top: var(--spacing-large);
+}
+
+/* ================================================
+   EL MEJOR FOOTER PROFESIONAL DEL MUNDO
+   ================================================ */
+
+.site-footer {
+  background-color: var(--color-text); /* Fondo oscuro consistente con el header */
+  color: rgba(255, 255, 255, 0.7); /* Texto no tan blanco para no cansar la vista */
+  padding: var(--spacing-large) 0 var(--spacing-base) 0;
+  font-size: 0.95em;
+  line-height: 1.7;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--spacing-large);
+  padding-bottom: var(--spacing-large);
+}
+
+.footer-column .footer-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 var(--spacing-small) 0;
+}
+
+.footer-column-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin: 0 0 var(--spacing-base) 0;
+}
+
+.footer-tagline {
+  max-width: 100%; /* El footer no necesita limitar el ancho de línea */
+}
+
+/* Estilo de los enlaces del footer */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: var(--spacing-small);
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7) !important;
+  background-image: none !important; /* Quitamos subrayado por defecto */
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--color-accent) !important;
+}
+
+/* Estilo de los iconos de redes sociales */
+.social-links {
+  display: flex;
+  gap: var(--spacing-base);
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: rgba(255, 255, 255, 0.7) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #ffffff !important;
+  background-color: var(--color-accent) !important;
+  border-color: var(--color-accent) !important;
+  transform: translateY(-2px);
+}
+
+/* Barra inferior */
+.footer-bottom-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: var(--spacing-medium);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85em;
+}
+
+.copyright {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.back-to-top {
+  color: rgba(255, 255, 255, 0.5) !important;
+  text-decoration: none !important;
+  background-image: none !important;
+  transition: color 0.3s ease;
+}
+
+.back-to-top:hover {
+  color: var(--color-accent) !important;
+}
+
+/* Responsividad del footer */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-medium);
+  }
+  .footer-bottom-bar {
+    flex-direction: column;
+    gap: var(--spacing-base);
+    text-align: center;
+  }
+}
+
+
+/* ================================================
+   NUEVO HEADER Y NAVEGACIÓN
+   ================================================ */
+
+/* 1. Barra de Navegación Fija (Sticky) */
+.nav-bar {
+      background-image: 
+        linear-gradient(rgba(207, 76, 53, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(207, 76, 53, 0.03) 1px, transparent 1px);
+  padding: var(--spacing-base) 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Sombra sutil que aparece al hacer scroll */
+.nav-bar.scrolled {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-brand {
+  font-family: var(--font-code);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  background-image: none !important;
+}
+
+/* ================================================
+   NUEVO HERO SECTION CON FONDO ANIMADO
+   ================================================ */
+
+/* Definimos la animación que mueve la rejilla */
+@keyframes moveGrid {
+  from { background-position: 0 0; }
+  to { background-position: 40px 40px; } /* Mueve exactamente un cuadro */
+}
+
+/* 1. Estilo base del Hero Section (sin imagen de fondo) */
+.hero-section {
+  color: white;
+  position: relative;
+  overflow: hidden;
+  /* Fondo principal con un gradiente oscuro */
+
+  
+}
+
+/* Pseudo-elemento que crea la rejilla animada */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+      background-image: 
+        linear-gradient(rgba(207, 76, 53, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(207, 76, 53, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.04;
+  animation: moveGrid 30s linear infinite; /* Aplicamos la animación */
+}
+
+/* 2. Estilos que se aplican CUANDO SÍ HAY una imagen de fondo */
+.hero-section.has-background {
+  background-size: cover;
+  background-position: center center;
+}
+
+/* Cuando hay imagen, ocultamos la rejilla para no sobrecargar */
+.hero-section.has-background::before {
+  display: none;
+}
+
+/* 3. Estilos para el contenido (títulos, etc.) */
+/* Capa de oscurecimiento para la versión con imagen */
+.hero-dimming {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Contenedor del texto, para que esté por encima de la rejilla */
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Estilos del título (los mantenemos como estaban) */
+.hero-title {
+ padding: 4rem 0; 
+  color: rgb(22, 22, 22);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+}
+
+/* Estilos de la descripción (los mantenemos como estaban) */
+.hero-description {
+  color: rgb(22, 22, 22);
+  font-size: 1.2rem;
+  font-weight: 400;
+  max-width: 60ch;
+  margin: var(--spacing-base) auto 0;
+}
+
+
+/* 3. Lógica del Menú Responsive (igual que la propuesta anterior) */
+/* --- Ocultar/mostrar elementos --- */
+.header-nav { display: none; }
+.nav-toggle { display: flex; }
+@media (min-width: 769px) {
+  .header-nav { display: block; }
+  .nav-toggle { display: none; }
+}
+
+/* --- Menú de Escritorio --- */
+.nav-links {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; gap: var(--spacing-medium);
+}
+.nav-links a {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-weight: 500;
+  background-image: linear-gradient(var(--color-accent), var(--color-accent)) !important;
+}
+
+/* --- Botón Hamburguesa --- */
+.nav-toggle {
+  flex-direction: column; justify-content: space-around;
+  width: 30px; height: 24px;
+  background: transparent; border: none; cursor: pointer; padding: 0; z-index: 1001;
+}
+.hamburger-line {
+  display: block; width: 30px; height: 3px;
+  background-color: #ffffff; border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* --- Menú Abierto en Móvil --- */
+.nav-open .header-nav {
+  display: flex; position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-color: var(--color-text);
+  flex-direction: column; justify-content: center; align-items: center;
+}
+.nav-open .nav-links { flex-direction: column; text-align: center; }
+.nav-open .nav-links a { font-size: 2rem; }
+.no-scroll { overflow: hidden; }
+
+/* --- Animación Hamburguesa -> X --- */
+.nav-open .nav-toggle .hamburger-line:nth-child(1) { transform: translateY(10px) rotate(45deg); }
+.nav-open .nav-toggle .hamburger-line:nth-child(2) { opacity: 0; }
+.nav-open .nav-toggle .hamburger-line:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
+
+/* Forzamos consistencia tipográfica también en listados */
+.post-card-title a,
+.post-card-title,
+.f1, .f2, .f3 {
+  font-family: var(--font-body) !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+  color: var(--color-text) !important;
+  text-decoration: none !important;
+}
+
+/* Ajustes de tamaño (puedes modificarlos a tu gusto) */
+.post-card-title a,
+.f1 { font-size: 2.2rem !important; }
+
+.f2 { font-size: 1.8rem !important; }
+
+.f3 { font-size: 1.4rem !important; }
+
+
+/* ================================================
+   SECCIÓN DE ÚLTIMOS POSTS (HOMEPAGE) - REFINADA
+   ================================================ */
+
+/* 1. Cabecera de la sección (sin cambios, ya estaba bien) */
+.posts-header {
+  text-align: center;
+  margin-bottom: var(--spacing-large);
+}
+
+.posts-header p {
+  max-width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--color-text-secondary);
+}
+
+/* 2. Rejilla (Grid) de Posts (sin cambios) */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-medium);
+}
+
+/* 3. Tarjeta de Post Individual - MEJORADA */
+.post-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%; /* Asegura que todas las tarjetas ocupen el alto completo de la fila */
+}
+
+/* El nuevo envoltorio <a> que hace toda la tarjeta clicable */
+.post-card-link-wrapper {
+  text-decoration: none !important;
+  color: inherit !important;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-image: none !important; /* Anula el efecto de subrayado global */
+}
+
+.post-card-link-wrapper:hover,
+.post-card-link-wrapper:focus {
+  background-size: 0 !important; /* Nos aseguramos de anularlo también en hover */
+}
+
+
+/* Efecto hover mejorado */
+.post-card.has-hover-effect:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.post-card-content {
+  padding: var(--spacing-medium);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; 
+}
+
+/* 4. Elementos dentro de la tarjeta - REFINADOS */
+.post-card-date {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--spacing-small);
+  display: block;
+}
+
+.post-card-title {
+  margin-top: 0;
+  margin-bottom: var(--spacing-base);
+  color: var(--color-text) !important;
+  transition: color 0.3s ease; /* Transición suave de color en hover */
+}
+
+/* El título cambia de color al pasar el ratón por la tarjeta */
+.post-card.has-hover-effect:hover .post-card-title {
+  color: var(--color-accent) !important;
+}
+
+.post-card-description {
+  color: var(--color-text-secondary);
+  flex-grow: 1; 
+  max-width: 100%;
+  margin-bottom: var(--spacing-medium);
+}
+
+.post-card-footer {
+  margin-top: auto; 
+}
+
+.post-card-readmore {
+  font-weight: 500;
+  color: var(--color-accent);
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+/* Animación sutil de la flecha en el hover de la tarjeta */
+.post-card-readmore .arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.post-card.has-hover-effect:hover .post-card-readmore .arrow {
+  transform: translateX(5px);
+}
+
+
+
+/* =======================================================
+   5. Botón secundario para "Ver todos los artículos"
+   ======================================================= */
+.cta-button-secondary {
+  display: inline-block;
+  background-color: #F59E0B !important; /* AHORA: Al pasar el ratón, se rellena de naranja */
+  
+  /* ANTES: color: var(--color-text) !important; */
+  color: white !important; /* El texto se vuelve blanco para contraste */
+
+  
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  /* ANTES: border: 2px solid #e0e0e0; */
+  border: 2px solid #F59E0B; /* AHORA: El borde también es naranja */
+  text-decoration: none !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  background-image: none !important;
+  box-shadow: none !important; /* Nos aseguramos de que no tenga la sombra del CTA primario */
+}
+
+.cta-button-secondary:hover {
+  /* ANTES: background-color: var(--color-text); */
+  background-color: #D97706 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4) !important;
+}
+
+/* ================================================
+   POSTS: TARJETAS MEJORADAS (portada, meta, chips)
+   ================================================ */
+
+/* Contenedor de portada con ratio fijo y overflow controlado */
+.post-card-cover {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background-color: var(--color-code-bg);
+  overflow: hidden;
+}
+
+/* Imagen de portada con zoom sutil en hover */
+.post-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.post-card.has-hover-effect:hover .post-card-image {
+  transform: scale(1.04);
+}
+
+/* Badge "Nuevo/Actualizado" */
+.post-card-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: var(--color-accent);
+  color: #fff;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* Meta: fecha y tiempo de lectura */
+.post-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: var(--spacing-small);
+}
+.meta-separator {
+  color: var(--color-text-secondary);
+}
+
+/* Título y descripción con line-clamp para uniformidad */
+.post-card-title {
+  margin-top: 0;
+  margin-bottom: var(--spacing-small);
+  display: -webkit-box;
+  -webkit-line-clamp: 4;        /* Máximo 2 líneas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.post-card-description {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-medium);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;        /* Máximo 3 líneas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Chips de tags (no enlaces para no anidar <a> dentro del card-link) */
+.post-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0;                /* Se integra con la descripción */
+  margin-bottom: var(--spacing-small);
+}
+.post-tag {
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* Footer: sutil separación visual */
+.post-card-footer {
+  margin-top: auto;
+}
+
+/* Accesibilidad: focus visible en toda la tarjeta */
+.post-card-link-wrapper:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+/* Respeto por usuarios con reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .post-card.has-hover-effect:hover { transform: none; box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+  .post-card-image { transition: none; }
+  .post-card-readmore .arrow { transition: none; }
+}
+.post-card.mv4 { margin-top: 0 !important; }

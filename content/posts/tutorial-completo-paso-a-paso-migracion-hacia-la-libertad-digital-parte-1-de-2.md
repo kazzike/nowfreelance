@@ -20,10 +20,9 @@ draft: false
 
 # Guía Completa de Migración a la Privacidad Digital: De Google a Alternativas Libres y Seguras (2025) - Primera Parte
 
-**Versión:** 2025.09
-**Fecha:** Septiembre 2025
-**Autor:** Guía de Migración Digital
-**Licencia:** Creative Commons CC BY-SA 4.0
+> **Versión:** 2025.09 | **Licencia:** [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+> 
+> **Descargo de responsabilidad:** El uso de scripts y la implementación de los procedimientos aquí documentados son responsabilidad exclusiva del usuario. Este contenido es de carácter informativo y no oficial. El usuario asume toda la responsabilidad por su uso. consulte con un especialista si no tiene los conocimientos técnicos requeridos.
 
 ## Tabla de Contenidos 1/2
 

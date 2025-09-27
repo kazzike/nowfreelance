@@ -1,5 +1,6 @@
-baseURL = "https://nowfreelance.com/"
-languageCode = "es-es"
+baseURL = "http://localhost:1313/"
+languageCode = "es"
+defaultContentLanguage = "es"
 title = "nowfreelance"
 theme = "ananke"
 
@@ -10,5 +11,43 @@ weight = 1
 [params]
 custom_css = ["custom.css"]
 
-[development]
-baseURL = "http://localhost:1313/"
+footer_tagline = "Ayudando a empresas a crecer a través de la automatización y la tecnología."
+
+[[params.social]]
+  name = "LinkedIn"
+  icon_name = "linkedin" 
+  url = "https://linkedin.com/in/"
+
+[[params.social]]
+  name = "Twitter"
+  icon_name = "twitter"
+  url = "https://x.com/"
+
+[[params.social]]
+  name = "YouTube"
+  icon_name = "youtube"
+  url = "https://youtube.com/c/"
+
+
+# --- MENÚ PRINCIPAL ---
+ [menu]
+   [[menu.main]]
+     name = "Inicio"
+     url = "/"
+     weight = 10
+#   [[menu.main]]
+#     name = "Servicios"
+#     url = "/servicios/"
+#     weight = 20
+   [[menu.main]]
+     name = "Blog"
+     url = "/posts/"
+     weight = 30
+#   [[menu.main]]
+#     name = "Sobre Nosotros"
+#     url = "/sobre-nosotros/"
+#     weight = 40
+#   [[menu.main]]
+#     name = "Contacto"
+#     url = "/contacto/"
+#     weight = 50

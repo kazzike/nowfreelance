@@ -1,0 +1,61 @@
+<article class="post-card has-hover-effect mv4">
+  {{- $cover := "" -}}
+  {{- with .Resources.GetMatch "cover*" }}{{ $cover = .RelPermalink }}{{ end -}}
+  {{- if eq $cover "" }}{{ with .Params.cover }}{{ $cover = . | relURL }}{{ end }}{{ end -}}
+  {{- if eq $cover "" }}{{ with .Params.image }}{{ $cover = . | relURL }}{{ end }}{{ end -}}
+  {{- if eq $cover "" }}{{ with .Params.images }}{{ $first := index . 0 }}{{ $cover = $first | relURL }}{{ end }}{{ end -}}
+
+  {{- $showUpdated := gt .Lastmod .Date -}}
+  {{- $isNew := and (not $showUpdated) (lt (sub now.Unix .Date.Unix) 1209600) -}} <!-- 14 días -->
+
+  <a href="{{ .RelPermalink }}" class="post-card-link-wrapper" aria-label="Leer el artículo completo: {{ .Title }}">
+
+    {{- if $cover -}}
+    <figure class="post-card-cover">
+      <img
+        class="post-card-image"
+        src="{{ $cover }}"
+        alt="{{ .Title }}"
+        loading="lazy"
+        decoding="async"
+      >
+      {{- if $showUpdated -}}
+        <span class="post-card-badge">Actualizado</span>
+      {{- else if $isNew -}}
+        <span class="post-card-badge">Nuevo</span>
+      {{- end -}}
+    </figure>
+    {{- end -}}
+
+    <div class="post-card-content">
+      <div class="post-card-meta">
+        <time class="post-card-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 de Enero, 2006" }}</time>
+        <span class="meta-separator" aria-hidden="true">•</span>
+        <span class="post-card-reading-time">{{ .ReadingTime }} min</span>
+      </div>
+
+      <h3 class="post-card-title f3">{{ .Title }}</h3>
+
+      <p class="post-card-description">
+        {{ with .Description }}
+          {{ . }}
+        {{ else }}
+          {{ .Summary | plainify | truncate 160 }}
+        {{ end }}
+      </p>
+
+      {{ with .GetTerms "tags" }}
+        <div class="post-card-tags">
+          {{ range first 3 . }}
+            <span class="post-tag">{{ .LinkTitle }}</span>
+          {{ end }}
+        </div>
+      {{ end }}
+
+      <footer class="post-card-footer">
+        <span class="post-card-readmore">Leer más <span class="arrow">&rarr;</span></span>
+      </footer>
+    </div>
+
+  </a>
+</article>
