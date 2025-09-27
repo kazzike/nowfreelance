@@ -18,12 +18,11 @@ slug: "tutorial-completo-paso-a-paso-migracion-hacia-la-libertad-digital-parte-1
 draft: false
 ---
 
+# Guía Completa de Migración a la Privacidad Digital: De Google a Alternativas Libres y Seguras (2025) - Primera Parte
 
-# Guía Completa de Migración a la Privacidad Digital: De Google a Alternativas Libres y Seguras (2025)
-
-**Versión:** 2025.09  
+**Versión:** 2025.09
 **Fecha:** Septiembre 2025
-**Autor:** Guía de Migración Digital  
+**Autor:** Guía de Migración Digital
 **Licencia:** Creative Commons CC BY-SA 4.0
 
 ## Tabla de Contenidos 1/2
@@ -35,7 +34,6 @@ draft: false
 4. [Migración de Almacenamiento y Documentos](#paso-4-migración-de-almacenamiento-documentos-y-sheets)
 5. [Migración de Calendario y Contactos](#paso-5-migración-de-calendario-contactos-y-otros-servicios)
 6. [Consideraciones Adicionales](#paso-6-otras-consideraciones-y-recomendaciones-adicionales)
-
 
 ---
 
