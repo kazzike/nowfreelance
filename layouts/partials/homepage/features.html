@@ -1,0 +1,36 @@
+<div class="custom-features-section">
+  <div class="mw8 center ph3">
+    <h2 class="f2 athelas tc mb4">{{ .title | default "¿Por Qué Elegir Nuestras Automatizaciones?" }}</h2>
+    <div class="custom-features-grid">
+      {{ range .items }}
+      <div class="custom-feature-item">
+        <div class="custom-feature-icon">{{ .icon }}</div>
+        <h3 class="f3">{{ .title }}</h3>
+        <p>{{ .description }}</p>
+      </div>
+      {{ end }}
+      {{ if not .items }}
+      <div class="custom-feature-item">
+        <div class="custom-feature-icon">⚙️</div>
+        <h3 class="f3">Automatización de Procesos</h3>
+        <p>Elimina tareas repetitivas como el manejo de correos, facturación y seguimiento de leads.</p>
+      </div>
+      <div class="custom-feature-item">
+        <div class="custom-feature-icon">🔗</div>
+        <h3 class="f3">Integraciones Personalizadas</h3>
+        <p>Conecta CRM, email marketing y software de contabilidad.</p>
+      </div>
+      <div class="custom-feature-item">
+        <div class="custom-feature-icon">📈</div>
+        <h3 class="f3">Escalabilidad</h3>
+        <p>Crece sin costos exorbitantes ni complejidades.</p>
+      </div>
+      <div class="custom-feature-item">
+        <div class="custom-feature-icon">🛡️</div>
+        <h3 class="f3">Soporte y Seguridad</h3>
+        <p>Equipo experto y protección de datos.</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>

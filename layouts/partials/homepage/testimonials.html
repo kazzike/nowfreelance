@@ -1,0 +1,13 @@
+<section class="testimonials-section mw8 center ph3 mt5 mb5">
+  <div class="testimonials-header tc">
+    <h2 class="f2 mb2">Historias Reales de Éxito</h2>
+  </div>
+  <div class="custom-testimonials-grid">
+    {{ range . }}
+      <blockquote class="custom-testimonial">
+        <p class="f4">“{{ .quote }}”</p>
+        <footer class="f6 mt2">— {{ .name }}, {{ .role | default "Emprendedor" }}</footer>
+      </blockquote>
+    {{ end }}
+  </div>
+</section>

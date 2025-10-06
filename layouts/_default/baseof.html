@@ -62,5 +62,31 @@
       {{ block "main" . }}{{ end }}
     </main>
     {{ block "footer" . }}{{ partials.IncludeCached "site-footer.html" . }}{{ end }}
+
+<script>
+  // Menú móvil
+  const navToggle = document.querySelector('.nav-toggle');
+  if (navToggle) {
+    navToggle.addEventListener('click', () => {
+      document.body.classList.toggle('nav-open');
+      document.documentElement.classList.toggle('no-scroll');
+      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !isExpanded);
+    });
+  }
+
+  // Sombra en header al hacer scroll
+  const navBar = document.querySelector('.nav-bar');
+  if (navBar) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        navBar.classList.add('scrolled');
+      } else {
+        navBar.classList.remove('scrolled');
+      }
+    });
+  }
+</script>
+
   </body>
 </html>

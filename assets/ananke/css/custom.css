@@ -18,14 +18,16 @@
   --color-bg: #faf9f9;
   --color-text: #1a1a1a;
   --color-text-secondary: rgb(73, 61, 61);
-  --color-accent: rgb(207, 76, 53);
+  --color-accent: rgb(223, 77, 19);
+  --color-accent-translucent: rgba(223, 77, 19, 0.1);
+
   --color-code-bg: #f0f0f0; /* Un gris muy claro para el código inline */
   --color-header-bg: #000000;
 
   /* Familias Tipográficas */
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-code: 'Source Code Pro', monospace;
-
+ 
   /* Ritmo Vertical y Espaciado (clave para la legibilidad) */
   --spacing-base: 1rem; /* Aprox 16px */
   --spacing-small: calc(var(--spacing-base) / 2);
@@ -284,6 +286,7 @@ color: white;
 
 .hero-content {
   flex: 1;
+  padding-bottom: 2.5rem;
 }
 
 .hero-image {
@@ -304,21 +307,28 @@ color: white;
 }
 
 .custom-cta-button {
-  display: inline-block !important;
-  background-color: #F59E0B !important;
+  display: inline-block;
+  background-color: var(--color-accent) !important; /* Tu naranja original */
   color: white !important;
-  padding: 1rem 2rem !important;
-  border-radius: 8px !important;
+  padding: 1.2rem 2.5rem;
+  border-radius: 50px;
   text-decoration: none !important;
-  font-weight: 600 !important;
-  transition: all 0.3s ease !important;
-  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3) !important;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 25px var(--color-accent-dark);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  background-image: none !important;
 }
 
 .custom-cta-button:hover {
-  background-color: #D97706 !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4) !important;
+  background-color: var(--color-accent-dark) !important; /* Naranja más oscuro en hover */
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 35px var(--color-accent);
+  background-size: 0 !important;
+  color: var(--color-text-secondary) !important; /* Asegura que el texto sea blanco en hover */
 }
 
 .custom-features-section {
@@ -350,6 +360,7 @@ color: white;
 .custom-feature-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
+  color: var(--color-accent);
 }
 
 /* Responsive */
@@ -366,6 +377,341 @@ color: white;
   .custom-hero-placeholder {
     width: 250px;
     height: 150px;
+  }
+}
+
+
+/* ================================================
+   SECCIÓN: PLAN DE MODERNIZACIÓN EN 3 PASOS
+   ================================================ */
+.modernization-steps {
+  padding: var(--spacing-large) 0;
+  position: relative;
+}
+
+.modernization-header {
+  text-align: center;
+  margin-bottom: calc(var(--spacing-large) * 1.5);
+}
+
+.modernization-header h2 {
+  margin-bottom: var(--spacing-base);
+}
+
+.modernization-subtitle {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+}
+
+/* Contenedor de pasos con línea conectora */
+.steps-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: calc(var(--spacing-large) * 1.5);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Línea conectora entre pasos (solo en escritorio) */
+@media (min-width: 900px) {
+  .steps-container::before {
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: 15%;
+    right: 15%;
+    height: 3px;
+    background: linear-gradient(90deg, 
+      var(--color-accent) 0%, 
+      var(--color-accent) 33%, 
+      #e0e0e0 33%, 
+      #e0e0e0 66%, 
+      #e0e0e0 66%, 
+      #e0e0e0 100%);
+    z-index: 0;
+  }
+  
+  .steps-container.step-2-active::before {
+    background: linear-gradient(90deg, 
+      var(--color-accent) 0%, 
+      var(--color-accent) 66%, 
+      #e0e0e0 66%, 
+      #e0e0e0 100%);
+  }
+  
+  .steps-container.step-3-active::before {
+    background: var(--color-accent);
+  }
+}
+
+/* Tarjeta individual de paso */
+.step-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: calc(var(--spacing-large) * 1.2);
+  position: relative;
+  z-index: 1;
+  border: 2px solid transparent;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.step-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-accent);
+  box-shadow: 0 20px 40px rgba(207, 76, 53, 0.15);
+}
+
+/* Número del paso con diseño circular */
+.step-number {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto var(--spacing-medium);
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 10px 30px var(--color-accent-dark);
+  transition: all 0.4s ease;
+}
+
+.step-card:hover .step-number {
+  transform: rotate(360deg) scale(1.1);
+  box-shadow: 0 15px 40px var(--color-accent-dark);
+}
+
+/* Anillo decorativo alrededor del número */
+.step-number::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border: 3px solid var(--color-accent-dark);
+  border-radius: 50%;
+  transition: all 0.4s ease;
+}
+
+.step-card:hover .step-number::before {
+  inset: -12px;
+  border-color: var(--color-accent-dark);
+}
+
+.step-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-base);
+  text-align: center;
+  color: var(--color-text);
+}
+
+.step-description {
+  text-align: center;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* Animación de entrada escalonada */
+@media (prefers-reduced-motion: no-preference) {
+  .step-card {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+  }
+  
+  .step-card:nth-child(1) { animation-delay: 0.1s; }
+  .step-card:nth-child(2) { animation-delay: 0.3s; }
+  .step-card:nth-child(3) { animation-delay: 0.5s; }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+
+/* ================================================
+   SECCIÓN: CASO DE ÉXITO
+   ================================================ */
+.success-story {
+  background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
+  padding: calc(var(--spacing-large) * 2.5) var(--spacing-medium);
+  margin: calc(var(--spacing-large) * 2) 0;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Patrón decorativo de fondo */
+.success-story::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(207, 76, 53, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.success-story-header {
+  text-align: center;
+  margin-bottom: calc(var(--spacing-large) * 1.5);
+}
+
+.success-story-title {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 700;
+  margin-bottom: var(--spacing-base);
+  background: linear-gradient(135deg, var(--color-text), #555);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.success-story-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Subsecciones del caso */
+.story-section {
+  background: white;
+  padding: calc(var(--spacing-large) * 1.2);
+  margin-bottom: var(--spacing-large);
+  border-radius: 12px;
+  border-left: 5px solid var(--color-accent);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.story-section:hover {
+  transform: translateX(8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.story-section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-base);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-small);
+}
+
+/* Icono decorativo antes del título */
+.story-section-title::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(207, 76, 53, 0.2);
+}
+
+.story-section-text {
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+
+/* Destacar el resultado - SIN GRADIENTE, usando tu color original */
+.story-result {
+  border-left: 4px solid var(--color-accent);
+  color: var(--color-text);
+  padding: calc(var(--spacing-large) * 1.5);
+  box-shadow: 0 6px 25px rgba(207, 76, 53, 0.12);
+}
+
+.story-result .story-section-title {
+  color: var(--color-accent);
+  font-size: 1.8rem;
+}
+
+.story-result .story-section-title::before {
+  background: var(--color-accent);
+  box-shadow: 0 0 0 4px rgba(207, 76, 53, 0.15);
+}
+
+.story-result .story-section-text {
+  color: var(--color-text);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* CTA dentro del caso de éxito */
+.story-cta {
+  text-align: center;
+  margin-top: calc(var(--spacing-large) * 1.5);
+}
+
+.story-cta-button {
+  display: inline-block;
+  background-color: var(--color-accent) !important; /* Tu naranja original */
+  color: white !important;
+  padding: 1.2rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none !important;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 25px var(--color-accent-dark);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  background-image: none !important;
+}
+
+.story-cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--color-accent-dark), transparent);
+  transition: left 0.5s;
+}
+
+.story-cta-button:hover {
+  background-color: var(--color-accent-dark) !important; /* Naranja más oscuro en hover */
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 35px var(--color-accent);
+  background-size: 0 !important;
+  color: var(--color-text-secondary) !important; /* Asegura que el texto sea blanco en hover */
+}
+
+.story-cta-button:hover::before {
+  left: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .success-story {
+    padding: calc(var(--spacing-large) * 1.5) var(--spacing-base);
+  }
+  
+  .story-section {
+    padding: var(--spacing-medium);
+  }
+  
+  .story-section:hover {
+    transform: translateX(4px);
   }
 }
 
@@ -493,7 +839,7 @@ color: white;
 }
 
 .is-recommended .plan-cta-button:hover {
-  background-color: rgb(180, 60, 40) !important; /* Un tono más oscuro de tu acento */
+  background-color: var(--color-accent-dark) !important; /* Un tono más oscuro de tu acento */
 }
 
 /* Insignia "Más Popular" */
@@ -559,6 +905,7 @@ color: white;
   flex-direction: column;
   border: 1px solid #e0e0e0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
 }
 
 .post-card:hover {
@@ -571,6 +918,27 @@ color: white;
   display: flex;
   flex-direction: column;
   flex-grow: 1; /* Asegura que todas las tarjetas tengan la misma altura */
+}
+
+/* El nuevo envoltorio <a> que hace toda la tarjeta clicable */
+.post-card-link-wrapper {
+  text-decoration: none !important;
+  color: inherit !important;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-image: none !important;
+}
+
+.post-card-link-wrapper:hover,
+.post-card-link-wrapper:focus {
+  background-size: 0 !important;
+}
+
+/* Efecto hover mejorado */
+.post-card.has-hover-effect:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* 4. Elementos dentro de la tarjeta */
@@ -587,30 +955,50 @@ color: white;
 .post-card-title {
   margin-top: 0;
   margin-bottom: var(--spacing-base);
+  color: var(--color-text) !important;
+  transition: color 0.3s ease;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-/* El enlace del título hereda el estilo global de 'a', pero lo refinamos */
-.post-card-title a {
-  color: var(--color-text) !important;
-  background-image: linear-gradient(var(--color-accent), var(--color-accent));
+/* El título cambia de color al pasar el ratón por la tarjeta */
+.post-card.has-hover-effect:hover .post-card-title {
+  color: var(--color-accent) !important;
 }
 
 .post-card-description {
   color: var(--color-text-secondary);
-  flex-grow: 1; /* Empuja el footer hacia abajo */
-  max-width: 100%; /* Sobreescribe el --content-width para que ocupe toda la tarjeta */
+  flex-grow: 1; 
+  max-width: 100%;
   margin-bottom: var(--spacing-medium);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .post-card-footer {
-  margin-top: auto; /* Se alinea al fondo gracias al flex-grow del p */
+  margin-top: auto; 
 }
 
 .post-card-readmore {
   font-weight: 500;
-  color: var(--color-accent) !important;
-  text-decoration: none !important;
-  /* Mantenemos el efecto de subrayado hover que ya definiste */
+  color: var(--color-accent);
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+/* Animación sutil de la flecha en el hover de la tarjeta */
+.post-card-readmore .arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.post-card.has-hover-effect:hover .post-card-readmore .arrow {
+  transform: translateX(5px);
 }
 
 /* 5. Botón para ver todos los posts */
@@ -619,12 +1007,96 @@ color: white;
 }
 
 /* ================================================
+   POSTS: TARJETAS MEJORADAS (portada, meta, chips)
+   ================================================ */
+
+/* Contenedor de portada con ratio fijo y overflow controlado */
+.post-card-cover {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background-color: var(--color-code-bg);
+  overflow: hidden;
+}
+
+/* Imagen de portada con zoom sutil en hover */
+.post-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.post-card.has-hover-effect:hover .post-card-image {
+  transform: scale(1.04);
+}
+
+/* Badge "Nuevo/Actualizado" */
+.post-card-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: var(--color-accent);
+  color: #fff;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* Meta: fecha y tiempo de lectura */
+.post-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: var(--spacing-small);
+}
+.meta-separator {
+  color: var(--color-text-secondary);
+}
+
+/* Chips de tags (no enlaces para no anidar <a> dentro del card-link) */
+.post-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0;
+  margin-bottom: var(--spacing-small);
+}
+.post-tag {
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* Accesibilidad: focus visible en toda la tarjeta */
+.post-card-link-wrapper:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+/* Respeto por usuarios con reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .post-card.has-hover-effect:hover { transform: none; box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+  .post-card-image { transition: none; }
+  .post-card-readmore .arrow { transition: none; }
+}
+.post-card.mv4 { margin-top: 0 !important; }
+
+/* ================================================
    EL MEJOR FOOTER PROFESIONAL DEL MUNDO
    ================================================ */
 
 .site-footer {
-  background-color: var(--color-text); /* Fondo oscuro consistente con el header */
-  color: rgba(255, 255, 255, 0.7); /* Texto no tan blanco para no cansar la vista */
+  background-color: var(--color-text);
+  color: rgba(255, 255, 255, 0.7);
   padding: var(--spacing-large) 0 var(--spacing-base) 0;
   font-size: 0.95em;
   line-height: 1.7;
@@ -654,7 +1126,7 @@ color: white;
 }
 
 .footer-tagline {
-  max-width: 100%; /* El footer no necesita limitar el ancho de línea */
+  max-width: 100%;
 }
 
 /* Estilo de los enlaces del footer */
@@ -670,7 +1142,7 @@ color: white;
 
 .footer-links a {
   color: rgba(255, 255, 255, 0.7) !important;
-  background-image: none !important; /* Quitamos subrayado por defecto */
+  background-image: none !important;
   transition: color 0.3s ease;
 }
 
@@ -749,9 +1221,9 @@ color: white;
 
 /* 1. Barra de Navegación Fija (Sticky) */
 .nav-bar {
-      background-image: 
-        linear-gradient(rgba(207, 76, 53, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(207, 76, 53, 0.03) 1px, transparent 1px);
+  background-image: 
+    linear-gradient(rgba(207, 76, 53, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(207, 76, 53, 0.03) 1px, transparent 1px);
   padding: var(--spacing-base) 0;
   position: sticky;
   top: 0;
@@ -786,7 +1258,7 @@ color: white;
 /* Definimos la animación que mueve la rejilla */
 @keyframes moveGrid {
   from { background-position: 0 0; }
-  to { background-position: 40px 40px; } /* Mueve exactamente un cuadro */
+  to { background-position: 40px 40px; }
 }
 
 /* 1. Estilo base del Hero Section (sin imagen de fondo) */
@@ -794,9 +1266,6 @@ color: white;
   color: white;
   position: relative;
   overflow: hidden;
-  /* Fondo principal con un gradiente oscuro */
-
-  
 }
 
 /* Pseudo-elemento que crea la rejilla animada */
@@ -805,12 +1274,12 @@ color: white;
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: 0;
-      background-image: 
-        linear-gradient(rgba(207, 76, 53, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(207, 76, 53, 0.03) 1px, transparent 1px);
+  background-image: 
+    linear-gradient(rgba(207, 76, 53, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(207, 76, 53, 0.03) 1px, transparent 1px);
   background-size: 40px 40px;
   opacity: 0.04;
-  animation: moveGrid 30s linear infinite; /* Aplicamos la animación */
+  animation: moveGrid 30s linear infinite;
 }
 
 /* 2. Estilos que se aplican CUANDO SÍ HAY una imagen de fondo */
@@ -836,14 +1305,14 @@ color: white;
   z-index: 1;
 }
 
-/* Estilos del título (los mantenemos como estaban) */
+/* Estilos del título */
 .hero-title {
- padding: 4rem 0; 
+  padding: 4rem 0; 
   color: rgb(22, 22, 22);
   font-size: clamp(2.5rem, 6vw, 4rem);
 }
 
-/* Estilos de la descripción (los mantenemos como estaban) */
+/* Estilos de la descripción */
 .hero-description {
   color: rgb(22, 22, 22);
   font-size: 1.2rem;
@@ -852,8 +1321,7 @@ color: white;
   margin: var(--spacing-base) auto 0;
 }
 
-
-/* 3. Lógica del Menú Responsive (igual que la propuesta anterior) */
+/* 3. Lógica del Menú Responsive */
 /* --- Ocultar/mostrar elementos --- */
 .header-nav { display: none; }
 .nav-toggle { display: flex; }
@@ -912,7 +1380,7 @@ color: white;
   text-decoration: none !important;
 }
 
-/* Ajustes de tamaño (puedes modificarlos a tu gusto) */
+/* Ajustes de tamaño */
 .post-card-title a,
 .f1 { font-size: 2.2rem !important; }
 
@@ -920,258 +1388,638 @@ color: white;
 
 .f3 { font-size: 1.4rem !important; }
 
-
-/* ================================================
-   SECCIÓN DE ÚLTIMOS POSTS (HOMEPAGE) - REFINADA
-   ================================================ */
-
-/* 1. Cabecera de la sección (sin cambios, ya estaba bien) */
-.posts-header {
-  text-align: center;
-  margin-bottom: var(--spacing-large);
-}
-
-.posts-header p {
-  max-width: var(--content-width);
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--color-text-secondary);
-}
-
-/* 2. Rejilla (Grid) de Posts (sin cambios) */
-.posts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--spacing-medium);
-}
-
-/* 3. Tarjeta de Post Individual - MEJORADA */
-.post-card {
-  background-color: #ffffff;
-  border-radius: 8px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #e0e0e0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 100%; /* Asegura que todas las tarjetas ocupen el alto completo de la fila */
-}
-
-/* El nuevo envoltorio <a> que hace toda la tarjeta clicable */
-.post-card-link-wrapper {
-  text-decoration: none !important;
-  color: inherit !important;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  background-image: none !important; /* Anula el efecto de subrayado global */
-}
-
-.post-card-link-wrapper:hover,
-.post-card-link-wrapper:focus {
-  background-size: 0 !important; /* Nos aseguramos de anularlo también en hover */
-}
-
-
-/* Efecto hover mejorado */
-.post-card.has-hover-effect:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-}
-
-.post-card-content {
-  padding: var(--spacing-medium);
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1; 
-}
-
-/* 4. Elementos dentro de la tarjeta - REFINADOS */
-.post-card-date {
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  color: var(--color-text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: var(--spacing-small);
-  display: block;
-}
-
-.post-card-title {
-  margin-top: 0;
-  margin-bottom: var(--spacing-base);
-  color: var(--color-text) !important;
-  transition: color 0.3s ease; /* Transición suave de color en hover */
-}
-
-/* El título cambia de color al pasar el ratón por la tarjeta */
-.post-card.has-hover-effect:hover .post-card-title {
-  color: var(--color-accent) !important;
-}
-
-.post-card-description {
-  color: var(--color-text-secondary);
-  flex-grow: 1; 
-  max-width: 100%;
-  margin-bottom: var(--spacing-medium);
-}
-
-.post-card-footer {
-  margin-top: auto; 
-}
-
-.post-card-readmore {
-  font-weight: 500;
-  color: var(--color-accent);
-  text-decoration: none;
-  display: inline-block;
-  transition: color 0.3s ease;
-}
-
-/* Animación sutil de la flecha en el hover de la tarjeta */
-.post-card-readmore .arrow {
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-
-.post-card.has-hover-effect:hover .post-card-readmore .arrow {
-  transform: translateX(5px);
-}
-
-
-
 /* =======================================================
-   5. Botón secundario para "Ver todos los artículos"
+   Botón secundario para "Ver todos los artículos"
    ======================================================= */
 .cta-button-secondary {
   display: inline-block;
-  background-color: #F59E0B !important; /* AHORA: Al pasar el ratón, se rellena de naranja */
-  
-  /* ANTES: color: var(--color-text) !important; */
-  color: white !important; /* El texto se vuelve blanco para contraste */
-
-  
+  background-color: var(--color-accent)!important;
+  color: white !important;
   padding: 0.8rem 1.8rem;
   border-radius: 8px;
-  /* ANTES: border: 2px solid #e0e0e0; */
-  border: 2px solid #F59E0B; /* AHORA: El borde también es naranja */
+  border: 2px solid var(--color-accent-dark);
   text-decoration: none !important;
   font-weight: 600;
   transition: all 0.3s ease;
   background-image: none !important;
-  box-shadow: none !important; /* Nos aseguramos de que no tenga la sombra del CTA primario */
+  box-shadow: none !important;
 }
 
 .cta-button-secondary:hover {
-  /* ANTES: background-color: var(--color-text); */
-  background-color: #D97706 !important;
+  background-color: var(--color-accent-dark) !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4) !important;
+  box-shadow: 0 6px 20px var(--color-accent) !important;
+  color: var(--color-text-secondary) !important;
+}
+
+/* ==========================================================================
+   IMPROVED SOLUTION SECTION V2
+   ========================================================================== */
+
+/* Main container for the section */
+.solution-v2-section {
+  padding: var(--spacing-xlarge) 0;
+  margin: var(--spacing-large) 0;
+  background-color: var(--color-bg); /* Uses your main background color */
+}
+
+/* Grid layout for the two columns */
+.solution-v2-container {
+  display: grid;
+  grid-template-columns: 1fr; /* Stacks on mobile by default */
+  gap: var(--spacing-large);
+  align-items: center;
+}
+
+/* Two-column layout for tablets and larger */
+@media (min-width: 768px) {
+  .solution-v2-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- Left Column: Main Content --- */
+.solution-v2-main-content {
+  border-left: 4px solid var(--color-accent);
+  padding-left: var(--spacing-medium);
+}
+
+.solution-v2-pre-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: block;
+  margin-bottom: var(--spacing-base);
+}
+
+.solution-v2-title {
+  font-size: 2.1rem; /* f2 */
+  margin-top: 0;
+  margin-bottom: var(--spacing-base);
+}
+
+.solution-v2-subtitle {
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+  max-width: var(--content-width);
+  margin-bottom: 0;
+}
+
+/* --- Right Column: Highlight Card --- */
+.solution-v2-highlight-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: var(--spacing-large);
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.solution-v2-highlight-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.insight-item {
+  display: flex;
+  align-items: flex-start; /* Aligns number with the top of the text */
+  gap: var(--spacing-base);
+}
+
+.insight-number {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.insight-text .insight-title {
+  font-size: 1.25rem; /* f4 */
+  font-weight: 700;
+  color: var(--color-text);
+  margin-top: 0;
+  margin-bottom: var(--spacing-small);
+}
+
+.insight-text .insight-description {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  max-width: 100%;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.insight-divider {
+  border: 0;
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: var(--spacing-medium) 0;
+}
+
+.insight-footer {
+  margin-top: var(--spacing-medium);
+  padding-top: var(--spacing-medium);
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-small);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.insight-footer svg {
+  color: var(--color-accent);
+  flex-shrink: 0;
 }
 
 /* ================================================
-   POSTS: TARJETAS MEJORADAS (portada, meta, chips)
+   CLASES DE ESPACIADO PARA SECTIONS
    ================================================ */
 
-/* Contenedor de portada con ratio fijo y overflow controlado */
-.post-card-cover {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  background-color: var(--color-code-bg);
-  overflow: hidden;
+/* Espaciado base usando tus variables existentes */
+.spaciado {
+  margin-top: var(--spacing-large);
+  margin-bottom: var(--spacing-large);
 }
 
-/* Imagen de portada con zoom sutil en hover */
-.post-card-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.6s ease;
-}
-.post-card.has-hover-effect:hover .post-card-image {
-  transform: scale(1.04);
+.spaciado-mega {
+  margin-top: calc(var(--spacing-large) * 5); 
+  margin-bottom: calc(var(--spacing-large) * 5);
 }
 
-/* Badge "Nuevo/Actualizado" */
-.post-card-badge {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  background-color: var(--color-accent);
-  color: #fff;
-  padding: 0.25rem 0.6rem;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+/* Espaciado extra grande */
+.spaciado-xl {
+  margin-top: calc(var(--spacing-large) * 2);
+  margin-bottom: calc(var(--spacing-large) * 2);
 }
 
-/* Meta: fecha y tiempo de lectura */
-.post-card-meta {
+/* Espaciado grande */
+.spaciado-lg {
+  margin-top: calc(var(--spacing-large) * 1.5);
+  margin-bottom: calc(var(--spacing-large) * 1.5);
+}
+
+/* Espaciado pequeño */
+.spaciado-sm {
+  margin-top: var(--spacing-medium);
+  margin-bottom: var(--spacing-medium);
+}
+
+/* Espaciado solo arriba */
+.spaciado-top {
+  margin-top: var(--spacing-large);
+}
+
+.spaciado-top-xl {
+  margin-top: calc(var(--spacing-large) * 2);
+}
+
+/* Espaciado solo abajo */
+.spaciado-bottom {
+  margin-bottom: var(--spacing-large);
+}
+
+.spaciado-bottom-xl {
+  margin-bottom: calc(var(--spacing-large) * 2);
+}
+
+
+/* ================================================
+   TAMAno de icono grande
+   ================================================ */
+
+   .icono-grande {
+  width: 80px !important;   /* Doble del tamaño original */
+  height: 80px !important;
+  color: currentColor;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   INTEGRATED AI SECTION (V2)
+   ========================================================================== */
+
+/* --- Contenedor Principal --- */
+.ai-unified-section {
+  padding: var(--spacing-large) 0;
+  margin: var(--spacing-large) 0;
+}
+
+/* --- Panel Principal --- */
+.ai-unified-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  overflow: hidden; /* Importante para el layout interior */
+}
+
+/* --- Rejilla Asimétrica --- */
+.ai-unified-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Apilado en móvil */
+}
+
+/* Layout de 2 columnas en escritorio */
+@media (min-width: 768px) {
+  .ai-unified-grid {
+    /* La columna derecha es 1.5 veces más ancha que la izquierda */
+    grid-template-columns: 1fr 1.5fr; 
+  }
+}
+
+/* --- Columna Izquierda: Introducción --- */
+.ai-unified-intro {
+  padding: var(--spacing-large);
+  text-align: center;
+  background-color: #F9FAFB; /* Un fondo ligeramente distinto para separar */
+}
+
+@media (min-width: 768px) {
+  .ai-unified-intro {
+    text-align: left;
+    border-right: 1px solid #e0e0e0;
+  }
+}
+
+.ai-intro-icon svg {
+  width: 48px;
+  height: 48px;
+  color: var(--color-accent);
+  stroke-width: 1.5;
+  margin-bottom: var(--spacing-base);
+}
+
+.ai-intro-title {
+  font-size: 1.8rem; /* f2 */
+  margin-top: 0;
+  margin-bottom: var(--spacing-base);
+}
+
+.ai-intro-description {
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 100%;
+  margin-bottom: 0;
+}
+
+/* --- Columna Derecha: Niveles de Impacto --- */
+.ai-unified-levels {
+  padding: var(--spacing-medium);
+}
+
+.ai-unified-levels ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium);
+}
+
+.ai-unified-levels li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-base);
+  margin-bottom: 0;
+  padding: var(--spacing-base);
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.ai-unified-levels li:hover {
+  background-color: #F9FAFB;
+}
+
+.level-icon {
+  flex-shrink: 0;
+  background-color: var(--color-accent-translucent, rgba(223, 77, 19, 0.1)); /* Usamos un color de acento translúcido */
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  margin-bottom: var(--spacing-small);
-}
-.meta-separator {
-  color: var(--color-text-secondary);
+  justify-content: center;
 }
 
-/* Título y descripción con line-clamp para uniformidad */
-.post-card-title {
+.level-icon svg {
+  width: 24px;
+  height: 24px;
+  color: var(--color-accent);
+  stroke-width: 2;
+}
+
+.level-title {
+  font-size: 1.25rem; /* f4 */
   margin-top: 0;
   margin-bottom: var(--spacing-small);
-  display: -webkit-box;
-  -webkit-line-clamp: 4;        /* Máximo 2 líneas */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.post-card-description {
-  color: var(--color-text-secondary);
-  margin-bottom: var(--spacing-medium);
-  display: -webkit-box;
-  -webkit-line-clamp: 3;        /* Máximo 3 líneas */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
-/* Chips de tags (no enlaces para no anidar <a> dentro del card-link) */
-.post-card-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0;                /* Se integra con la descripción */
+.level-description {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  max-width: 100%;
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+/* ================================================
+   PÁGINA DE CONTACTO - ESTILOS COMPLETOS
+   ================================================ */
+
+/* --- Intro Section --- */
+.contact-intro {
+  max-width: 700px;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+
+.contact-intro-subtitle {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-base);
+}
+
+.contact-intro-question {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
   margin-bottom: var(--spacing-small);
 }
-.post-tag {
-  border: 1px solid var(--color-accent);
+
+.contact-intro-cta {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  font-weight: 700;
+  margin-top: var(--spacing-medium);
+}
+
+/* --- Contact Methods Grid --- */
+.contact-methods-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: calc(var(--spacing-large) * 1.5);
+  margin-bottom: calc(var(--spacing-large) * 3);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-method-card {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: calc(var(--spacing-large) * 1.5);
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  text-decoration: none !important;
+  color: inherit !important;
+  display: block;
+  background-image: none !important;
+  overflow: visible;
+}
+
+.contact-method-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--color-accent);
+  border-radius: 12px 12px 0 0;
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.contact-method-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-accent);
+  box-shadow: 0 20px 40px rgba(223, 77, 19, 0.15);
+  background-size: 0 !important;
+}
+
+.contact-method-card:hover::before {
+  transform: scaleX(1);
+}
+
+.contact-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--spacing-medium);
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+.contact-method-card:hover .contact-icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 10px 30px rgba(223, 77, 19, 0.3);
+}
+
+.contact-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.contact-method-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-small);
+}
+
+.contact-method-description {
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-medium);
+  font-size: 0.95rem;
+}
+
+.contact-method-link {
+  display: inline-block;
   color: var(--color-accent);
-  padding: 0.15rem 0.55rem;
-  border-radius: 999px;
-  font-size: 0.75rem;
   font-weight: 600;
-  line-height: 1;
+  font-size: 1.05rem;
+  margin-bottom: var(--spacing-small);
+  transition: color 0.3s ease;
 }
 
-/* Footer: sutil separación visual */
-.post-card-footer {
-  margin-top: auto;
+.contact-method-card:hover .contact-method-link {
+  color: var(--color-text);
 }
 
-/* Accesibilidad: focus visible en toda la tarjeta */
-.post-card-link-wrapper:focus-visible {
-  outline: 3px solid var(--color-accent);
-  outline-offset: 4px;
-  border-radius: 8px;
+.contact-card-arrow {
+  position: absolute;
+  bottom: 20px;
+  right: 25px;
+  font-size: 1.8rem;
+  color: var(--color-accent);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.4s ease;
 }
 
-/* Respeto por usuarios con reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .post-card.has-hover-effect:hover { transform: none; box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
-  .post-card-image { transition: none; }
-  .post-card-readmore .arrow { transition: none; }
+.contact-method-card:hover .contact-card-arrow {
+  opacity: 1;
+  transform: translateX(0);
 }
-.post-card.mv4 { margin-top: 0 !important; }
+
+/* --- What Happens Next Section --- */
+.what-happens-next {
+  background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
+  border-radius: 16px;
+  padding: calc(var(--spacing-large) * 2);
+  margin-top: calc(var(--spacing-large) * 3);
+}
+
+.what-happens-header {
+  text-align: center;
+  margin-bottom: var(--spacing-large);
+}
+
+.what-happens-title {
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-base);
+  color: var(--color-text);
+}
+
+.what-happens-subtitle {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.next-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--spacing-large);
+  margin-top: var(--spacing-large);
+  position: relative;
+}
+
+/* Línea conectora entre pasos (solo desktop) */
+@media (min-width: 768px) {
+  .next-steps-grid::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 20%;
+    right: 20%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+      var(--color-accent) 0%, 
+      var(--color-accent) 50%, 
+      #e0e0e0 50%, 
+      #e0e0e0 100%);
+    z-index: 0;
+  }
+}
+
+.next-step-item {
+  text-align: center;
+  padding: var(--spacing-medium);
+  position: relative;
+  z-index: 1;
+}
+
+.next-step-number {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto var(--spacing-base);
+  border-radius: 50%;
+  background: white;
+  border: 3px solid var(--color-accent);
+  color: var(--color-accent);
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(223, 77, 19, 0.15);
+  transition: all 0.3s ease;
+}
+
+.next-step-item:hover .next-step-number {
+  transform: scale(1.15);
+  box-shadow: 0 6px 20px rgba(223, 77, 19, 0.25);
+}
+
+.next-step-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-small);
+}
+
+.next-step-description {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 100%;
+  margin: 0;
+}
+
+/* --- Final CTA Section --- */
+.contact-final-cta {
+  background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.final-cta-main {
+  font-size: 1.75rem;
+  line-height: 1.4;
+  color: var(--color-text);
+  font-weight: 500;
+  margin-bottom: var(--spacing-medium);
+}
+
+.final-cta-highlight {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.final-cta-note {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .contact-methods-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-large);
+  }
+  
+  .what-happens-next {
+    padding: var(--spacing-large);
+  }
+  
+  .contact-card-arrow {
+    display: none;
+  }
+
+  .final-cta-main {
+    font-size: 1.4rem;
+  }
+}

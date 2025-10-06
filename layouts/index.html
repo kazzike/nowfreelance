@@ -1,0 +1,42 @@
+{{ define "header" }}
+  {{ partial "site-header.html" . }}
+{{ end }}
+
+{{ define "main" }}
+  
+  {{ with .Site.Data.homepage.hero }}
+    {{ partial "homepage/hero.html" . }}
+  {{ end }}
+
+  {{ with .Site.Data.homepage.pain_points }}
+    {{ partial "homepage/pain-points.html" . }}
+  {{ end }}
+
+  {{ partial "homepage/solution.html" }}
+  
+  {{ with .Site.Data.homepage.process }}
+    {{ partial "homepage/process.html" . }}
+  {{ end }}
+
+  {{ with .Site.Data.homepage.case_study }}
+    {{ partial "homepage/case-study.html" . }}
+  {{ end }}
+
+  
+
+
+  {{ partial "homepage/ai-section.html" . }}
+  
+  {{ $posts := where .Site.RegularPages "Type" "posts" }}
+
+  
+  {{ $posts := where .Site.RegularPages "Type" "posts" }}
+  {{ if gt (len $posts) 0 }}
+    {{ partial "homepage/posts.html" . }}
+  {{ end }}
+
+{{ end }}
+
+{{ define "footer" }}
+  {{ partial "site-footer.html" . }}
+{{ end }}

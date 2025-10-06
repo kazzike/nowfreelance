@@ -1,0 +1,51 @@
+hero:
+  title: "Escala tu negocio, no el caos."
+  description: "Convertimos la complejidad de tu negocio en un sistema moderno, simple y centralizado que puedes gestionar desde tu móvil. Pasa de ser un autoempleado a ser el estratega y líder de una empresa que crece con estructura e inteligencia artificial cuando es necesario."
+  cta_text: "Agendar mi Sesión de Claridad Gratuita"
+  cta_link: "/contact"
+
+pain_points:
+  items:
+    - icon: "folder-open"
+      title: "Información Fragmentada"
+      description: "Tu información más crítica vive en hojas de cálculo de Excel, documentos de Word o chats repartidos y en varios plataformas. Nada está conectado."
+    - icon: "user-cog"
+      title: "El negocio depende 100% de ti"
+      description: "Sientes que no puedes delegar porque nadie más entiende tus procesos (o no los hay)."
+    - icon: "alert-triangle"
+      title: "El crecimiento te da miedo"
+      description: "Cada nuevo cliente o proyecto añade más desorden y te roba más tiempo, en lugar de darte más libertad."
+    - icon: "plane"
+      title: "Vacaciones, ¿qué es eso?"
+      description: "La idea de desconectar una semana te genera más estrés que tranquilidad, porque sabes que todo se detendría."
+    - icon: "trending-down"
+      title: "Oportunidades Perdidas"
+      description: "Leads que se enfrían por no contactarlos a tiempo o clientes que se van por falta de seguimiento. Es dinero que se escapa."
+    - icon: "git-merge"
+      title: "Inconsistencia con Clientes"
+      description: "Ofreces una experiencia diferente a cada cliente porque no hay un proceso estandarizado, afectando tu reputación."
+
+process:
+  steps:
+    - title: "1. Diagnóstico y Hoja de Ruta"
+      description: "En nuestra 'Sesión de Claridad', mapeamos tu negocio, no tus apps. Entendemos tus ambiciones y detectamos los cuellos de botella que realmente frenan tu escalada. Te entregamos un plan claro."
+    - title: "2. Modernización e Implementación"
+      description: "Construimos tu sistema centralizado. Migramos tus viejos procesos a un ecosistema digital integrado y seguro, accesible desde cualquier dispositivo."
+    - title: "3. Formación y Despegue"
+      description: "El objetivo es tu libertad. Te formamos a ti y a tu equipo para que dominéis el nuevo sistema. No creamos dependencia, creamos autonomía."
+
+case_study:
+  challenge: "Un cliente con una visión clara de expandir su negocio a nuevas regiones, pero ahogado en el caos de gestionar créditos y ventas con archivos locales de Excel y Word. El crecimiento era imposible."
+  mission: "El problema no era el Excel, era la mentalidad. El primer paso fue estratégico: demostrar que para escalar, hay que confiar en sistemas modernos."
+  transformation: "Creamos un ecosistema digital único que centralizó toda la operación. Todo el equipo, sin importar la ubicación, empezó a trabajar sobre la misma información en tiempo real."
+  result: "Hoy, gestiona un negocio multi-oficina desde un único lugar, ha eliminado la pérdida de datos y ha recuperado el tiempo y la paz mental para enfocarse en lo que de verdad importa: seguir creciendo."
+  cta_text: "Ver cómo podemos hacer esto por ti"
+  cta_link: "/contact"
+
+  steps:
+  - title: "1. Diagnóstico y Hoja de Ruta"
+    description: "En nuestra 'Sesión de Claridad'..."
+  - title: "2. Modernización e Implementación"
+    description: "Construimos tu sistema centralizado..."
+  - title: "3. Formación y Despegue"
+    description: "El objetivo es tu libertad..."

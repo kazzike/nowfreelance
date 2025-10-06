@@ -1,0 +1,52 @@
+<footer class="site-footer" id="footer">
+  <div class="footer-content mw8 center ph3">
+    
+    <div class="footer-grid">
+      
+      <!-- Columna 1: Marca y Misión -->
+      <div class="footer-column brand-column">
+        <h3 class="footer-title">{{ .Site.Title }}</h3>
+        <p class="footer-tagline">
+          {{ .Site.Params.footer_tagline | default "Ayudando a empresas a crecer a través de la automatización y la tecnología." }}
+        </p>
+      </div>
+
+      <!-- Columna 2: Navegación -->
+      <div class="footer-column">
+        <h4 class="footer-column-title">Navegación</h4>
+        <ul class="footer-links">
+          <li><a href="{{ "/" | relLangURL }}">Inicio</a></li>
+          <li><a href="{{ "/posts/" | relLangURL }}">Blog</a></li>
+          <li><a href="{{ "contact" | relLangURL }}">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Legal -->
+      <div class="footer-column">
+        <h4 class="footer-column-title">Legal</h4>
+        <ul class="footer-links">
+          <li><a href="{{ "/politica-de-privacidad/" | relLangURL }}">Política de Privacidad</a></li>
+          <li><a href="{{ "/aviso-legal/" | relLangURL }}">Aviso Legal</a></li>
+          <li><a href="{{ "/politica-de-cookies/" | relLangURL }}">Política de Cookies</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 4: Redes Sociales -->
+
+
+    </div>
+
+    <!-- Barra inferior con copyright y "Volver arriba" -->
+    <div class="footer-bottom-bar">
+      <p class="copyright">
+        {{ .Site.Copyright | default (printf "© %s %s. Todos los derechos reservados." (now.Format "2006") .Site.Title) }}
+      </p>
+      <a href="#top" class="back-to-top">Volver arriba &uarr;</a>
+    </div>
+
+  </div>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>
+  lucide.createIcons();
+</script>
+</footer>

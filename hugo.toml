@@ -1,5 +1,5 @@
 baseURL = "http://localhost:1313/"
-languageCode = "es"
+languageCode = "es-ES"
 defaultContentLanguage = "es"
 title = "nowfreelance"
 theme = "ananke"
@@ -20,7 +20,7 @@ footer_tagline = "Ayudando a empresas a crecer a través de la automatización y
 
 [[params.social]]
   name = "Twitter"
-  icon_name = "twitter"
+  icon_name = "x"
   url = "https://x.com/"
 
 [[params.social]]
@@ -43,11 +43,7 @@ footer_tagline = "Ayudando a empresas a crecer a través de la automatización y
      name = "Blog"
      url = "/posts/"
      weight = 30
-#   [[menu.main]]
-#     name = "Sobre Nosotros"
-#     url = "/sobre-nosotros/"
-#     weight = 40
-#   [[menu.main]]
-#     name = "Contacto"
-#     url = "/contacto/"
-#     weight = 50
+   [[menu.main]]
+     name = "Contacto"
+     url = "/contact"
+     weight = 40

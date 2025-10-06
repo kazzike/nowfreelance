@@ -1,0 +1,73 @@
+<section class="mw8 center ph3 mt4 mb5">
+  <div class="plans-header tc">
+    <h2 class="f2 athelas mb2">{{ .title | default "Planes Pensados para Crecer" }}</h2>
+    <p class="f5 lh-copy measure-wide center gray">Elige el punto de partida que mejor se adapte a tu momento actual. Todos los planes son flexibles.</p>
+  </div>
+
+  <div class="plans-grid">
+    {{ range .packages }}
+      <div class="plan-card {{ if eq .name "Growth" }}is-recommended{{ end }}">
+        
+        {{ if eq .name "Growth" }}
+          <div class="plan-badge">Más Popular</div>
+        {{ end }}
+
+        <div class="plan-header-card">
+          <h3 class="f3 mb1">{{ .name }}</h3>
+          <p class="plan-price">{{ .price }}</p>
+        </div>
+        
+        <ul class="plan-features">
+          {{ range .bullets }}
+            <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+        
+        <div class="plan-footer">
+          <a href="{{ .context.Site.Data.homepage.hero.cta_link | default "/contacto" }}" class="plan-cta-button">
+            {{ if eq .name "Scale (a medida)" }}
+              Solicitar Presupuesto
+            {{ else }}
+              Empezar Ahora
+            {{ end }}
+          </a>
+        </div>
+      </div>
+    {{ end }}
+    {{ if not .packages }}
+    <div class="plan-card">
+      <h3 class="f3">Básico</h3>
+      <p class="plan-price">$99/mes</p>
+      <ul>
+        <li>Automatización de hasta 5 procesos</li>
+        <li>Integración con 3 herramientas</li>
+        <li>Soporte por email</li>
+      </ul>
+      <a href="/contacto" class="plan-cta-button">Empezar Ahora</a>
+    </div>
+    <div class="plan-card is-recommended">
+      <div class="plan-badge">Más Popular</div>
+      <h3 class="f3">Growth</h3>
+      <p class="plan-price">$199/mes</p>
+      <ul>
+        <li>Automatización ilimitada</li>
+        <li>Integraciones personalizadas</li>
+        <li>Soporte prioritario</li>
+        <li>Informes mensuales</li>
+      </ul>
+      <a href="/contacto" class="plan-cta-button">Empezar Ahora</a>
+    </div>
+    <div class="plan-card">
+      <h3 class="f3">Scale (a medida)</h3>
+      <p class="plan-price">Personalizado</p>
+      <ul>
+        <li>Soluciones a medida</li>
+        <li>Equipo dedicado</li>
+        <li>Entrenamiento y consultoría</li>
+        <li>Seguridad avanzada</li>
+      </ul>
+      <a href="/contacto" class="plan-cta-button">Solicitar Presupuesto</a>
+    </div>
+    {{ end }}
+  </div>
+</section>
