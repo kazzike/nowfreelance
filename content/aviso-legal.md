@@ -21,7 +21,7 @@ La información contenida en este sitio web tiene carácter general y meramente 
 - El uso que los usuarios hagan de la información aquí proporcionada
 - Problemas técnicos que puedan surgir durante la navegación
 
-### 4. Enlaces a Redes Sociales y WhatsApp
+### 4. Enlaces a Redes Sociales
 
 Este sitio web puede contener enlaces para contacto a de redes sociales. Estas plataformas son servicios externos cuyas condiciones de uso y políticas de privacidad son responsabilidad de sus respectivas empresas.
 
