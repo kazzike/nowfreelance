@@ -1,6 +1,6 @@
 hero:
   title: "Escala tu negocio, no el caos."
-  description: "Convertimos la complejidad de tu negocio en un sistema moderno, simple y centralizado que puedes gestionar desde tu móvil. Pasa de ser un autoempleado a ser el estratega y líder de una empresa que crece con estructura e inteligencia artificial cuando es necesario."
+  description: "Consultoría de Optimización de Procesos: Detectamos puntos de mejora en tus operaciones, diseñamos soluciones personalizadas y las implementamos con herramientas inteligentes (como IA cuando añade valor real). Pasa de autoempleado a líder estratégico, ahorrando hasta 20h/semana en ineficiencias y tan simple que podrás gestionarlo desde tu móvil."
   cta_text: "Agendar mi Sesión de Claridad Gratuita"
   cta_link: "/contact"
 
@@ -8,22 +8,22 @@ pain_points:
   items:
     - icon: "folder-open"
       title: "Información Fragmentada"
-      description: "Tu información más crítica vive en hojas de cálculo de Excel, documentos de Word o chats repartidos y en varios plataformas. Nada está conectado."
+      description: "Datos dispersos en Excel, Word y otras plataformas. → Diagnosticamos conexiones fallidas y centralizamos todo en un sistema unificado."
     - icon: "user-cog"
       title: "El negocio depende 100% de ti"
-      description: "Sientes que no puedes delegar porque nadie más entiende tus procesos (o no los hay)."
+      description: "Procesos no delegables. → Detectamos brechas en documentación y estandarizamos flujos para autonomía de equipo."
     - icon: "alert-triangle"
       title: "El crecimiento te da miedo"
-      description: "Cada nuevo cliente o proyecto añade más desorden y te roba más tiempo, en lugar de darte más libertad."
+      description: "Más clientes = más desorden. → Identificamos cuellos de botella y optimizamos procesos para escalar sin perder tiempo."
     - icon: "plane"
-      title: "Vacaciones, ¿qué es eso?"
-      description: "La idea de desconectar una semana te genera más estrés que tranquilidad, porque sabes que todo se detendría."
+      title: "Vacaciones Imposibles"
+      description: "Todo se detiene sin ti. → Analizamos dependencias y creamos alertas/automaciones para monitoreo remoto."
     - icon: "trending-down"
       title: "Oportunidades Perdidas"
-      description: "Leads que se enfrían por no contactarlos a tiempo o clientes que se van por falta de seguimiento. Es dinero que se escapa."
+      description: "Leads fríos o clientes insatisfechos. → Analizamos dónde se pierden las oportunidades y aplicamos estrategias para convertirlas en ventas reales"
     - icon: "git-merge"
-      title: "Inconsistencia con Clientes"
-      description: "Ofreces una experiencia diferente a cada cliente porque no hay un proceso estandarizado, afectando tu reputación."
+      title: "No es falta de esfuerzo"
+      description: " → es falta de diagnóstico experto. Nosotros lo detectamos y solucionamos."
 
 process:
   steps:
