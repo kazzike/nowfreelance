@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reemplazador de Palabras Pro - Bidireccional</title>
+    <style>
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --success: #28a745;
+            --danger: #dc3545;
+            --warning: #ffc107;
+            --info: #17a2b8;
+            --light: #f8f9fa;
+            --dark: #343a40;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 { font-size: 2rem; margin-bottom: 10px; }
+        .header p { opacity: 0.9; font-size: 1rem; }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        @media (max-width: 1024px) {
+            .main-content { grid-template-columns: 1fr; }
+        }
+
+        .panel {
+            padding: 25px;
+            border-right: 1px solid #e0e0e0;
+        }
+
+        .panel:last-child {
+            border-right: none;
+            background: #fcfcfc;
+        }
+
+        .panel-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 220px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 15px;
+            font-size: 14px;
+            font-family: 'Fira Code', 'Courier New', monospace;
+            resize: vertical;
+            transition: border-color 0.3s;
+            margin-bottom: 15px;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4); }
+        .btn-secondary { background: #6c757d; color: white; }
+        .btn-success { background: var(--success); color: white; }
+        .btn-danger { background: var(--danger); color: white; }
+        .btn-warning { background: var(--warning); color: #333; }
+        .btn-info { background: var(--info); color: white; }
+
+        .mode-toggle {
+            display: flex;
+            background: #eee;
+            padding: 4px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .mode-btn {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .mode-btn.active {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .word-list-container {
+            background: #f1f3f5;
+            border-radius: 10px;
+            padding: 10px;
+            max-height: 250px;
+            overflow-y: auto;
+            border: 1px inset rgba(0,0,0,0.05);
+        }
+
+        .word-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 12px;
+            background: white;
+            border-radius: 6px;
+            margin-bottom: 6px;
+            font-size: 13px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .word-item code { background: #fdf2f2; padding: 2px 4px; border-radius: 4px; color: var(--danger); }
+        .word-item .replacement { color: var(--success); font-weight: bold; }
+
+        .add-word-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr auto;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .add-word-form input {
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+        }
+
+        .result-box {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 15px;
+            min-height: 200px;
+            max-height: 400px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            font-family: 'Fira Code', monospace;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .mapping-info {
+            background: #fff3cd;
+            border-left: 4px solid var(--warning);
+            padding: 12px;
+            margin-bottom: 15px;
+            font-size: 13px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .stats {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            flex: 1;
+            text-align: center;
+        }
+
+        .stat-value { font-weight: 800; color: var(--primary); font-size: 1.2rem; }
+        .stat-label { font-size: 11px; color: #777; text-transform: uppercase; }
+
+        .default-words-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background: #e9ecef;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .tag:hover { background: var(--primary); color: white; }
+        .tag.active { background: var(--success); color: white; }
+
+        .badge-email { background: #6f42c1; color: white; padding: 2px 6px; border-radius: 4px; font-size: 10px; }
+        
+        .options-bar {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 13px;
+        }
+
+        .btn-remove {
+            background: none;
+            border: none;
+            color: var(--danger);
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔄 Reemplazador Bidireccional</h1>
+            <p>Anonimiza textos y restaura los datos originales cuando los necesites</p>
+        </div>
+
+        <div class="main-content">
+            <div class="panel">
+                <div class="mode-toggle">
+                    <button class="mode-btn active" id="btnModeReplace" onclick="setMode('replace')">MODO REEMPLAZO</button>
+                    <button class="mode-btn" id="btnModeRestore" onclick="setMode('restore')">MODO RESTAURACIÓN</button>
+                </div>
+
+                <div class="panel-title"><span>📝</span> Texto a procesar</div>
+                <textarea id="inputText" placeholder="Pega aquí el texto original o el texto anonimizado..."></textarea>
+
+                <div class="options-bar">
+                    <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
+                        <input type="checkbox" id="checkWholeWord" checked> Solo palabras completas
+                    </label>
+                </div>
+
+                <div class="controls">
+                    <button class="btn btn-primary" onclick="processText()">
+                        <span id="txtAction">Ejecutar Reemplazo</span>
+                    </button>
+                    <button class="btn btn-secondary" onclick="clearInput()">Limpiar</button>
+                </div>
+
+                <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+
+                <div class="panel-title"><span>⚙️</span> Configuración de Palabras</div>
+                
+                <div class="default-words-list" id="defaultWordsList"></div>
+
+                <div class="add-word-form">
+                    <input type="text" id="newWord" placeholder="Palabra o @ para emails">
+                    <input type="text" id="newReplacement" placeholder="Reemplazo (vacío = azar)">
+                    <button class="btn btn-success" onclick="addWordManual()">+</button>
+                </div>
+
+                <div class="word-list-container" id="wordList">
+                    </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-title"><span>📊</span> Resultado y Mapeos</div>
+                
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-value" id="statMappings">0</div>
+                        <div class="stat-label">Reglas</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="statEmails">0</div>
+                        <div class="stat-label">Emails Detectados</div>
+                    </div>
+                </div>
+
+                <div id="mappingInfo" class="mapping-info" style="display: none;">
+                    <strong>Mapeos utilizados en este proceso:</strong>
+                    <div id="mappingDetails" style="margin-top:5px; max-height: 100px; overflow-y: auto;"></div>
+                </div>
+
+                <div class="result-box" id="resultBox">El resultado aparecerá aquí...</div>
+
+                <div class="controls">
+                    <button class="btn btn-info" onclick="copyResult()">📋 Copiar</button>
+                    <button class="btn btn-warning" onclick="downloadResult()">💾 Descargar .txt</button>
+                    <button class="btn btn-danger" onclick="resetAllData()">🗑️ Borrar Todo</button>
+                </div>
+
+                <div class="panel-title" style="margin-top: 30px;"><span>🔑</span> Diccionario Histórico</div>
+                <div class="word-list-container" id="historyList">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- CONFIGURACIÓN Y DATOS ---
+        const dictionary = {
+            names: ['Julián', 'Adriana', 'Marcos', 'Elena', 'Roberto', 'Sonia', 'Ricardo', 'Paola', 'Fernando', 'Marta'],
+            places: ['Madrid', 'Barcelona', 'México', 'Bogotá', 'Santiago', 'Lima', 'Buenos Aires', 'Valencia'],
+            companies: ['TechCorp', 'GlobalSoft', 'Innovatech', 'DataSystems', 'AlphaGroup', 'OmegaSolutions'],
+            emails: ['usuario', 'contacto', 'info', 'admin', 'personal', 'correo', 'test', 'soporte'],
+            domains: ['gmail.com', 'outlook.com', 'empresa.com', 'servidor.net', 'webmail.org']
+        };
+
+        let state = {
+            mode: 'replace',
+            wordMappings: {}, // { "original_lower": { original: "Original", replacement: "Repl" } }
+            emailMappings: {}, // { "original_email": "fake_email" }
+            replaceAllEmails: false
+        };
+
+        const defaultWords = ['PEPE', 'JUAN', 'ADMIN', 'PASSWORD', '@COMPANY', 'SITIO.COM', 'EMPRESA', '@'];
+
+        // --- INICIALIZACIÓN ---
+        window.onload = () => {
+            const saved = localStorage.getItem('bidirectional_replacer_data');
+            if (saved) {
+                const parsed = JSON.parse(saved);
+                state.wordMappings = parsed.wordMappings || {};
+                state.emailMappings = parsed.emailMappings || {};
+                state.replaceAllEmails = parsed.replaceAllEmails || false;
+            }
+            renderAll();
+        };
+
+        function save() {
+            localStorage.setItem('bidirectional_replacer_data', JSON.stringify({
+                wordMappings: state.wordMappings,
+                emailMappings: state.emailMappings,
+                replaceAllEmails: state.replaceAllEmails
+            }));
+            updateStats();
+        }
+
+        // --- LÓGICA DE UI ---
+        function setMode(mode) {
+            state.mode = mode;
+            document.getElementById('btnModeReplace').classList.toggle('active', mode === 'replace');
+            document.getElementById('btnModeRestore').classList.toggle('active', mode === 'restore');
+            document.getElementById('txtAction').textContent = mode === 'replace' ? 'Ejecutar Reemplazo' : 'Ejecutar Restauración';
+        }
+
+        function renderAll() {
+            renderDefaultWords();
+            renderWordList();
+            renderHistory();
+            updateStats();
+        }
+
+        function renderDefaultWords() {
+            const container = document.getElementById('defaultWordsList');
+            container.innerHTML = '';
+            defaultWords.forEach(w => {
+                const isActive = (w === '@') ? state.replaceAllEmails : !!state.wordMappings[w.toLowerCase()];
+                const span = document.createElement('span');
+                span.className = `tag ${isActive ? 'active' : ''}`;
+                span.textContent = w === '@' ? '📧 Todos los Emails' : w;
+                span.onclick = () => toggleDefaultWord(w);
+                container.appendChild(span);
+            });
+        }
+
+        function toggleDefaultWord(word) {
+            if (word === '@') {
+                state.replaceAllEmails = !state.replaceAllEmails;
+            } else {
+                const key = word.toLowerCase();
+                if (state.wordMappings[key]) delete state.wordMappings[key];
+                else state.wordMappings[key] = { original: word, replacement: generateRandom(word) };
+            }
+            save();
+            renderAll();
+        }
+
+        function addWordManual() {
+            const word = document.getElementById('newWord').value.trim();
+            const repl = document.getElementById('newReplacement').value.trim();
+            if (!word) return;
+
+            if (word === '@') {
+                state.replaceAllEmails = true;
+            } else {
+                state.wordMappings[word.toLowerCase()] = {
+                    original: word,
+                    replacement: repl || generateRandom(word)
+                };
+            }
+            document.getElementById('newWord').value = '';
+            document.getElementById('newReplacement').value = '';
+            save();
+            renderAll();
+        }
+
+        function removeWord(key) {
+            delete state.wordMappings[key];
+            save();
+            renderAll();
+        }
+
+        function renderWordList() {
+            const container = document.getElementById('wordList');
+            container.innerHTML = '';
+            
+            if (state.replaceAllEmails) {
+                container.innerHTML += `
+                    <div class="word-item">
+                        <span><span class="badge-email">Email</span> Todos los correos detectados</span>
+                        <span class="replacement">→ azar@dominio.com</span>
+                        <button class="btn-remove" onclick="state.replaceAllEmails=false; save(); renderAll();">×</button>
+                    </div>`;
+            }
+
+            Object.entries(state.wordMappings).forEach(([key, val]) => {
+                const div = document.createElement('div');
+                div.className = 'word-item';
+                div.innerHTML = `
+                    <span><code>${val.original}</code></span>
+                    <span class="replacement">→ ${val.replacement}</span>
+                    <button class="btn-remove" onclick="removeWord('${key}')">×</button>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function renderHistory() {
+            const container = document.getElementById('historyList');
+            container.innerHTML = '';
+            const emails = Object.entries(state.emailMappings);
+            if (emails.length === 0) {
+                container.innerHTML = '<div style="font-size:12px; color:#999; text-align:center; padding:10px;">No hay emails mapeados aún</div>';
+                return;
+            }
+            emails.forEach(([orig, fake]) => {
+                const div = document.createElement('div');
+                div.className = 'word-item';
+                div.style.fontSize = '11px';
+                div.innerHTML = `<span>${orig}</span> <span class="replacement">→ ${fake}</span>`;
+                container.appendChild(div);
+            });
+        }
+
+        // --- NÚCLEO DEL PROCESAMIENTO ---
+        function processText() {
+            let text = document.getElementById('inputText').value;
+            if (!text) return;
+
+            const useWholeWord = document.getElementById('checkWholeWord').checked;
+            const applied = [];
+
+            if (state.mode === 'replace') {
+                // 1. Reemplazar Palabras Definidas
+                // Ordenar por longitud descendente para evitar que "Juan" pise a "Juan Pablo"
+                const sortedWords = Object.values(state.wordMappings).sort((a,b) => b.original.length - a.original.length);
+                
+                sortedWords.forEach(m => {
+                    const regex = new RegExp(useWholeWord ? `\\b${escapeRegex(m.original)}\\b` : escapeRegex(m.original), 'gi');
+                    if (regex.test(text)) {
+                        text = text.replace(regex, m.replacement);
+                        applied.push(`${m.original} → ${m.replacement}`);
+                    }
+                });
+
+                // 2. Reemplazar Emails
+                if (state.replaceAllEmails) {
+                    const emailRegex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
+                    text = text.replace(emailRegex, (match) => {
+                        if (!state.emailMappings[match]) {
+                            state.emailMappings[match] = generateFakeEmail();
+                        }
+                        applied.push(`${match} → ${state.emailMappings[match]}`);
+                        return state.emailMappings[match];
+                    });
+                }
+            } else {
+                // MODO RESTAURACIÓN
+                // 1. Restaurar Emails primero (suelen ser más específicos)
+                Object.entries(state.emailMappings).forEach(([orig, fake]) => {
+                    const regex = new RegExp(escapeRegex(fake), 'g');
+                    if (regex.test(text)) {
+                        text = text.replace(regex, orig);
+                        applied.push(`${fake} → ${orig}`);
+                    }
+                });
+
+                // 2. Restaurar Palabras
+                Object.values(state.wordMappings).forEach(m => {
+                    const regex = new RegExp(useWholeWord ? `\\b${escapeRegex(m.replacement)}\\b` : escapeRegex(m.replacement), 'gi');
+                    if (regex.test(text)) {
+                        text = text.replace(regex, m.original);
+                        applied.push(`${m.replacement} → ${m.original}`);
+                    }
+                });
+            }
+
+            // Mostrar Resultados
+            document.getElementById('resultBox').textContent = text;
+            const infoBox = document.getElementById('mappingInfo');
+            if (applied.length > 0) {
+                infoBox.style.display = 'block';
+                document.getElementById('mappingDetails').innerHTML = [...new Set(applied)].join('<br>');
+            } else {
+                infoBox.style.display = 'none';
+            }
+            save();
+            renderHistory();
+        }
+
+        // --- HELPERS ---
+        function generateRandom(base) {
+            const type = base.includes('.') ? 'companies' : (base === base.toUpperCase() ? 'companies' : 'names');
+            const list = dictionary[type] || dictionary.names;
+            return list[Math.floor(Math.random() * list.length)];
+        }
+
+        function generateFakeEmail() {
+            const user = dictionary.emails[Math.floor(Math.random() * dictionary.emails.length)] + Math.floor(Math.random()*99);
+            const domain = dictionary.domains[Math.floor(Math.random() * dictionary.domains.length)];
+            return `${user}@${domain}`;
+        }
+
+        function escapeRegex(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
+        function updateStats() {
+            document.getElementById('statMappings').textContent = Object.keys(state.wordMappings).length;
+            document.getElementById('statEmails').textContent = Object.keys(state.emailMappings).length;
+        }
+
+        function copyResult() {
+            const txt = document.getElementById('resultBox').textContent;
+            navigator.clipboard.writeText(txt);
+            alert("Copiado al portapapeles");
+        }
+
+        function downloadResult() {
+            const txt = document.getElementById('resultBox').textContent;
+            const blob = new Blob([txt], {type: 'text/plain'});
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = `resultado_${state.mode}.txt`;
+            a.click();
+        }
+
+        function clearInput() {
+            document.getElementById('inputText').value = '';
+            document.getElementById('resultBox').textContent = 'El resultado aparecerá aquí...';
+            document.getElementById('mappingInfo').style.display = 'none';
+        }
+
+        function resetAllData() {
+            if (confirm("¿Seguro que quieres borrar todos los mapeos y el historial?")) {
+                state = { mode: 'replace', wordMappings: {}, emailMappings: {}, replaceAllEmails: false };
+                localStorage.removeItem('bidirectional_replacer_data');
+                renderAll();
+                clearInput();
+            }
+        }
+    </script>
+</body>
+</html>
