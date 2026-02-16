@@ -2,8 +2,8 @@
 title: "The Human Orchestrator... Life as Kubernetes"
 date: 2026-02-16T17:20:20+01:00
 draft: false
-tags: []
-categories: []
+tags: ["Kubernetes", "Life", "Philosophy", "Personal Development", "Orchestration"]
+categories: ["Essay", "Technology", "Personal Growth"]
 slug: "the-human-orchestrator-life-as-kubernetes"
 ---
 

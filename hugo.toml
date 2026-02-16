@@ -4,6 +4,11 @@ defaultContentLanguage = "es"
 title = "nowfreelance"
 theme = "ananke"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [languages.es]
 languageName = "Español"
 weight = 1
