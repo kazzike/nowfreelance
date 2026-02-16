@@ -7,6 +7,19 @@ categories: ["Essay", "Technology", "Personal Growth"]
 slug: "the-human-orchestrator-life-as-kubernetes"
 ---
 
+
+#### If you prefer to listen instead of reading, you can play the audio file below
+
+<audio
+  controls
+  controlslist="nodownload"
+  preload="metadata"
+>
+  <source src="/audio/Episode-01-the-human-orchestrator-life-as-kubernetes.opus" type="audio/ogg; codecs=opus">
+  <source src="/audio/Episode-01-the-human-orchestrator-life-as-kubernetes.mp3" type="audio/mpeg">
+  Tu navegador no soporta el elemento de audio.
+</audio>
+
 # The Human Orchestrator: Life as Kubernetes
 
 ## An Essay on Being the Conductor of Your Own Orchestra
@@ -197,11 +210,3 @@ We are all orchestrators managing resources, handling failures, and striving for
 So be a good orchestrator. Monitor your resources. Balance your loads. And when something fails, restart with grace.
 
 ---
-
-If you prefer to listen instead of reading, you can play the audio file below:
-
-<audio controls>
-  <source src="/audio/Episode-01-the-human-orchestrator-life-as-kubernetes.opus" type="audio/ogg; codecs=opus">
-  <source src="/audio/Episode-01-the-human-orchestrator-life-as-kubernetes.mp3" type="audio/mpeg">
-  Tu navegador no soporta el elemento de audio.
-</audio>
