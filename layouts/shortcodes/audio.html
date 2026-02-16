@@ -13,6 +13,7 @@
         (function () {
             const audio = document.getElementById('audio-{{ .Ordinal }}');
             const durationDisplay = document.getElementById('duration-{{ .Ordinal }}');
+            let checkInterval;
 
             function formatTime(seconds) {
                 const m = Math.floor(seconds / 60);
@@ -22,22 +23,40 @@
 
             function updateDuration() {
                 const duration = audio.duration;
-                // Check if duration is a valid finite number
                 if (!isNaN(duration) && isFinite(duration) && duration > 0) {
                     durationDisplay.textContent = formatTime(duration);
-                } else {
-                    // If duration is still loading or Infinity, we might need to wait
-                    // console.log('Duration not ready:', duration);
+                    // Clear the interval once we have a valid duration
+                    if (checkInterval) {
+                        clearInterval(checkInterval);
+                        checkInterval = null;
+                    }
+                    return true;
                 }
+                return false;
             }
 
-            // 'durationchange' is more reliable than 'loadedmetadata' for variable encoding or streaming
+            // Multiple event listeners for better compatibility
             audio.addEventListener('durationchange', updateDuration);
             audio.addEventListener('loadedmetadata', updateDuration);
+            audio.addEventListener('loadeddata', updateDuration);
+            audio.addEventListener('canplay', updateDuration);
 
-            // Fallback: Check immediately in case it's already loaded
-            if (audio.readyState >= 1) {
-                updateDuration();
+            // Force load metadata
+            audio.load();
+
+            // Immediate check
+            if (!updateDuration()) {
+                // Polling fallback: check every 100ms for up to 5 seconds
+                let attempts = 0;
+                checkInterval = setInterval(() => {
+                    attempts++;
+                    if (updateDuration() || attempts > 50) {
+                        clearInterval(checkInterval);
+                        if (attempts > 50) {
+                            durationDisplay.textContent = 'Duration unavailable';
+                        }
+                    }
+                }, 100);
             }
         })();
     </script>
