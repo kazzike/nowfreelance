@@ -10,11 +10,7 @@ slug: "the-human-orchestrator-life-as-kubernetes"
 
 #### If you prefer to listen instead of reading, you can play the audio file below
 
-<audio controls controlslist="nodownload" preload="metadata">
-  <source src="/audio/Episode-01-the-human-orchestrator-life-as-kubernetes.opus" type="audio/ogg; codecs=opus">
-  <source src="/audio/Episode-01-the-human-orchestrator-life-as-kubernetes.mp3" type="audio/mpeg">
-  Tu navegador no soporta el elemento de audio.
-</audio>
+{{< audio mp3="/audio/Episode-01-the-human-orchestrator-life-as-kubernetes.mp3" opus="/audio/Episode-01-the-human-orchestrator-life-as-kubernetes.opus" >}}
 
 # The Human Orchestrator: Life as Kubernetes
 

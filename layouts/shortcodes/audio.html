@@ -1,0 +1,33 @@
+<div class="audio-player-wrapper">
+    <audio controls controlslist="nodownload" preload="metadata" id="audio-{{ .Ordinal }}">
+        {{ with .Get "opus" }}
+        <source src="{{ . }}" type="audio/ogg; codecs=opus">{{ end }}
+        {{ with .Get "mp3" }}
+        <source src="{{ . }}" type="audio/mpeg">{{ end }}
+        Your browser does not support the audio element.
+    </audio>
+    <div class="audio-duration" id="duration-{{ .Ordinal }}" style="font-size: 0.9em; margin-top: 5px; color: #666;">
+        Loading duration...
+    </div>
+    <script>
+        (function () {
+            const audio = document.getElementById('audio-{{ .Ordinal }}');
+            const durationDisplay = document.getElementById('duration-{{ .Ordinal }}');
+
+            function updateDuration() {
+                const duration = audio.duration;
+                if (!isNaN(duration) && isFinite(duration)) {
+                    const minutes = Math.floor(duration / 60);
+                    const seconds = Math.floor(duration % 60);
+                    durationDisplay.textContent = `Duration: ${minutes}m ${seconds}s`;
+                }
+            }
+
+            if (audio.readyState >= 1) {
+                updateDuration();
+            } else {
+                audio.addEventListener('loadedmetadata', updateDuration);
+            }
+        })();
+    </script>
+</div>
