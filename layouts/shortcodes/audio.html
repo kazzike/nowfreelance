@@ -14,19 +14,30 @@
             const audio = document.getElementById('audio-{{ .Ordinal }}');
             const durationDisplay = document.getElementById('duration-{{ .Ordinal }}');
 
+            function formatTime(seconds) {
+                const m = Math.floor(seconds / 60);
+                const s = Math.floor(seconds % 60);
+                return `Duration: ${m}m ${s}s`;
+            }
+
             function updateDuration() {
                 const duration = audio.duration;
-                if (!isNaN(duration) && isFinite(duration)) {
-                    const minutes = Math.floor(duration / 60);
-                    const seconds = Math.floor(duration % 60);
-                    durationDisplay.textContent = `Duration: ${minutes}m ${seconds}s`;
+                // Check if duration is a valid finite number
+                if (!isNaN(duration) && isFinite(duration) && duration > 0) {
+                    durationDisplay.textContent = formatTime(duration);
+                } else {
+                    // If duration is still loading or Infinity, we might need to wait
+                    // console.log('Duration not ready:', duration);
                 }
             }
 
+            // 'durationchange' is more reliable than 'loadedmetadata' for variable encoding or streaming
+            audio.addEventListener('durationchange', updateDuration);
+            audio.addEventListener('loadedmetadata', updateDuration);
+
+            // Fallback: Check immediately in case it's already loaded
             if (audio.readyState >= 1) {
                 updateDuration();
-            } else {
-                audio.addEventListener('loadedmetadata', updateDuration);
             }
         })();
     </script>
