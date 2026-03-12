@@ -1,7 +1,5 @@
 baseURL = "http://localhost:1313/"
-languageCode = "es-ES"
 defaultContentLanguage = "es"
-title = "nowfreelance"
 theme = "ananke"
 
 [markup]
@@ -9,14 +7,8 @@ theme = "ananke"
     [markup.goldmark.renderer]
       unsafe = true
 
-[languages.es]
-languageName = "Español"
-weight = 1
-
 [params]
 custom_css = ["custom.css"]
-
-footer_tagline = "Ayudando a empresas a crecer a través de la automatización y la tecnología."
 
 [[params.social]]
   name = "LinkedIn"
@@ -33,26 +25,108 @@ footer_tagline = "Ayudando a empresas a crecer a través de la automatización y
   icon_name = "youtube"
   url = "https://youtube.com/c/"
 
+[languages.es]
+languageName = "ES"
+weight = 1
+languageCode = "es-ES"
+title = "nowfreelance"
 
-# --- MENÚ PRINCIPAL ---
- [menu]
-   [[menu.main]]
-     name = "Inicio"
-     url = "/"
-     weight = 10
-#   [[menu.main]]
-#     name = "Servicios"
-#     url = "/servicios/"
-#     weight = 20
-   [[menu.main]]
-     name = "Blog"
-     url = "/posts/"
-     weight = 30
-   [[menu.main]]
-     name = "Contacto"
-     url = "/contact"
-     weight = 40
-    [[menu.main]]
-     name = "Replacer"
-     url = "/replacer/"
-     weight = 45
+[languages.es.params]
+footer_tagline = "Ayudando a empresas a crecer a través de la automatización y la tecnología."
+
+[languages.es.menu]
+  [[languages.es.menu.main]]
+    name = "Inicio"
+    url = "/"
+    weight = 10
+  [[languages.es.menu.main]]
+    name = "Blog"
+    url = "/posts/"
+    weight = 30
+  [[languages.es.menu.main]]
+    name = "Contacto"
+    url = "/contact/"
+    weight = 40
+  [[languages.es.menu.main]]
+    name = "Replacer"
+    url = "/replacer/"
+    weight = 45
+
+  [[languages.es.menu.footer_nav]]
+    name = "Inicio"
+    url = "/"
+    weight = 10
+  [[languages.es.menu.footer_nav]]
+    name = "Blog"
+    url = "/posts/"
+    weight = 20
+  [[languages.es.menu.footer_nav]]
+    name = "Contacto"
+    url = "/contact/"
+    weight = 30
+
+  [[languages.es.menu.footer_legal]]
+    name = "Política de Privacidad"
+    url = "/politica-de-privacidad/"
+    weight = 10
+  [[languages.es.menu.footer_legal]]
+    name = "Aviso Legal"
+    url = "/aviso-legal/"
+    weight = 20
+  [[languages.es.menu.footer_legal]]
+    name = "Política de Cookies"
+    url = "/politica-de-cookies/"
+    weight = 30
+
+[languages.en]
+languageName = "EN"
+weight = 2
+languageCode = "en-US"
+title = "nowfreelance"
+
+[languages.en.params]
+footer_tagline = "Helping companies grow through automation and technology."
+
+[languages.en.menu]
+  [[languages.en.menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 10
+  [[languages.en.menu.main]]
+    name = "Blog"
+    url = "/posts/"
+    weight = 30
+  [[languages.en.menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 40
+  [[languages.en.menu.main]]
+    name = "Replacer"
+    url = "/replacer/"
+    weight = 45
+
+  [[languages.en.menu.footer_nav]]
+    name = "Home"
+    url = "/"
+    weight = 10
+  [[languages.en.menu.footer_nav]]
+    name = "Blog"
+    url = "/posts/"
+    weight = 20
+  [[languages.en.menu.footer_nav]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 30
+
+  [[languages.en.menu.footer_legal]]
+    name = "Privacy Policy"
+    url = "/politica-de-privacidad/"
+    weight = 10
+  [[languages.en.menu.footer_legal]]
+    name = "Legal Notice"
+    url = "/aviso-legal/"
+    weight = 20
+  [[languages.en.menu.footer_legal]]
+    name = "Cookie Policy"
+    url = "/politica-de-cookies/"
+    weight = 30

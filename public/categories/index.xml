@@ -1,1 +1,103 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Categories on nowfreelance</title><link>https://nowfreelance.com/categories/</link><description>Recent content in Categories on nowfreelance</description><generator>Hugo</generator><language>es</language><lastBuildDate>Tue, 23 Sep 2025 09:00:00 +0000</lastBuildDate><atom:link href="https://nowfreelance.com/categories/index.xml" rel="self" type="application/rss+xml"/><item><title>Desarrollo</title><link>https://nowfreelance.com/categories/desarrollo/</link><pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate><guid>https://nowfreelance.com/categories/desarrollo/</guid><description/></item><item><title>IA</title><link>https://nowfreelance.com/categories/ia/</link><pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate><guid>https://nowfreelance.com/categories/ia/</guid><description/></item><item><title>Inteligencia Artificial</title><link>https://nowfreelance.com/categories/inteligencia-artificial/</link><pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate><guid>https://nowfreelance.com/categories/inteligencia-artificial/</guid><description/></item><item><title>Tecnología</title><link>https://nowfreelance.com/categories/tecnolog%C3%ADa/</link><pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate><guid>https://nowfreelance.com/categories/tecnolog%C3%ADa/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on nowfreelance</title>
+    <link>http://localhost:1313/categories/</link>
+    <description>Recent content in Categories on nowfreelance</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <lastBuildDate>Mon, 16 Feb 2026 17:20:20 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Essay</title>
+      <link>http://localhost:1313/categories/essay/</link>
+      <pubDate>Mon, 16 Feb 2026 17:20:20 +0100</pubDate>
+      <guid>http://localhost:1313/categories/essay/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Personal Growth</title>
+      <link>http://localhost:1313/categories/personal-growth/</link>
+      <pubDate>Mon, 16 Feb 2026 17:20:20 +0100</pubDate>
+      <guid>http://localhost:1313/categories/personal-growth/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Technology</title>
+      <link>http://localhost:1313/categories/technology/</link>
+      <pubDate>Mon, 16 Feb 2026 17:20:20 +0100</pubDate>
+      <guid>http://localhost:1313/categories/technology/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Automatización</title>
+      <link>http://localhost:1313/categories/automatizaci%C3%B3n/</link>
+      <pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/automatizaci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>IA Empresarial</title>
+      <link>http://localhost:1313/categories/ia-empresarial/</link>
+      <pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/ia-empresarial/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Estrategia</title>
+      <link>http://localhost:1313/categories/estrategia/</link>
+      <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/estrategia/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Productividad</title>
+      <link>http://localhost:1313/categories/productividad/</link>
+      <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/productividad/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Privacidad Digital</title>
+      <link>http://localhost:1313/categories/privacidad-digital/</link>
+      <pubDate>Sat, 27 Sep 2025 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/privacidad-digital/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Software Libre</title>
+      <link>http://localhost:1313/categories/software-libre/</link>
+      <pubDate>Sat, 27 Sep 2025 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/software-libre/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tecnología</title>
+      <link>http://localhost:1313/categories/tecnolog%C3%ADa/</link>
+      <pubDate>Sat, 27 Sep 2025 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/tecnolog%C3%ADa/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Desarrollo</title>
+      <link>http://localhost:1313/categories/desarrollo/</link>
+      <pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/desarrollo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>IA</title>
+      <link>http://localhost:1313/categories/ia/</link>
+      <pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/ia/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Inteligencia Artificial</title>
+      <link>http://localhost:1313/categories/inteligencia-artificial/</link>
+      <pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/inteligencia-artificial/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

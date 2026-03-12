@@ -3,32 +3,31 @@
 {{ end }}
 
 {{ define "main" }}
+  {{ $homeData := index site.Data site.Language.Lang "homepage" }}
   
-  {{ with .Site.Data.homepage.hero }}
+  {{ with $homeData.hero }}
     {{ partial "homepage/hero.html" . }}
   {{ end }}
 
-  {{ with .Site.Data.homepage.pain_points }}
+  {{ with $homeData.pain_points }}
     {{ partial "homepage/pain-points.html" . }}
   {{ end }}
 
-  {{ partial "homepage/solution.html" }}
+  {{ with $homeData.solution }}
+    {{ partial "homepage/solution.html" . }}
+  {{ end }}
   
-  {{ with .Site.Data.homepage.process }}
+  {{ with $homeData.process }}
     {{ partial "homepage/process.html" . }}
   {{ end }}
 
-  {{ with .Site.Data.homepage.case_study }}
+  {{ with $homeData.case_study }}
     {{ partial "homepage/case-study.html" . }}
   {{ end }}
 
-  
-
-
-  {{ partial "homepage/ai-section.html" . }}
-  
-  {{ $posts := where .Site.RegularPages "Type" "posts" }}
-
+  {{ with $homeData.ai_section }}
+    {{ partial "homepage/ai-section.html" . }}
+  {{ end }}
   
   {{ $posts := where .Site.RegularPages "Type" "posts" }}
   {{ if gt (len $posts) 0 }}

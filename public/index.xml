@@ -1,3 +1,82 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>nowfreelance</title><link>https://nowfreelance.com/</link><description>Recent content on nowfreelance</description><generator>Hugo</generator><language>es</language><lastBuildDate>Tue, 23 Sep 2025 09:00:00 +0000</lastBuildDate><atom:link href="https://nowfreelance.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Cómo Anthropic creó Claude Code: arquitectura, permisos y el futuro del desarrollo con IA</title><link>https://nowfreelance.com/posts/como-anthropic-creo-claude-code/</link><pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate><guid>https://nowfreelance.com/posts/como-anthropic-creo-claude-code/</guid><description>&lt;h2 id="claude-code-anatomía-de-un-experimento-que-anticipa-el-futuro"&gt;Claude Code: anatomía de un experimento que anticipa el futuro&lt;/h2&gt;
-&lt;p&gt;Anthropic presentó &lt;em&gt;Claude Code&lt;/em&gt; como un experimento interno… y terminó mostrando al mundo un anticipo del futuro del desarrollo de software.&lt;br&gt;
-Lejos de ser un simple autocompletador, Claude Code es un &lt;strong&gt;agente de IA que vive en tu terminal&lt;/strong&gt;: puede leer y recorrer el sistema de archivos, entender cómo se conectan los módulos de un repositorio y ejecutar comandos de shell bajo supervisión.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nowfreelance</title>
+    <link>http://localhost:40949/</link>
+    <description>Recent content on nowfreelance</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <lastBuildDate>Tue, 14 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:40949/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Inteligencia Operativa con LLMs más allá de ChatGPT</title>
+      <link>http://localhost:40949/posts/inteligencia-operativa-llms/</link>
+      <pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:40949/posts/inteligencia-operativa-llms/</guid>
+      <description>Introducción: más que conversaciones Imagínate contar con una inteligencia operacional integrada a tus procesos, capaz de anticipar cuellos de botella, sugerir decisiones y actuar en tiempo real sobre tus datos. No se trata de un chatbot conversacional como ChatGPT, sino de sistemas que usan modelos de lenguaje (LLMs) como motores de inteligencia operativa.&#xA;En este post veremos:&#xA;Las limitaciones de ChatGPT como herramienta operativa pura. Cómo los LLMs pueden integrarse en procesos críticos.</description>
+    </item>
+    <item>
+      <title>De &#39;Apagar Fuegos&#39; a Liderar: La Mentalidad Ágil que Transforma el Caos Diario en Crecimiento Estructurado</title>
+      <link>http://localhost:40949/posts/de-apagar-fuegos-a-liderar-mentalidad-agil-transforma-caos-crecimiento-estructurado/</link>
+      <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:40949/posts/de-apagar-fuegos-a-liderar-mentalidad-agil-transforma-caos-crecimiento-estructurado/</guid>
+      <description>En el mundo empresarial actual, muchos dueños de negocios se encuentran atrapados en un ciclo interminable de &amp;ldquo;apagar fuegos&amp;rdquo;: resolviendo problemas urgentes del día a día, lidiando con información fragmentada, procesos no delegables y un miedo constante al crecimiento que, irónicamente, podría generar aún más desorden.&#xA;Si te identificas con esto como cuando las vacaciones parecen imposibles porque todo depende de ti, o cuando valiosas oportunidades de ventas se pierden por ineficiencias internas, permítenos decirte que no estás solo.</description>
+    </item>
+    <item>
+      <title>Guía Práctica para tu Primer &#34;Aliado de IA&#34;: 3 Procesos (que no son un chatbot) que Puedes Empezar a Inteligenciar Hoy Mismo</title>
+      <link>http://localhost:40949/posts/guia-practica-primer-aliado-ia/</link>
+      <pubDate>Wed, 08 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:40949/posts/guia-practica-primer-aliado-ia/</guid>
+      <description>Seguramente estás oyendo hablar de Inteligencia Artificial por todas partes. Parece que, de la noche a la mañana, todo es un chatbot o una compleja herramienta que promete revolucionarlo todo. La realidad para ti, como dueño de un negocio, es probablemente una mezcla de curiosidad y escepticismo. ¿Es otra moda pasajera? ¿Necesito ser un experto técnico para usarla? ¿Realmente me va a ayudar a solucionar el caos del día a día?</description>
+    </item>
+    <item>
+      <title>Aviso Legal</title>
+      <link>http://localhost:40949/aviso-legal/</link>
+      <pubDate>Sat, 04 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:40949/aviso-legal/</guid>
+      <description>1. Información General Este sitio web tiene carácter informativo y su finalidad es presentar los servicios de consultoría en modernización de negocios ofrecidos por un profesional independiente.&#xA;2. Propiedad Intelectual Todos los contenidos de este sitio web (textos, imágenes, diseño, logotipos) son propiedad del titular del sitio o de sus respectivos propietarios y están protegidos por las leyes de propiedad intelectual e industrial.&#xA;Queda prohibida la reproducción total o parcial de los contenidos sin autorización previa.</description>
+    </item>
+    <item>
+      <title>Política de Cookies</title>
+      <link>http://localhost:40949/politica-de-cookies/</link>
+      <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:40949/politica-de-cookies/</guid>
+      <description>1. ¿Qué son las cookies? Una cookie es un pequeño fichero de texto que se almacena en tu navegador cuando visitas una página web. Su utilidad es que la web sea capaz de recordar tu visita cuando vuelvas a navegar por esa página.&#xA;2. Cookies que utiliza este sitio web Este sitio web utiliza cookies técnicas esenciales y de análisis:&#xA;Cookies Técnicas Esenciales Cookies de funcionamiento básico del sitio web Cookies de seguridad y protección contra spam (proporcionadas por Cloudflare) Cookies de Análisis (Cloudflare Analytics) Utilizamos Cloudflare Web Analytics, que emplea cookies para recopilar información anónima sobre:</description>
+    </item>
+    <item>
+      <title>Política de Privacidad</title>
+      <link>http://localhost:40949/politica-de-privacidad/</link>
+      <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:40949/politica-de-privacidad/</guid>
+      <description>Última actualización: 03 de Octubre de 2025&#xA;1. Información General Esta web es principalmente informativa. La única recopilación de datos se realiza a través de Cloudflare Web Analytics para entender el tráfico del sitio y mejorar la experiencia del usuario.&#xA;2. Analíticas de Cloudflare Utilizamos Cloudflare Web Analytics, un servicio que recopila datos anónimos sobre:&#xA;Número de visitantes y páginas vistas País de origen de las visitas Tipo de dispositivo y navegador utilizado Páginas más visitadas y tiempo de permanencia Cloudflare no utiliza cookies de seguimiento ni recopila datos personales identificativos.</description>
+    </item>
+    <item>
+      <title>Guía Completa de Migración a la Privacidad Digital: De Google a Alternativas Libres y Seguras (2025) - 1/2</title>
+      <link>http://localhost:40949/posts/tutorial-completo-paso-a-paso-migracion-hacia-la-libertad-digital-parte-1-de-2/</link>
+      <pubDate>Sat, 27 Sep 2025 09:00:00 +0000</pubDate>
+      <guid>http://localhost:40949/posts/tutorial-completo-paso-a-paso-migracion-hacia-la-libertad-digital-parte-1-de-2/</guid>
+      <description>Guía Completa de Migración a la Privacidad Digital: De Google a Alternativas Libres y Seguras (2025) - Primera Parte Versión: 2025.09 | Licencia: CC BY-SA 4.0&#xA;Descargo de responsabilidad: El uso de scripts y la implementación de los procedimientos aquí documentados son responsabilidad exclusiva del usuario. Este contenido es de carácter informativo y no oficial. El usuario asume toda la responsabilidad por su uso. consulte con un especialista si no tiene los conocimientos técnicos requeridos.</description>
+    </item>
+    <item>
+      <title>Guía Completa de Migración a la Privacidad Digital: De Google a Alternativas Libres y Seguras (2025) - 2/2</title>
+      <link>http://localhost:40949/posts/tutorial-completo-paso-a-paso-migracion-hacia-la-libertad-digital-parte-2-de-2/</link>
+      <pubDate>Wed, 24 Sep 2025 09:00:00 +0000</pubDate>
+      <guid>http://localhost:40949/posts/tutorial-completo-paso-a-paso-migracion-hacia-la-libertad-digital-parte-2-de-2/</guid>
+      <description>Guía Completa de Migración a la Privacidad Digital - Segunda Parte Versión: 2025.09 | Licencia: CC BY-SA 4.0&#xA;Descargo de responsabilidad: El uso de scripts y la implementación de los procedimientos aquí documentados son responsabilidad exclusiva del usuario. Este contenido es de carácter informativo y no oficial. El usuario asume toda la responsabilidad por su uso. consulte con un especialista si no tiene los conocimientos técnicos requeridos.&#xA;Tabla de Contenidos 2/2 Verificación y Mantenimiento Recursos Avanzados Preguntas Frecuentes Glosario Referencias Paso 7: Verificación, Limpieza y Mantenimiento 7.</description>
+    </item>
+    <item>
+      <title>Cómo Anthropic creó Claude Code: arquitectura, permisos y el futuro del desarrollo con IA</title>
+      <link>http://localhost:40949/posts/como-anthropic-creo-claude-code/</link>
+      <pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate>
+      <guid>http://localhost:40949/posts/como-anthropic-creo-claude-code/</guid>
+      <description>Claude Code: anatomía de un experimento que anticipa el futuro Anthropic presentó Claude Code como un experimento interno… y terminó mostrando al mundo un anticipo del futuro del desarrollo de software.&#xA;Lejos de ser un simple autocompletador, Claude Code es un agente de IA que vive en tu terminal: puede leer y recorrer el sistema de archivos, entender cómo se conectan los módulos de un repositorio y ejecutar comandos de shell bajo supervisión.</description>
+    </item>
+    <item>
+      <title>Contacto</title>
+      <link>http://localhost:40949/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:40949/contact/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

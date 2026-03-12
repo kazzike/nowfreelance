@@ -1,1 +1,271 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tags on nowfreelance</title><link>https://nowfreelance.com/tags/</link><description>Recent content in Tags on nowfreelance</description><generator>Hugo</generator><language>es</language><lastBuildDate>Tue, 23 Sep 2025 09:00:00 +0000</lastBuildDate><atom:link href="https://nowfreelance.com/tags/index.xml" rel="self" type="application/rss+xml"/><item><title>Anthropic</title><link>https://nowfreelance.com/tags/anthropic/</link><pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate><guid>https://nowfreelance.com/tags/anthropic/</guid><description/></item><item><title>Claude</title><link>https://nowfreelance.com/tags/claude/</link><pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate><guid>https://nowfreelance.com/tags/claude/</guid><description/></item><item><title>Desarrollo</title><link>https://nowfreelance.com/tags/desarrollo/</link><pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate><guid>https://nowfreelance.com/tags/desarrollo/</guid><description/></item><item><title>IA</title><link>https://nowfreelance.com/tags/ia/</link><pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate><guid>https://nowfreelance.com/tags/ia/</guid><description/></item><item><title>IA-First</title><link>https://nowfreelance.com/tags/ia-first/</link><pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate><guid>https://nowfreelance.com/tags/ia-first/</guid><description/></item><item><title>Ink</title><link>https://nowfreelance.com/tags/ink/</link><pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate><guid>https://nowfreelance.com/tags/ink/</guid><description/></item><item><title>MCP</title><link>https://nowfreelance.com/tags/mcp/</link><pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate><guid>https://nowfreelance.com/tags/mcp/</guid><description/></item><item><title>Productividad</title><link>https://nowfreelance.com/tags/productividad/</link><pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate><guid>https://nowfreelance.com/tags/productividad/</guid><description/></item><item><title>React</title><link>https://nowfreelance.com/tags/react/</link><pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate><guid>https://nowfreelance.com/tags/react/</guid><description/></item><item><title>Seguridad</title><link>https://nowfreelance.com/tags/seguridad/</link><pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate><guid>https://nowfreelance.com/tags/seguridad/</guid><description/></item><item><title>Subagentes</title><link>https://nowfreelance.com/tags/subagentes/</link><pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate><guid>https://nowfreelance.com/tags/subagentes/</guid><description/></item><item><title>TypeScript</title><link>https://nowfreelance.com/tags/typescript/</link><pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate><guid>https://nowfreelance.com/tags/typescript/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on nowfreelance</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on nowfreelance</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <lastBuildDate>Mon, 16 Feb 2026 17:20:20 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes</title>
+      <link>http://localhost:1313/tags/kubernetes/</link>
+      <pubDate>Mon, 16 Feb 2026 17:20:20 +0100</pubDate>
+      <guid>http://localhost:1313/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Life</title>
+      <link>http://localhost:1313/tags/life/</link>
+      <pubDate>Mon, 16 Feb 2026 17:20:20 +0100</pubDate>
+      <guid>http://localhost:1313/tags/life/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Orchestration</title>
+      <link>http://localhost:1313/tags/orchestration/</link>
+      <pubDate>Mon, 16 Feb 2026 17:20:20 +0100</pubDate>
+      <guid>http://localhost:1313/tags/orchestration/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Personal Development</title>
+      <link>http://localhost:1313/tags/personal-development/</link>
+      <pubDate>Mon, 16 Feb 2026 17:20:20 +0100</pubDate>
+      <guid>http://localhost:1313/tags/personal-development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Philosophy</title>
+      <link>http://localhost:1313/tags/philosophy/</link>
+      <pubDate>Mon, 16 Feb 2026 17:20:20 +0100</pubDate>
+      <guid>http://localhost:1313/tags/philosophy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Inteligencia Operativa</title>
+      <link>http://localhost:1313/tags/inteligencia-operativa/</link>
+      <pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/inteligencia-operativa/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LLM</title>
+      <link>http://localhost:1313/tags/llm/</link>
+      <pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/llm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MCP</title>
+      <link>http://localhost:1313/tags/mcp/</link>
+      <pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/mcp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Modelos De Lenguaje</title>
+      <link>http://localhost:1313/tags/modelos-de-lenguaje/</link>
+      <pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/modelos-de-lenguaje/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Toma De Decisiones</title>
+      <link>http://localhost:1313/tags/toma-de-decisiones/</link>
+      <pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/toma-de-decisiones/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Agilidad</title>
+      <link>http://localhost:1313/tags/agilidad/</link>
+      <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/agilidad/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Crecimiento Empresarial</title>
+      <link>http://localhost:1313/tags/crecimiento-empresarial/</link>
+      <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/crecimiento-empresarial/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Estrategia</title>
+      <link>http://localhost:1313/tags/estrategia/</link>
+      <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/estrategia/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Liderazgo</title>
+      <link>http://localhost:1313/tags/liderazgo/</link>
+      <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/liderazgo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Optimizacion</title>
+      <link>http://localhost:1313/tags/optimizacion/</link>
+      <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/optimizacion/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Eficiencia</title>
+      <link>http://localhost:1313/tags/eficiencia/</link>
+      <pubDate>Wed, 08 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/eficiencia/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>IA</title>
+      <link>http://localhost:1313/tags/ia/</link>
+      <pubDate>Wed, 08 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ia/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Optimización De Procesos</title>
+      <link>http://localhost:1313/tags/optimizaci%C3%B3n-de-procesos/</link>
+      <pubDate>Wed, 08 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/optimizaci%C3%B3n-de-procesos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Productividad</title>
+      <link>http://localhost:1313/tags/productividad/</link>
+      <pubDate>Wed, 08 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/productividad/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pymes</title>
+      <link>http://localhost:1313/tags/pymes/</link>
+      <pubDate>Wed, 08 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/pymes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Alternativas Libres</title>
+      <link>http://localhost:1313/tags/alternativas-libres/</link>
+      <pubDate>Sat, 27 Sep 2025 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/alternativas-libres/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Autonomía Digital</title>
+      <link>http://localhost:1313/tags/autonom%C3%ADa-digital/</link>
+      <pubDate>Sat, 27 Sep 2025 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/autonom%C3%ADa-digital/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Google</title>
+      <link>http://localhost:1313/tags/google/</link>
+      <pubDate>Sat, 27 Sep 2025 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/google/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Migración Digital</title>
+      <link>http://localhost:1313/tags/migraci%C3%B3n-digital/</link>
+      <pubDate>Sat, 27 Sep 2025 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/migraci%C3%B3n-digital/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Privacidad</title>
+      <link>http://localhost:1313/tags/privacidad/</link>
+      <pubDate>Sat, 27 Sep 2025 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/privacidad/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Seguridad</title>
+      <link>http://localhost:1313/tags/seguridad/</link>
+      <pubDate>Sat, 27 Sep 2025 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/seguridad/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Software Libre</title>
+      <link>http://localhost:1313/tags/software-libre/</link>
+      <pubDate>Sat, 27 Sep 2025 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/software-libre/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Glosario</title>
+      <link>http://localhost:1313/tags/glosario/</link>
+      <pubDate>Wed, 24 Sep 2025 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/glosario/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Recursos</title>
+      <link>http://localhost:1313/tags/recursos/</link>
+      <pubDate>Wed, 24 Sep 2025 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/recursos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Anthropic</title>
+      <link>http://localhost:1313/tags/anthropic/</link>
+      <pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/anthropic/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Claude</title>
+      <link>http://localhost:1313/tags/claude/</link>
+      <pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/claude/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Desarrollo</title>
+      <link>http://localhost:1313/tags/desarrollo/</link>
+      <pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/desarrollo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>IA-First</title>
+      <link>http://localhost:1313/tags/ia-first/</link>
+      <pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ia-first/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ink</title>
+      <link>http://localhost:1313/tags/ink/</link>
+      <pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ink/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>React</title>
+      <link>http://localhost:1313/tags/react/</link>
+      <pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/react/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Subagentes</title>
+      <link>http://localhost:1313/tags/subagentes/</link>
+      <pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/subagentes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>TypeScript</title>
+      <link>http://localhost:1313/tags/typescript/</link>
+      <pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/typescript/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

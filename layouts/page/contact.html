@@ -1,0 +1,85 @@
+{{ define "header" }}
+  {{ partial "site-header.html" . }}
+{{ end }}
+
+{{ define "main" }}
+{{ $data := index site.Data site.Language.Lang "homepage" "contact" }}
+<section class="contact-section spaciado-xl">
+  <div class="mw8 center ph3">
+    
+    <div class="contact-intro">
+      <p class="contact-intro-subtitle">{{ $data.subtitle }}</p>
+      <p class="contact-intro-question">
+        {{ $data.question }}
+      </p>
+      <p class="contact-intro-cta">{{ $data.cta }}</p>
+    </div>
+
+    <div class="contact-methods-grid">
+      <a href="mailto:{{ .Site.Params.contact_email | default `hola@nowfreelance.com` }}" class="contact-method-card">
+        <div class="contact-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </div>
+        <h3 class="contact-method-title">{{ $data.method_title }}</h3>
+        <p class="contact-method-description">
+          {{ $data.method_description }}
+        </p>
+        <span class="contact-method-link">{{ .Site.Params.contact_email | default "hola@nowfreelance.com" }}</span>
+        <div class="contact-card-arrow">→</div>
+      </a>
+    </div>
+
+    <div class="what-happens-next spaciado-top-xl">
+      <div class="what-happens-header">
+        <h2 class="what-happens-title">{{ $data.next_steps_title }}</h2>
+        <p class="what-happens-subtitle">
+          {{ $data.next_steps_subtitle }}
+        </p>
+      </div>
+      
+      <div class="next-steps-grid">
+        <div class="next-step-item">
+          <div class="next-step-number">1</div>
+          <h4 class="next-step-title">{{ $data.step1_title }}</h4>
+          <p class="next-step-description">
+            {{ $data.step1_desc }}
+          </p>
+        </div>
+
+        <div class="next-step-item">
+          <div class="next-step-number">2</div>
+          <h4 class="next-step-title">{{ $data.step2_title }}</h4>
+          <p class="next-step-description">
+            {{ $data.step2_desc }}
+          </p>
+        </div>
+
+        <div class="next-step-item">
+          <div class="next-step-number">3</div>
+          <h4 class="next-step-title">{{ $data.step3_title }}</h4>
+          <p class="next-step-description">
+            {{ $data.step3_desc }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-final-cta spaciado-top-xl">
+      <p class="final-cta-main">
+        {{ $data.final_cta_main }} <strong class="final-cta-highlight">{{ $data.final_cta_highlight }}</strong>.
+      </p>
+      <p class="final-cta-note">
+        {{ $data.final_cta_note }}
+      </p>
+    </div>
+
+  </div>
+</section>
+{{ end }}
+
+{{ define "footer" }}
+  {{ partial "site-footer.html" . }}
+{{ end }}

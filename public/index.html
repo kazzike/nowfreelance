@@ -1,1 +1,612 @@
-<!doctype html><html lang=es><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><title>nowfreelance</title><meta name=viewport content="width=device-width,minimum-scale=1"><meta name=description content><meta name=generator content="Hugo 0.150.0"><meta name=robots content="index, follow"><link rel=stylesheet href=/ananke/css/main.min.e38f88942c4775d7cc486073781a48c2ce4ae5e8d41d24bd6469eff31dbb3d27.css><link href=/index.xml rel=alternate type=application/rss+xml title=nowfreelance><link href=/index.xml rel=feed type=application/rss+xml title=nowfreelance><link rel=canonical href=https://nowfreelance.com/><meta property="og:url" content="https://nowfreelance.com/"><meta property="og:site_name" content="nowfreelance"><meta property="og:title" content="nowfreelance"><meta property="og:locale" content="es"><meta property="og:type" content="website"><meta itemprop=name content="nowfreelance"><meta itemprop=datePublished content="2025-09-23T09:00:00+00:00"><meta itemprop=dateModified content="2025-09-23T09:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="nowfreelance"></head><body class="ma0 avenir bg-near-white production"><header class=custom-site-header><div class=custom-header-content><nav class="pv3 ph3 ph4-ns" role=navigation><div class="flex-l center items-center justify-between"><a href=/ class="f3 fw2 hover-white white-90 dib no-underline">nowfreelance</a><div class="flex-l items-center"><div class=ananke-socials></div></div></div></nav><div class=custom-title-container><h1 class=custom-site-title>nowfreelance</h1></div></div></header><main class=pb7 role=main><article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links mid-gray"></article><div class="pa3 pa4-ns w-100 w-70-ns center"><section class="w-100 mw8"><div class="w-100 mb4 relative"><article class="bb b--black-10"><div class="db pv4 ph3 ph0-l dark-gray no-underline"><div class="flex-column flex-row-ns flex"><div class="blah w-100"><h1 class="f3 fw1 athelas mt0 lh-title"><a href=/posts/como-anthropic-creo-claude-code/ class="color-inherit dim link">Cómo Anthropic creó Claude Code: arquitectura, permisos y el futuro del desarrollo con IA</a></h1><div class="f6 f5-l lh-copy nested-copy-line-height nested-links"><h2 id=claude-code-anatomía-de-un-experimento-que-anticipa-el-futuro>Claude Code: anatomía de un experimento que anticipa el futuro</h2><p>Anthropic presentó <em>Claude Code</em> como un experimento interno… y terminó mostrando al mundo un anticipo del futuro del desarrollo de software.<br>Lejos de ser un simple autocompletador, Claude Code es un <strong>agente de IA que vive en tu terminal</strong>: puede leer y recorrer el sistema de archivos, entender cómo se conectan los módulos de un repositorio y ejecutar comandos de shell bajo supervisión.</p></div><a href=/posts/como-anthropic-creo-claude-code/ class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">Leer más</a></div></div></div></article></div></section></div></main><footer class="bg-black bottom-0 w-100 pa3" role=contentinfo><div class="flex justify-between"><a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href=https://nowfreelance.com/>&copy; nowfreelance 2025</a><div><div class=ananke-socials></div></div></div></footer></body></html>
+<!DOCTYPE html>
+<html lang="es-ES">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=40949&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>nowfreelance</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.128.2">
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+  
+
+
+    
+
+
+    
+      
+
+    
+
+    
+    
+      <link href="/index.xml" rel="alternate" type="application/rss+xml" title="nowfreelance" />
+      <link href="/index.xml" rel="feed" type="application/rss+xml" title="nowfreelance" />
+      
+    
+
+    
+      <link rel="canonical" href="http://localhost:40949/">
+    
+
+    <meta property="og:url" content="http://localhost:40949/">
+  <meta property="og:site_name" content="nowfreelance">
+  <meta property="og:title" content="nowfreelance">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="nowfreelance">
+  <meta itemprop="datePublished" content="2025-10-14T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-10-14T00:00:00+00:00">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="nowfreelance">
+
+	
+  </head><body class="ma0 avenir bg-near-white development">
+
+    
+  
+
+  
+  <header class="custom-site-header">
+    <div class="custom-header-content">
+      <div class="nav-bar" id="top">
+  <div class="nav-content mw8 center ph3">
+    
+    
+    <a href="/" class="site-brand">
+      nowfreelance
+    </a>
+
+    
+    <button class="nav-toggle" aria-label="Abrir menú" aria-controls="header-nav" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    
+    <nav class="header-nav" id="header-nav">
+      <ul class="nav-links">
+        
+          <li>
+            <a href="/" title="Inicio" >Inicio</a>
+          </li>
+        
+          <li>
+            <a href="/posts/" title="Blog" >Blog</a>
+          </li>
+        
+          <li>
+            <a href="/contact/" title="Contacto" >Contacto</a>
+          </li>
+        
+          <li>
+            <a href="/replacer/" title="Replacer" target="_blank">Replacer</a>
+          </li>
+        
+        
+        <li class="lang-switcher" style="display:flex; align-items:center; gap:0.5rem; margin-left: 1rem; padding-left: 1rem; border-left: 1px solid rgba(255,255,255,0.2);">
+          
+          
+          
+          
+          <a href="/" style="font-weight:700; text-decoration:underline; opacity:1;" title="Español">ES</a>
+          <a href="/en/" style="font-weight:400; opacity:0.7;" title="English">EN</a>
+
+          
+          
+            
+              
+                <script>document.querySelector('a[title="Español"]').href = '\/';</script>
+              
+              
+            
+              
+              
+                <script>document.querySelector('a[title="English"]').href = '\/en\/';</script>
+              
+            
+          
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+</div>
+      <div class="custom-title-container">
+        <h1 class="custom-site-title">
+          nowfreelance
+        </h1>
+        
+      </div>
+    </div>
+  </header>
+
+
+
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  
+    
+
+
+
+<section class="hero-section spaciado">
+  <div class="hero-content mw8 center ph3 tc">
+    <h1 class="hero-title mt3 mb1">
+      Escala tu negocio, no el caos.
+    </h1>
+    <p class="hero-description measure-wide center spaciado">
+      Consultoría de Optimización de Procesos: Detectamos puntos de mejora en tus operaciones, diseñamos soluciones personalizadas y las implementamos con herramientas inteligentes (como IA cuando añade valor real). Pasa de autoempleado a líder estratégico, ahorrando hasta 20h/semana en ineficiencias y tan simple que podrás gestionarlo desde tu móvil.
+    </p>
+    <a href='/contact' class="spaciado custom-cta-button mt3">
+      Agendar mi Sesión de Claridad Gratuita
+    </a>
+  </div>
+</section>
+  
+
+  
+    <section class="section-bg-alt spaciado-xl">
+  <div class="mw8 center ph3">
+    <div class="tc">
+      <h2 class="f2 athelas mb2">Si tu negocio crece, ¿por qué tú te sientes más atrapado?</h2>
+      <p class="f5 lh-copy measure-wide center gray">Si te identificas con los siguientes sintomas, mira como nuestra consultoria identifica y resuelve los puntos de mejora:</p>
+    </div>
+    <div class="custom-features-grid mt4">
+      
+      <div class="custom-feature-item">
+        <div class="custom-feature-icon">
+  <i data-lucide="folder-open"></i>
+</div>  
+        <h3 class="f4">Información Fragmentada</h3>
+        <p class="f6 lh-copy">Datos dispersos en Excel, Word y otras plataformas. → Diagnosticamos conexiones fallidas y centralizamos todo en un sistema unificado.</p>
+      </div>
+      
+      <div class="custom-feature-item">
+        <div class="custom-feature-icon">
+  <i data-lucide="user-cog"></i>
+</div>  
+        <h3 class="f4">El negocio depende 100% de ti</h3>
+        <p class="f6 lh-copy">Procesos no delegables. → Detectamos brechas en documentación y estandarizamos flujos para autonomía de equipo.</p>
+      </div>
+      
+      <div class="custom-feature-item">
+        <div class="custom-feature-icon">
+  <i data-lucide="alert-triangle"></i>
+</div>  
+        <h3 class="f4">El crecimiento te da miedo</h3>
+        <p class="f6 lh-copy">Más clientes = más desorden. → Identificamos cuellos de botella y optimizamos procesos para escalar sin perder tiempo.</p>
+      </div>
+      
+      <div class="custom-feature-item">
+        <div class="custom-feature-icon">
+  <i data-lucide="plane"></i>
+</div>  
+        <h3 class="f4">Vacaciones Imposibles</h3>
+        <p class="f6 lh-copy">Todo se detiene sin ti. → Analizamos dependencias y creamos alertas/automaciones para monitoreo remoto.</p>
+      </div>
+      
+      <div class="custom-feature-item">
+        <div class="custom-feature-icon">
+  <i data-lucide="trending-down"></i>
+</div>  
+        <h3 class="f4">Oportunidades Perdidas</h3>
+        <p class="f6 lh-copy">Leads fríos o clientes insatisfechos. → Analizamos dónde se pierden las oportunidades y aplicamos estrategias para convertirlas en ventas reales</p>
+      </div>
+      
+      <div class="custom-feature-item">
+        <div class="custom-feature-icon">
+  <i data-lucide="git-merge"></i>
+</div>  
+        <h3 class="f4">No es falta de esfuerzo</h3>
+        <p class="f6 lh-copy"> → es falta de diagnóstico experto. Nosotros lo detectamos y solucionamos.</p>
+      </div>
+      
+    </div>
+  </div>
+
+</section>
+  
+
+  
+    
+<section class="solution-v2-section spaciado-mega">
+  <div class="solution-v2-container mw8 center ph3">
+
+    <div class="solution-v2-main-content">
+      <span class="solution-v2-pre-title">Nuestra Filosofía</span>
+      <h2 class="solution-v2-title">No necesitas más herramientas. Necesitas una estrategia.</h2>
+      <p class="solution-v2-subtitle">No vendemos herramientas → vendemos soluciones a tus procesos. Detectamos mejoras con 90% enfoque en análisis y rediseño, y 10% en implementación inteligente.</p>
+    </div>
+
+    <div class="solution-v2-highlight-card">
+      <div class="insight-item">
+        <span class="insight-number">10%</span>
+        <div class="insight-text">
+          <h4 class="insight-title">Tecnología</h4>
+          <p class="insight-description">Las herramientas y automatizaciones que implementamos.</p>
+        </div>
+      </div>
+      
+      <hr class="insight-divider">
+
+      <div class="insight-item">
+        <span class="insight-number">90%</span>
+        <div class="insight-text">
+          <h4 class="insight-title">Estrategia</h4>
+          <p class="insight-description">El análisis, rediseño de procesos y la mentalidad para modernizar tu forma de operar.</p>
+        </div>
+      </div>
+
+    
+    </div>
+
+  </div>
+</section>
+
+  
+  
+  
+    <section class="modernization-steps">
+  <div class="mw8 center ph3">
+    <div class="modernization-header">
+      <h2 class="f2 athelas">Tu plan de modernización en 3 pasos</h2>
+      <p class="modernization-subtitle">No interrumpimos tu negocio. Lo potenciamos de forma fluida y sin jerga técnica.</p>
+    </div>
+    <div class="steps-container">
+      
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <h3 class="step-title">1. Diagnóstico y Hoja de Ruta</h3>
+        <p class="step-description">En nuestra &#39;Sesión de Claridad&#39;, mapeamos tu negocio, no tus apps. Entendemos tus ambiciones y detectamos los cuellos de botella que realmente frenan tu escalada. Te entregamos un plan claro.</p>
+      </div>
+      
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <h3 class="step-title">2. Modernización e Implementación</h3>
+        <p class="step-description">Construimos tu sistema centralizado. Migramos tus viejos procesos a un ecosistema digital integrado y seguro, accesible desde cualquier dispositivo.</p>
+      </div>
+      
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <h3 class="step-title">3. Formación y Despegue</h3>
+        <p class="step-description">El objetivo es tu libertad. Te formamos a ti y a tu equipo para que dominéis el nuevo sistema. No creamos dependencia, creamos autonomía.</p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+  
+
+  
+    <section class="spaciado-xl success-story">
+  <div class="mw8 center ph3">
+    <div class="success-story-header">
+      <h2 class="success-story-title">Caso de Éxito: De estar atrapado en el Excel a liderar un negocio en expansión</h2>
+    </div>
+    
+    <div class="success-story-content">
+      <div class="story-section">
+        <h3 class="story-section-title">El Reto</h3>
+        <p class="story-section-text">Un cliente con una visión clara de expandir su negocio a nuevas regiones, pero ahogado en el caos de gestionar créditos y ventas con archivos locales de Excel y Word. El crecimiento era imposible.</p>
+      </div>
+
+      <div class="story-section">
+        <h3 class="story-section-title">Nuestra Misión</h3>
+        <p class="story-section-text">El problema no era el Excel, era la mentalidad. El primer paso fue estratégico: demostrar que para escalar, hay que confiar en sistemas modernos.</p>
+      </div>
+
+      <div class="story-section">
+        <h3 class="story-section-title">La Transformación</h3>
+        <p class="story-section-text">Creamos un ecosistema digital único que centralizó toda la operación. Todo el equipo, sin importar la ubicación, empezó a trabajar sobre la misma información en tiempo real.</p>
+      </div>
+
+      <div class="story-section story-result">
+        <h3 class="story-section-title">El Resultado</h3>
+        <p class="story-section-text">Hoy, gestiona un negocio multi-oficina desde un único lugar, ha eliminado la pérdida de datos y ha recuperado el tiempo y la paz mental para enfocarse en lo que de verdad importa: seguir creciendo.</p>
+      </div>
+
+      <div class="story-cta">
+        <a href="/contact" class="story-cta-button">Ver cómo podemos hacer esto por ti</a>
+      </div>
+    </div>
+  </div>
+</section>
+  
+
+  
+    <section class="ai-unified-section">
+  <div class="mw8 center ph3">
+
+    <div class="ai-unified-card">
+      <div class="ai-unified-grid">
+
+        <div class="ai-unified-intro">
+          <div class="ai-intro-icon">
+            <i data-lucide="bot"></i>
+          </div>
+          <h2 class="ai-intro-title">IA como Acelerador Estratégico</h2>
+          <p class="ai-intro-description">No vemos la IA como un simple añadido, sino como el motor que potencia una base de negocio ya modernizada. La aplicamos con un único fin: darte una ventaja competitiva medible y sostenible.</p>
+        </div>
+
+        <div class="ai-unified-levels">
+          <ul>
+            
+            <li>
+              <div class="level-icon"><i data-lucide="zap"></i></div>
+              <div class="level-content">
+                <h4 class="level-title">Eficiencia Aumentada</h4>
+                <p class="level-description">Liberamos el potencial de tu equipo acelerando procesos existentes con inteligencia.</p>
+              </div>
+            </li>
+            
+            <li>
+              <div class="level-icon"><i data-lucide="brain-circuit"></i></div>
+              <div class="level-content">
+                <h4 class="level-title">Inteligencia Operativa</h4>
+                <p class="level-description">Extraemos insights de tus datos para que tomes decisiones más inteligentes y proactivas.</p>
+              </div>
+            </li>
+            
+            <li>
+              <div class="level-icon"><i data-lucide="gem"></i></div>
+              <div class="level-content">
+                <h4 class="level-title">Ventaja Estratégica</h4>
+                <p class="level-description">Creamos sistemas únicos que se convierten en un activo central y diferenciador para tu negocio.</p>
+              </div>
+            </li>
+            
+          </ul>
+        </div>
+
+      </div>
+    </div>
+    
+  </div>
+</section>
+  
+  
+  
+  
+    <section class="posts-section mw8 center ph3 mt5 mb5">
+
+  <div class="posts-header tc">
+    <h2 class="f2 mb2">Blog</h2>
+    <p class="f5 lh-copy measure-wide center gray">
+      Artículos, guías y reflexiones sobre automatización, tecnología y crecimiento empresarial.
+    </p>
+  </div>
+
+  
+
+  <div class="posts-grid">
+    <article class="post-card has-hover-effect">
+        <a href="/posts/inteligencia-operativa-llms/" class="post-card-link-wrapper" aria-label="Leer el artículo completo: Inteligencia Operativa con LLMs más allá de ChatGPT"><div class="post-card-content">
+            <div class="post-card-meta">
+              <time class="post-card-date" datetime="2025-10-14">14/10/2025</time>
+              <span class="meta-separator" aria-hidden="true">•</span>
+              <span class="post-card-reading-time">6 min</span>
+            </div>
+
+            <h3 class="post-card-title f3">Inteligencia Operativa con LLMs más allá de ChatGPT</h3>
+
+            <p class="post-card-description">
+              
+                Descubre cómo usar modelos de lenguaje en la inteligencia operativa y toma de decisiones para pymes y emprendedores.
+              
+            </p>
+
+            
+              <div class="post-card-tags">
+                
+                  <span class="post-tag">Inteligencia Operativa</span>
+                
+                  <span class="post-tag">Modelos De Lenguaje</span>
+                
+                  <span class="post-tag">Toma De Decisiones</span>
+                
+              </div>
+            
+
+            <footer class="post-card-footer">
+              <span class="post-card-readmore">Leer más <span class="arrow">&rarr;</span></span>
+            </footer>
+          </div>
+
+        </a>
+      </article>
+    <article class="post-card has-hover-effect">
+        <a href="/posts/de-apagar-fuegos-a-liderar-mentalidad-agil-transforma-caos-crecimiento-estructurado/" class="post-card-link-wrapper" aria-label="Leer el artículo completo: De &#39;Apagar Fuegos&#39; a Liderar: La Mentalidad Ágil que Transforma el Caos Diario en Crecimiento Estructurado"><div class="post-card-content">
+            <div class="post-card-meta">
+              <time class="post-card-date" datetime="2025-10-12">12/10/2025</time>
+              <span class="meta-separator" aria-hidden="true">•</span>
+              <span class="post-card-reading-time">8 min</span>
+            </div>
+
+            <h3 class="post-card-title f3">De &#39;Apagar Fuegos&#39; a Liderar: La Mentalidad Ágil que Transforma el Caos Diario en Crecimiento Estructurado</h3>
+
+            <p class="post-card-description">
+              
+                Descubre cómo la mentalidad ágil transforma la dependencia operativa en autonomía estratégica. Pasa de autoempleado sobrecargado a líder, respaldado por fuentes como McKinsey y HBR.
+              
+            </p>
+
+            
+              <div class="post-card-tags">
+                
+                  <span class="post-tag">Liderazgo</span>
+                
+                  <span class="post-tag">Agilidad</span>
+                
+                  <span class="post-tag">Optimizacion</span>
+                
+              </div>
+            
+
+            <footer class="post-card-footer">
+              <span class="post-card-readmore">Leer más <span class="arrow">&rarr;</span></span>
+            </footer>
+          </div>
+
+        </a>
+      </article>
+    <article class="post-card has-hover-effect">
+        <a href="/posts/guia-practica-primer-aliado-ia/" class="post-card-link-wrapper" aria-label="Leer el artículo completo: Guía Práctica para tu Primer &#34;Aliado de IA&#34;: 3 Procesos (que no son un chatbot) que Puedes Empezar a Inteligenciar Hoy Mismo"><div class="post-card-content">
+            <div class="post-card-meta">
+              <time class="post-card-date" datetime="2025-10-08">08/10/2025</time>
+              <span class="meta-separator" aria-hidden="true">•</span>
+              <span class="post-card-reading-time">5 min</span>
+            </div>
+
+            <h3 class="post-card-title f3">Guía Práctica para tu Primer &#34;Aliado de IA&#34;: 3 Procesos (que no son un chatbot) que Puedes Empezar a Inteligenciar Hoy Mismo</h3>
+
+            <p class="post-card-description">
+              
+                Desmitificamos la IA para dueños de negocio. Descubre 3 procesos simples y de alto impacto (sin chatbots complejos) que puedes empezar a optimizar con herramientas de IA para recuperar tu tiempo y cordura.
+              
+            </p>
+
+            
+              <div class="post-card-tags">
+                
+                  <span class="post-tag">IA</span>
+                
+                  <span class="post-tag">Eficiencia</span>
+                
+                  <span class="post-tag">Productividad</span>
+                
+              </div>
+            
+
+            <footer class="post-card-footer">
+              <span class="post-card-readmore">Leer más <span class="arrow">&rarr;</span></span>
+            </footer>
+          </div>
+
+        </a>
+      </article>
+    
+  </div>
+
+  
+  
+    <div class="all-posts-link tc mt4">
+      <a href="/posts/" class="story-cta-button">Ver todos los artículos</a>
+    </div>
+  
+
+</section>
+  
+
+
+    </main>
+    
+  <footer class="site-footer" id="footer">
+  <div class="footer-content mw8 center ph3">
+    
+    <div class="footer-grid">
+      
+      
+      <div class="footer-column brand-column">
+        <h3 class="footer-title">nowfreelance</h3>
+        <p class="footer-tagline">
+          Ayudando a empresas a crecer a través de la automatización y la tecnología.
+        </p>
+      </div>
+
+      
+      <div class="footer-column">
+        <h4 class="footer-column-title">Navegación</h4>
+        <ul class="footer-links">
+          
+          <li><a href="/">Inicio</a></li>
+          
+          <li><a href="/posts/">Blog</a></li>
+          
+          <li><a href="/contact/">Contacto</a></li>
+          
+        </ul>
+      </div>
+
+      
+      <div class="footer-column">
+        <h4 class="footer-column-title">Legal</h4>
+        <ul class="footer-links">
+          
+          <li><a href="/politica-de-privacidad/">Política de Privacidad</a></li>
+          
+          <li><a href="/aviso-legal/">Aviso Legal</a></li>
+          
+          <li><a href="/politica-de-cookies/">Política de Cookies</a></li>
+          
+        </ul>
+      </div>
+
+      
+
+
+    </div>
+
+    
+    <div class="footer-bottom-bar">
+      <p class="copyright">
+        © 2026 nowfreelance. Todos los derechos reservados.
+      </p>
+      <a href="#top" class="back-to-top">Volver arriba &uarr;</a>
+    </div>
+
+  </div>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>
+  lucide.createIcons();
+</script>
+</footer>
+
+
+<script>
+  
+  const navToggle = document.querySelector('.nav-toggle');
+  if (navToggle) {
+    navToggle.addEventListener('click', () => {
+      document.body.classList.toggle('nav-open');
+      document.documentElement.classList.toggle('no-scroll');
+      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !isExpanded);
+    });
+  }
+
+  
+  const navBar = document.querySelector('.nav-bar');
+  if (navBar) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        navBar.classList.add('scrolled');
+      } else {
+        navBar.classList.remove('scrolled');
+      }
+    });
+  }
+</script>
+
+  </body>
+</html>

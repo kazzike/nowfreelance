@@ -3,27 +3,27 @@
   <div class="solution-v2-container mw8 center ph3">
 
     <div class="solution-v2-main-content">
-      <span class="solution-v2-pre-title">Nuestra Filosofía</span>
-      <h2 class="solution-v2-title">No necesitas más herramientas. Necesitas una estrategia.</h2>
-      <p class="solution-v2-subtitle">No vendemos herramientas → vendemos soluciones a tus procesos. Detectamos mejoras con 90% enfoque en análisis y rediseño, y 10% en implementación inteligente.</p>
+      <span class="solution-v2-pre-title">{{ .pre_title }}</span>
+      <h2 class="solution-v2-title">{{ .title }}</h2>
+      <p class="solution-v2-subtitle">{{ .subtitle }}</p>
     </div>
 
     <div class="solution-v2-highlight-card">
       <div class="insight-item">
-        <span class="insight-number">10%</span>
+        <span class="insight-number">{{ .tech_perc }}</span>
         <div class="insight-text">
-          <h4 class="insight-title">Tecnología</h4>
-          <p class="insight-description">Las herramientas y automatizaciones que implementamos.</p>
+          <h4 class="insight-title">{{ .tech_title }}</h4>
+          <p class="insight-description">{{ .tech_desc }}</p>
         </div>
       </div>
       
       <hr class="insight-divider">
 
       <div class="insight-item">
-        <span class="insight-number">90%</span>
+        <span class="insight-number">{{ .strat_perc }}</span>
         <div class="insight-text">
-          <h4 class="insight-title">Estrategia</h4>
-          <p class="insight-description">El análisis, rediseño de procesos y la mentalidad para modernizar tu forma de operar.</p>
+          <h4 class="insight-title">{{ .strat_title }}</h4>
+          <p class="insight-description">{{ .strat_desc }}</p>
         </div>
       </div>
 

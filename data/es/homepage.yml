@@ -5,6 +5,8 @@ hero:
   cta_link: "/contact"
 
 pain_points:
+  title: "Si tu negocio crece, ¿por qué tú te sientes más atrapado?"
+  subtitle: "Si te identificas con los siguientes sintomas, mira como nuestra consultoria identifica y resuelve los puntos de mejora:"
   items:
     - icon: "folder-open"
       title: "Información Fragmentada"
@@ -26,6 +28,8 @@ pain_points:
       description: " → es falta de diagnóstico experto. Nosotros lo detectamos y solucionamos."
 
 process:
+  title: "Tu plan de modernización en 3 pasos"
+  subtitle: "No interrumpimos tu negocio. Lo potenciamos de forma fluida y sin jerga técnica."
   steps:
     - title: "1. Diagnóstico y Hoja de Ruta"
       description: "En nuestra 'Sesión de Claridad', mapeamos tu negocio, no tus apps. Entendemos tus ambiciones y detectamos los cuellos de botella que realmente frenan tu escalada. Te entregamos un plan claro."
@@ -35,12 +39,35 @@ process:
       description: "El objetivo es tu libertad. Te formamos a ti y a tu equipo para que dominéis el nuevo sistema. No creamos dependencia, creamos autonomía."
 
 case_study:
+  title: "Caso de Éxito: De estar atrapado en el Excel a liderar un negocio en expansión"
+  challenge_title: "El Reto"
   challenge: "Un cliente con una visión clara de expandir su negocio a nuevas regiones, pero ahogado en el caos de gestionar créditos y ventas con archivos locales de Excel y Word. El crecimiento era imposible."
+  mission_title: "Nuestra Misión"
   mission: "El problema no era el Excel, era la mentalidad. El primer paso fue estratégico: demostrar que para escalar, hay que confiar en sistemas modernos."
+  transformation_title: "La Transformación"
   transformation: "Creamos un ecosistema digital único que centralizó toda la operación. Todo el equipo, sin importar la ubicación, empezó a trabajar sobre la misma información en tiempo real."
+  result_title: "El Resultado"
   result: "Hoy, gestiona un negocio multi-oficina desde un único lugar, ha eliminado la pérdida de datos y ha recuperado el tiempo y la paz mental para enfocarse en lo que de verdad importa: seguir creciendo."
   cta_text: "Ver cómo podemos hacer esto por ti"
   cta_link: "/contact"
+
+contact:
+  subtitle: "No hay compromiso. Solo una conversación honesta sobre si podemos ayudarte a escalar tu negocio."
+  question: "¿Sientes que tu negocio podría crecer más rápido si tus sistemas trabajaran para ti en lugar de contra ti?"
+  cta: "Empecemos por ahí."
+  method_title: "Email"
+  method_description: "Escríbenos y te respondemos en menos de 24 horas laborables."
+  next_steps_title: "¿Qué pasa después de contactar?"
+  next_steps_subtitle: "Un proceso transparente y sin sorpresas. Así es como trabajamos."
+  step1_title: "Conversación inicial"
+  step1_desc: "10-15 minutos para entender tu situación. Sin jerga técnica, sin presión."
+  step2_title: "Evaluación honesta"
+  step2_desc: "Te digo si puedo ayudarte o no. Si no es un buen fit, te lo digo directamente."
+  step3_title: "Propuesta clara"
+  step3_desc: "Si tiene sentido seguir, te presento un plan concreto con plazos y costes reales."
+  final_cta_main: "No necesitas \"pensarlo más\". Necesitas"
+  final_cta_highlight: "claridad"
+  final_cta_note: "Obtienes respuesta personalizada, cero bots, cero asistentes virtuales."
 
   steps:
   - title: "1. Diagnóstico y Hoja de Ruta"
@@ -49,3 +76,28 @@ case_study:
     description: "Construimos tu sistema centralizado..."
   - title: "3. Formación y Despegue"
     description: "El objetivo es tu libertad..."
+
+solution:
+  pre_title: "Nuestra Filosofía"
+  title: "No necesitas más herramientas. Necesitas una estrategia."
+  subtitle: "No vendemos herramientas → vendemos soluciones a tus procesos. Detectamos mejoras con 90% enfoque en análisis y rediseño, y 10% en implementación inteligente."
+  tech_perc: "10%"
+  tech_title: "Tecnología"
+  tech_desc: "Las herramientas y automatizaciones que implementamos."
+  strat_perc: "90%"
+  strat_title: "Estrategia"
+  strat_desc: "El análisis, rediseño de procesos y la mentalidad para modernizar tu forma de operar."
+
+ai_section:
+  title: "IA como Acelerador Estratégico"
+  description: "No vemos la IA como un simple añadido, sino como el motor que potencia una base de negocio ya modernizada. La aplicamos con un único fin: darte una ventaja competitiva medible y sostenible."
+  levels:
+    - title: "Eficiencia Aumentada"
+      description: "Liberamos el potencial de tu equipo acelerando procesos existentes con inteligencia."
+      icon: "zap"
+    - title: "Inteligencia Operativa"
+      description: "Extraemos insights de tus datos para que tomes decisiones más inteligentes y proactivas."
+      icon: "brain-circuit"
+    - title: "Ventaja Estratégica"
+      description: "Creamos sistemas únicos que se convierten en un activo central y diferenciador para tu negocio."
+      icon: "gem"

@@ -12,3 +12,4 @@ resources/
 .idea/
 *.swp
 *.swo
+.prettierrc
