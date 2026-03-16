@@ -48,9 +48,10 @@ footer_tagline = "Ayudando a empresas a crecer a través de la automatización y
     url = "/contact/"
     weight = 40
   [[languages.es.menu.main]]
-    name = "Replacer"
-    url = "/replacer/"
-    weight = 45
+    name = "Tools"
+    url = "/tools/"
+    identifier = "tools"
+    weight = 50
 
   [[languages.es.menu.footer_nav]]
     name = "Inicio"
@@ -101,9 +102,10 @@ footer_tagline = "Helping companies grow through automation and technology."
     url = "/contact/"
     weight = 40
   [[languages.en.menu.main]]
-    name = "Replacer"
-    url = "/replacer/"
-    weight = 45
+    name = "Tools"
+    url = "/tools/"
+    identifier = "tools"
+    weight = 50
 
   [[languages.en.menu.footer_nav]]
     name = "Home"

@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Productividad on nowfreelance</title>
-    <link>http://localhost:40949/tags/productividad/</link>
+    <link>http://localhost:1313/tags/productividad/</link>
     <description>Recent content in Productividad on nowfreelance</description>
     <generator>Hugo</generator>
     <language>es-ES</language>
     <lastBuildDate>Wed, 08 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:40949/tags/productividad/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/productividad/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Guía Práctica para tu Primer &#34;Aliado de IA&#34;: 3 Procesos (que no son un chatbot) que Puedes Empezar a Inteligenciar Hoy Mismo</title>
-      <link>http://localhost:40949/posts/guia-practica-primer-aliado-ia/</link>
+      <link>http://localhost:1313/posts/guia-practica-primer-aliado-ia/</link>
       <pubDate>Wed, 08 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:40949/posts/guia-practica-primer-aliado-ia/</guid>
-      <description>Seguramente estás oyendo hablar de Inteligencia Artificial por todas partes. Parece que, de la noche a la mañana, todo es un chatbot o una compleja herramienta que promete revolucionarlo todo. La realidad para ti, como dueño de un negocio, es probablemente una mezcla de curiosidad y escepticismo. ¿Es otra moda pasajera? ¿Necesito ser un experto técnico para usarla? ¿Realmente me va a ayudar a solucionar el caos del día a día?</description>
+      <guid>http://localhost:1313/posts/guia-practica-primer-aliado-ia/</guid>
+      <description>&lt;p&gt;Seguramente estás oyendo hablar de Inteligencia Artificial por todas partes. Parece que, de la noche a la mañana, todo es un chatbot o una compleja herramienta que promete revolucionarlo todo. La realidad para ti, como dueño de un negocio, es probablemente una mezcla de curiosidad y escepticismo. ¿Es otra moda pasajera? ¿Necesito ser un experto técnico para usarla? ¿Realmente me va a ayudar a solucionar el caos del día a día?&lt;/p&gt;</description>
     </item>
     <item>
       <title>Cómo Anthropic creó Claude Code: arquitectura, permisos y el futuro del desarrollo con IA</title>
-      <link>http://localhost:40949/posts/como-anthropic-creo-claude-code/</link>
+      <link>http://localhost:1313/posts/como-anthropic-creo-claude-code/</link>
       <pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate>
-      <guid>http://localhost:40949/posts/como-anthropic-creo-claude-code/</guid>
-      <description>Claude Code: anatomía de un experimento que anticipa el futuro Anthropic presentó Claude Code como un experimento interno… y terminó mostrando al mundo un anticipo del futuro del desarrollo de software.&#xA;Lejos de ser un simple autocompletador, Claude Code es un agente de IA que vive en tu terminal: puede leer y recorrer el sistema de archivos, entender cómo se conectan los módulos de un repositorio y ejecutar comandos de shell bajo supervisión.</description>
+      <guid>http://localhost:1313/posts/como-anthropic-creo-claude-code/</guid>
+      <description>&lt;h2 id=&#34;claude-code-anatomía-de-un-experimento-que-anticipa-el-futuro&#34;&gt;Claude Code: anatomía de un experimento que anticipa el futuro&lt;/h2&gt;&#xA;&lt;p&gt;Anthropic presentó &lt;em&gt;Claude Code&lt;/em&gt; como un experimento interno… y terminó mostrando al mundo un anticipo del futuro del desarrollo de software.&lt;br&gt;&#xA;Lejos de ser un simple autocompletador, Claude Code es un &lt;strong&gt;agente de IA que vive en tu terminal&lt;/strong&gt;: puede leer y recorrer el sistema de archivos, entender cómo se conectan los módulos de un repositorio y ejecutar comandos de shell bajo supervisión.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

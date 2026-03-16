@@ -18,17 +18,24 @@
       <ul class="nav-links">
         {{ range .Site.Menus.main }}
           <li>
-            <a href="{{ if eq .Name `Replacer` }}{{ .URL }}{{ else }}{{ .URL | relLangURL }}{{ end }}" title="{{ .Name }}" {{ if eq .Name "Replacer" }}target="_blank"{{ end }}>{{ .Name }}</a>
+            <a href="{{ .URL | relLangURL }}" 
+               title="{{ .Name }}">
+               {{ .Name }}
+            </a>
           </li>
         {{ end }}
-        <!-- Language Switcher -->
+        <!-- Language Switcher (Flag Icons) -->
         <li class="lang-switcher" style="display:flex; align-items:center; gap:0.5rem; margin-left: 1rem; padding-left: 1rem; border-left: 1px solid rgba(255,255,255,0.2);">
           {{ $currentLang := site.Language.Lang }}
           {{ $page := . }}
           
           {{/* Link back to current page natively for the active language, and fallback to home for others */}}
-          <a href="{{ if eq $currentLang `es` }}{{ .RelPermalink }}{{ else }}/{{ end }}" style="{{ if eq $currentLang `es` }}font-weight:700; text-decoration:underline; opacity:1;{{ else }}font-weight:400; opacity:0.7;{{ end }}" title="Español">ES</a>
-          <a href="{{ if eq $currentLang `en` }}{{ .RelPermalink }}{{ else }}/en/{{ end }}" style="{{ if eq $currentLang `en` }}font-weight:700; text-decoration:underline; opacity:1;{{ else }}font-weight:400; opacity:0.7;{{ end }}" title="English">EN</a>
+          <a href="{{ if eq $currentLang `es` }}{{ .RelPermalink }}{{ else }}/{{ end }}" style="{{ if eq $currentLang `es` }}opacity:1;{{ else }}opacity:0.7;{{ end }}" title="Español">
+            <span class="flag-icon">{{ partial "icons/es-flag.html" . }}</span>
+          </a>
+          <a href="{{ if eq $currentLang `en` }}{{ .RelPermalink }}{{ else }}/en/{{ end }}" style="{{ if eq $currentLang `en` }}opacity:1;{{ else }}opacity:0.7;{{ end }}" title="English">
+            <span class="flag-icon">{{ partial "icons/en-flag.html" . }}</span>
+          </a>
 
           {{/* Overwrite links dynamically IF there is a translated variant available */}}
           {{ if .IsTranslated }}

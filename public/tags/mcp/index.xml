@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MCP on nowfreelance</title>
-    <link>http://localhost:40949/tags/mcp/</link>
+    <link>http://localhost:1313/tags/mcp/</link>
     <description>Recent content in MCP on nowfreelance</description>
     <generator>Hugo</generator>
     <language>es-ES</language>
     <lastBuildDate>Tue, 14 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:40949/tags/mcp/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/mcp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Inteligencia Operativa con LLMs más allá de ChatGPT</title>
-      <link>http://localhost:40949/posts/inteligencia-operativa-llms/</link>
+      <link>http://localhost:1313/posts/inteligencia-operativa-llms/</link>
       <pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:40949/posts/inteligencia-operativa-llms/</guid>
-      <description>Introducción: más que conversaciones Imagínate contar con una inteligencia operacional integrada a tus procesos, capaz de anticipar cuellos de botella, sugerir decisiones y actuar en tiempo real sobre tus datos. No se trata de un chatbot conversacional como ChatGPT, sino de sistemas que usan modelos de lenguaje (LLMs) como motores de inteligencia operativa.&#xA;En este post veremos:&#xA;Las limitaciones de ChatGPT como herramienta operativa pura. Cómo los LLMs pueden integrarse en procesos críticos.</description>
+      <guid>http://localhost:1313/posts/inteligencia-operativa-llms/</guid>
+      <description>&lt;h2 id=&#34;introducción-más-que-conversaciones&#34;&gt;Introducción: más que conversaciones&lt;/h2&gt;&#xA;&lt;p&gt;Imagínate contar con una &lt;strong&gt;inteligencia operacional&lt;/strong&gt; integrada a tus procesos, capaz de anticipar cuellos de botella, sugerir decisiones y actuar en tiempo real sobre tus datos. No se trata de un chatbot conversacional como ChatGPT, sino de sistemas que usan modelos de lenguaje (LLMs) como motores de &lt;em&gt;inteligencia operativa&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;p&gt;En este post veremos:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Las limitaciones de ChatGPT como herramienta operativa pura.&lt;/li&gt;&#xA;&lt;li&gt;Cómo los LLMs pueden integrarse en procesos críticos.&lt;/li&gt;&#xA;&lt;li&gt;El rol clave del &lt;em&gt;Model Context Protocol&lt;/em&gt; (MCP) para conectar modelos con sistemas.&lt;/li&gt;&#xA;&lt;li&gt;Casos reales, riesgos y cómo empezar con una implementación práctica.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Para dueños de pymes y emprendedores tech, esto podría significar el salto que llevan tiempo buscando.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Cómo Anthropic creó Claude Code: arquitectura, permisos y el futuro del desarrollo con IA</title>
-      <link>http://localhost:40949/posts/como-anthropic-creo-claude-code/</link>
+      <link>http://localhost:1313/posts/como-anthropic-creo-claude-code/</link>
       <pubDate>Tue, 23 Sep 2025 09:00:00 +0000</pubDate>
-      <guid>http://localhost:40949/posts/como-anthropic-creo-claude-code/</guid>
-      <description>Claude Code: anatomía de un experimento que anticipa el futuro Anthropic presentó Claude Code como un experimento interno… y terminó mostrando al mundo un anticipo del futuro del desarrollo de software.&#xA;Lejos de ser un simple autocompletador, Claude Code es un agente de IA que vive en tu terminal: puede leer y recorrer el sistema de archivos, entender cómo se conectan los módulos de un repositorio y ejecutar comandos de shell bajo supervisión.</description>
+      <guid>http://localhost:1313/posts/como-anthropic-creo-claude-code/</guid>
+      <description>&lt;h2 id=&#34;claude-code-anatomía-de-un-experimento-que-anticipa-el-futuro&#34;&gt;Claude Code: anatomía de un experimento que anticipa el futuro&lt;/h2&gt;&#xA;&lt;p&gt;Anthropic presentó &lt;em&gt;Claude Code&lt;/em&gt; como un experimento interno… y terminó mostrando al mundo un anticipo del futuro del desarrollo de software.&lt;br&gt;&#xA;Lejos de ser un simple autocompletador, Claude Code es un &lt;strong&gt;agente de IA que vive en tu terminal&lt;/strong&gt;: puede leer y recorrer el sistema de archivos, entender cómo se conectan los módulos de un repositorio y ejecutar comandos de shell bajo supervisión.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

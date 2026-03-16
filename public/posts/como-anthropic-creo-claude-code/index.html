@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="es-ES">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=40949&amp;path=livereload" data-no-instant defer></script>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
     <title>Cómo Anthropic creó Claude Code: arquitectura, permisos y el futuro del desarrollo con IA | nowfreelance</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Análisis de Claude Code por dentro: stack TypeScript/React/Ink, ejecución local con permisos, subagentes y la velocidad de un equipo AI-first.">
-    <meta name="generator" content="Hugo 0.128.2">
+    <meta name="generator" content="Hugo 0.157.0">
     
     
     
@@ -34,10 +34,10 @@
     
 
     
-      <link rel="canonical" href="http://localhost:40949/posts/como-anthropic-creo-claude-code/">
+      <link rel="canonical" href="http://localhost:1313/posts/como-anthropic-creo-claude-code/">
     
 
-    <meta property="og:url" content="http://localhost:40949/posts/como-anthropic-creo-claude-code/">
+    <meta property="og:url" content="http://localhost:1313/posts/como-anthropic-creo-claude-code/">
   <meta property="og:site_name" content="nowfreelance">
   <meta property="og:title" content="Cómo Anthropic creó Claude Code: arquitectura, permisos y el futuro del desarrollo con IA">
   <meta property="og:description" content="Análisis de Claude Code por dentro: stack TypeScript/React/Ink, ejecución local con permisos, subagentes y la velocidad de un equipo AI-first.">
@@ -92,19 +92,31 @@
       <ul class="nav-links">
         
           <li>
-            <a href="/" title="Inicio" >Inicio</a>
+            <a href="/" 
+               title="Inicio">
+               Inicio
+            </a>
           </li>
         
           <li>
-            <a href="/posts/" title="Blog" >Blog</a>
+            <a href="/posts/" 
+               title="Blog">
+               Blog
+            </a>
           </li>
         
           <li>
-            <a href="/contact/" title="Contacto" >Contacto</a>
+            <a href="/contact/" 
+               title="Contacto">
+               Contacto
+            </a>
           </li>
         
           <li>
-            <a href="/replacer/" title="Replacer" target="_blank">Replacer</a>
+            <a href="/tools/" 
+               title="Tools">
+               Tools
+            </a>
           </li>
         
         
@@ -113,8 +125,29 @@
           
           
           
-          <a href="/posts/como-anthropic-creo-claude-code/" style="font-weight:700; text-decoration:underline; opacity:1;" title="Español">ES</a>
-          <a href="/en/" style="font-weight:400; opacity:0.7;" title="English">EN</a>
+          <a href="/posts/como-anthropic-creo-claude-code/" style="opacity:1;" title="Español">
+            <span class="flag-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 300 200" fill="currentColor">
+  <rect width="300" height="200" fill="#AA151B"/>
+  <rect y="50" width="300" height="100" fill="#F1BF00"/>
+</svg></span>
+          </a>
+          <a href="/en/" style="opacity:0.7;" title="English">
+            <span class="flag-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="24" height="18">
+  <clipPath id="s">
+    <path d="M0,0 v30 h60 v-30 z"/>
+  </clipPath>
+  <clipPath id="t">
+    <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/>
+  </clipPath>
+  <g clip-path="url(#s)">
+    <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
+    <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+    <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/>
+    <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
+    <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
+  </g>
+</svg></span>
+          </a>
 
           
           
@@ -132,8 +165,8 @@
     <main class="pb7" role="main">
       
   
-  
-  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+
+  <article class="page-como-anthropic-creo-claude-code flex-l mw7 center ph3 flex-wrap justify-between">
     <header class="mt4 w-100">
       <aside class="instapaper_ignoref b helvetica tracked ttu">
           
@@ -149,7 +182,7 @@
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="claude-code-anatomía-de-un-experimento-que-anticipa-el-futuro">Claude Code: anatomía de un experimento que anticipa el futuro</h2>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-100-l"><h2 id="claude-code-anatomía-de-un-experimento-que-anticipa-el-futuro">Claude Code: anatomía de un experimento que anticipa el futuro</h2>
 <p>Anthropic presentó <em>Claude Code</em> como un experimento interno… y terminó mostrando al mundo un anticipo del futuro del desarrollo de software.<br>
 Lejos de ser un simple autocompletador, Claude Code es un <strong>agente de IA que vive en tu terminal</strong>: puede leer y recorrer el sistema de archivos, entender cómo se conectan los módulos de un repositorio y ejecutar comandos de shell bajo supervisión.</p>
 <p>Este diseño replantea la productividad, la arquitectura del software y el rol mismo del ingeniero en la era de los modelos de lenguaje.</p>
@@ -341,20 +374,9 @@ Un futuro donde:</p>
    </li>
   
 </ul>
-<div class="mt6 instapaper_ignoref">
+
       
-      
-      </div>
-    </div>
-
-    <aside class="w-30-l mt6-l">
-
-
-
-
-</aside>
-
-  </article>
+    </div></article>
 
     </main>
     <footer class="site-footer" id="footer">
