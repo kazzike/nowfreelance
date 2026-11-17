@@ -1,85 +1,24 @@
-<section class="posts-section mw8 center ph3 mt5 mb5">
-
-  <div class="posts-header tc">
-    <h2 class="f2 mb2">Blog</h2>
-    <p class="f5 lh-copy measure-wide center gray">
-      Artículos, guías y reflexiones sobre automatización, tecnología y crecimiento empresarial.
-    </p>
-  </div>
-
-  {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") 3 }}
-
-  <div class="posts-grid">
-    {{ range $paginator.Pages }}
-      {{- $cover := "" -}}
-      {{- with .Resources.GetMatch "cover*" }}{{ $cover = .RelPermalink }}{{ end -}}
-      {{- if eq $cover "" }}{{ with .Params.cover }}{{ $cover = . | relURL }}{{ end }}{{ end -}}
-      {{- if eq $cover "" }}{{ with .Params.image }}{{ $cover = . | relURL }}{{ end }}{{ end -}}
-      {{- if eq $cover "" }}{{ with .Params.images }}{{ $first := index . 0 }}{{ $cover = $first | relURL }}{{ end }}{{ end -}}
-
-      {{- $showUpdated := gt .Lastmod .Date -}}
-      {{- $isNew := and (not $showUpdated) (lt (sub now.Unix .Date.Unix) 1209600) -}}
-
-      <article class="post-card has-hover-effect">
-        <a href="{{ .RelPermalink }}" class="post-card-link-wrapper" aria-label="Leer el artículo completo: {{ .Title }}">
-
-          {{- if $cover -}}
-          <figure class="post-card-cover">
-            <img
-              class="post-card-image"
-              src="{{ $cover }}"
-              alt="{{ .Title }}"
-              loading="lazy"
-              decoding="async"
-            >
-            {{- if $showUpdated -}}
-              <span class="post-card-badge">Actualizado</span>
-            {{- else if $isNew -}}
-              <span class="post-card-badge">Nuevo</span>
-            {{- end -}}
-          </figure>
-          {{- end -}}
-
-          <div class="post-card-content">
-            <div class="post-card-meta">
-              <time class="post-card-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02/01/2006" }}</time>
-              <span class="meta-separator" aria-hidden="true">•</span>
-              <span class="post-card-reading-time">{{ .ReadingTime }} min</span>
-            </div>
-
-            <h3 class="post-card-title f3">{{ .Title }}</h3>
-
-            <p class="post-card-description">
-              {{ with .Description }}
-                {{ . }}
-              {{ else }}
-                {{ .Summary | plainify | truncate 160 }}
-              {{ end }}
-            </p>
-
-            {{ with .GetTerms "tags" }}
-              <div class="post-card-tags">
-                {{ range first 3 . }}
-                  <span class="post-tag">{{ .LinkTitle }}</span>
-                {{ end }}
-              </div>
-            {{ end }}
-
-            <footer class="post-card-footer">
-              <span class="post-card-readmore">Leer más <span class="arrow">&rarr;</span></span>
-            </footer>
-          </div>
-
-        </a>
+<section class="nf-section nf-posts" id="insights">
+  <div class="nf-container">
+    <div class="nf-section-heading">
+      <p class="nf-eyebrow">INSIGHTS</p>
+      <h2>{{ if eq site.Language.Lang "en" }}Ideas for better ways of working.{{ else }}Ideas para trabajar mejor.{{ end }}</h2>
+      <p>{{ if eq site.Language.Lang "en" }}Articles and practical guides on operations, automation and useful technology.{{ else }}Artículos y guías prácticas sobre operaciones, automatización y tecnología útil.{{ end }}</p>
+    </div>
+    {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") 3 }}
+    <div class="nf-post-grid">
+      {{ range $paginator.Pages }}
+      <article class="nf-post-card">
+        <p class="nf-post-meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02/01/2006" }}</time> · {{ .ReadingTime }} {{ if eq site.Language.Lang "en" }}min read{{ else }}min de lectura{{ end }}</p>
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 150 }}{{ end }}</p>
+        <a class="nf-text-link" href="{{ .RelPermalink }}">{{ if eq site.Language.Lang "en" }}Read article{{ else }}Leer artículo{{ end }} <span aria-hidden="true">→</span></a>
       </article>
+      {{ end }}
+    </div>
+    {{ $postsPage := .Site.GetPage "section" "posts" }}
+    {{ with $postsPage }}
+    <p class="nf-posts-all"><a class="nf-text-link" href="{{ .RelPermalink }}">{{ if eq site.Language.Lang "en" }}All insights{{ else }}Ver todos los artículos{{ end }} <span aria-hidden="true">→</span></a></p>
     {{ end }}
   </div>
-
-  {{ $postsPage := .Site.GetPage "section" "posts" }}
-  {{ if $postsPage }}
-    <div class="all-posts-link tc mt4">
-      <a href="{{ $postsPage.RelPermalink }}" class="story-cta-button">Ver todos los artículos</a>
-    </div>
-  {{ end }}
-
 </section>

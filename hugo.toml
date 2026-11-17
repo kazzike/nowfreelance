@@ -44,12 +44,12 @@ footer_tagline = "Operaciones más claras. Tecnología que trabaja para ti."
     url = "/#services"
     weight = 10
   [[languages.es.menu.main]]
-    name = "Cómo trabajamos"
-    url = "/#"
+    name = "Proceso"
+    url = "/#process"
     weight = 20
   [[languages.es.menu.main]]
     name = "Insights"
-    url = "/posts/"
+    url = "/#insights"
     weight = 30
   [[languages.es.menu.main]]
     name = "Contacto"
@@ -71,7 +71,7 @@ footer_tagline = "Operaciones más claras. Tecnología que trabaja para ti."
     weight = 20
   [[languages.es.menu.footer_nav]]
     name = "Insights"
-    url = "/posts/"
+    url = "/#insights"
     weight = 30
   [[languages.es.menu.footer_nav]]
     name = "Contacto"
@@ -107,12 +107,12 @@ footer_tagline = "Clearer operations. Technology that works for you."
     url = "/#services"
     weight = 10
   [[languages.en.menu.main]]
-    name = "How we work"
-    url = "/#"
+    name = "Process"
+    url = "/#process"
     weight = 20
   [[languages.en.menu.main]]
     name = "Insights"
-    url = "/posts/"
+    url = "/#insights"
     weight = 30
   [[languages.en.menu.main]]
     name = "Contact"
@@ -134,7 +134,7 @@ footer_tagline = "Clearer operations. Technology that works for you."
     weight = 20
   [[languages.en.menu.footer_nav]]
     name = "Insights"
-    url = "/posts/"
+    url = "/#insights"
     weight = 30
   [[languages.en.menu.footer_nav]]
     name = "Contact"
