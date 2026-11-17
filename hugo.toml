@@ -1,5 +1,6 @@
-baseURL = "http://localhost:1313/"
+baseURL = "https://nowfreelance.com/"
 defaultContentLanguage = "es"
+defaultContentLanguageInSubdir = false
 theme = "ananke"
 
 [markup]
@@ -8,11 +9,13 @@ theme = "ananke"
       unsafe = true
 
 [params]
-custom_css = ["custom.css"]
+custom_css = ["custom.css", "redesign.css"]
+description = "Consultoría de operaciones digitales, automatización e integración práctica de IA para autónomos y pequeñas empresas."
+contact_email = "hola@nowfreelance.com"
 
 [[params.social]]
   name = "LinkedIn"
-  icon_name = "linkedin" 
+  icon_name = "linkedin"
   url = "https://linkedin.com/in/"
 
 [[params.social]]
@@ -26,21 +29,26 @@ custom_css = ["custom.css"]
   url = "https://youtube.com/c/"
 
 [languages.es]
-languageName = "ES"
+languageName = "Español"
 weight = 1
 languageCode = "es-ES"
 title = "nowfreelance"
 
 [languages.es.params]
-footer_tagline = "Ayudando a empresas a crecer a través de la automatización y la tecnología."
+description = "Consultoría de operaciones digitales, automatización e integración práctica de IA para autónomos y pequeñas empresas."
+footer_tagline = "Operaciones más claras. Tecnología que trabaja para ti."
 
 [languages.es.menu]
   [[languages.es.menu.main]]
-    name = "Inicio"
-    url = "/"
+    name = "Servicios"
+    url = "/#services"
     weight = 10
   [[languages.es.menu.main]]
-    name = "Blog"
+    name = "Cómo trabajamos"
+    url = "/#"
+    weight = 20
+  [[languages.es.menu.main]]
+    name = "Insights"
     url = "/posts/"
     weight = 30
   [[languages.es.menu.main]]
@@ -58,13 +66,17 @@ footer_tagline = "Ayudando a empresas a crecer a través de la automatización y
     url = "/"
     weight = 10
   [[languages.es.menu.footer_nav]]
-    name = "Blog"
-    url = "/posts/"
+    name = "Servicios"
+    url = "/#services"
     weight = 20
+  [[languages.es.menu.footer_nav]]
+    name = "Insights"
+    url = "/posts/"
+    weight = 30
   [[languages.es.menu.footer_nav]]
     name = "Contacto"
     url = "/contact/"
-    weight = 30
+    weight = 40
 
   [[languages.es.menu.footer_legal]]
     name = "Política de Privacidad"
@@ -80,21 +92,26 @@ footer_tagline = "Ayudando a empresas a crecer a través de la automatización y
     weight = 30
 
 [languages.en]
-languageName = "EN"
+languageName = "English"
 weight = 2
 languageCode = "en-US"
 title = "nowfreelance"
 
 [languages.en.params]
-footer_tagline = "Helping companies grow through automation and technology."
+description = "Digital operations consulting, automation and practical AI integration for freelancers and small businesses."
+footer_tagline = "Clearer operations. Technology that works for you."
 
 [languages.en.menu]
   [[languages.en.menu.main]]
-    name = "Home"
-    url = "/"
+    name = "Services"
+    url = "/#services"
     weight = 10
   [[languages.en.menu.main]]
-    name = "Blog"
+    name = "How we work"
+    url = "/#"
+    weight = 20
+  [[languages.en.menu.main]]
+    name = "Insights"
     url = "/posts/"
     weight = 30
   [[languages.en.menu.main]]
@@ -112,13 +129,17 @@ footer_tagline = "Helping companies grow through automation and technology."
     url = "/"
     weight = 10
   [[languages.en.menu.footer_nav]]
-    name = "Blog"
-    url = "/posts/"
+    name = "Services"
+    url = "/#services"
     weight = 20
+  [[languages.en.menu.footer_nav]]
+    name = "Insights"
+    url = "/posts/"
+    weight = 30
   [[languages.en.menu.footer_nav]]
     name = "Contact"
     url = "/contact/"
-    weight = 30
+    weight = 40
 
   [[languages.en.menu.footer_legal]]
     name = "Privacy Policy"

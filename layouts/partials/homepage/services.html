@@ -1,0 +1,21 @@
+<section class="nf-section nf-services" id="services">
+  <div class="nf-container">
+    <div class="nf-section-heading">
+      <p class="nf-eyebrow">{{ .eyebrow }}</p>
+      <h2>{{ .title }}</h2>
+      <p>{{ .subtitle }}</p>
+    </div>
+    <div class="nf-service-list">
+      {{ range .items }}
+      <article class="nf-service">
+        <span class="nf-service-number">{{ .number }}</span>
+        <div>
+          <h3>{{ .title }}</h3>
+          <p>{{ .description }}</p>
+          <p class="nf-deliverable"><strong>{{ if eq site.Language.Lang "en" }}TYPICAL OUTCOME{{ else }}ENTREGABLE HABITUAL{{ end }}:</strong> {{ .deliverable }}</p>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>

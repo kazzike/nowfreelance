@@ -4,36 +4,41 @@
 
 {{ define "main" }}
   {{ $homeData := index site.Data site.Language.Lang "homepage" }}
-  
+
   {{ with $homeData.hero }}
     {{ partial "homepage/hero.html" . }}
+  {{ end }}
+
+  {{ with $homeData.audiences }}
+    {{ partial "homepage/audiences.html" . }}
   {{ end }}
 
   {{ with $homeData.pain_points }}
     {{ partial "homepage/pain-points.html" . }}
   {{ end }}
 
+  {{ with $homeData.services }}
+    {{ partial "homepage/services.html" . }}
+  {{ end }}
+
   {{ with $homeData.solution }}
     {{ partial "homepage/solution.html" . }}
   {{ end }}
-  
+
   {{ with $homeData.process }}
     {{ partial "homepage/process.html" . }}
-  {{ end }}
-
-  {{ with $homeData.case_study }}
-    {{ partial "homepage/case-study.html" . }}
   {{ end }}
 
   {{ with $homeData.ai_section }}
     {{ partial "homepage/ai-section.html" . }}
   {{ end }}
-  
+
   {{ $posts := where .Site.RegularPages "Type" "posts" }}
   {{ if gt (len $posts) 0 }}
     {{ partial "homepage/posts.html" . }}
   {{ end }}
 
+  {{ partial "homepage/clarity-cta.html" . }}
 {{ end }}
 
 {{ define "footer" }}

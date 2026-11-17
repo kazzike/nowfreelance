@@ -1,56 +1,20 @@
 <div class="nav-bar" id="top">
-  <div class="nav-content mw8 center ph3">
-    
-    <!-- Marca / Logo del Sitio -->
-    <a href="{{ .Site.BaseURL | relLangURL }}" class="site-brand">
-      {{ .Site.Title }}
-    </a>
-
-    <!-- Botón para el menú móvil (hamburguesa) -->
-    <button class="nav-toggle" aria-label="Abrir menú" aria-controls="header-nav" aria-expanded="false">
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
+  <div class="nav-content nf-container">
+    <a href="{{ site.Home.RelPermalink }}" class="site-brand" aria-label="{{ .Site.Title }} — {{ if eq site.Language.Lang "en" }}Home{{ else }}Inicio{{ end }}">nowfreelance<span>.</span></a>
+    <button class="nav-toggle" type="button" aria-label="{{ if eq site.Language.Lang "en" }}Open menu{{ else }}Abrir menú{{ end }}" aria-controls="header-nav" aria-expanded="false">
+      <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
     </button>
-
-    <!-- Navegación Principal -->
-    <nav class="header-nav" id="header-nav">
+    <nav class="header-nav" id="header-nav" aria-label="{{ if eq site.Language.Lang "en" }}Main navigation{{ else }}Navegación principal{{ end }}">
       <ul class="nav-links">
         {{ range .Site.Menus.main }}
-          <li>
-            <a href="{{ .URL | relLangURL }}" 
-               title="{{ .Name }}">
-               {{ .Name }}
-            </a>
-          </li>
+          <li><a href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
         {{ end }}
-        <!-- Language Switcher (Flag Icons) -->
-        <li class="lang-switcher" style="display:flex; align-items:center; gap:0.5rem; margin-left: 1rem; padding-left: 1rem; border-left: 1px solid rgba(255,255,255,0.2);">
-          {{ $currentLang := site.Language.Lang }}
-          {{ $page := . }}
-          
-          {{/* Link back to current page natively for the active language, and fallback to home for others */}}
-          <a href="{{ if eq $currentLang `es` }}{{ .RelPermalink }}{{ else }}/{{ end }}" style="{{ if eq $currentLang `es` }}opacity:1;{{ else }}opacity:0.7;{{ end }}" title="Español">
-            <span class="flag-icon">{{ partial "icons/es-flag.html" . }}</span>
-          </a>
-          <a href="{{ if eq $currentLang `en` }}{{ .RelPermalink }}{{ else }}/en/{{ end }}" style="{{ if eq $currentLang `en` }}opacity:1;{{ else }}opacity:0.7;{{ end }}" title="English">
-            <span class="flag-icon">{{ partial "icons/en-flag.html" . }}</span>
-          </a>
-
-          {{/* Overwrite links dynamically IF there is a translated variant available */}}
-          {{ if .IsTranslated }}
-            {{ range .AllTranslations }}
-              {{ if eq .Language.Lang "es" }}
-                <script>document.querySelector('a[title="Español"]').href = '{{ .RelPermalink }}';</script>
-              {{ end }}
-              {{ if eq .Language.Lang "en" }}
-                <script>document.querySelector('a[title="English"]').href = '{{ .RelPermalink }}';</script>
-              {{ end }}
-            {{ end }}
-          {{ end }}
+        <li class="lang-switcher">
+          <a href="/" lang="es" hreflang="es" aria-label="Español">ES</a>
+          <span aria-hidden="true">/</span>
+          <a href="/en/" lang="en" hreflang="en" aria-label="English">EN</a>
         </li>
       </ul>
     </nav>
-
   </div>
 </div>

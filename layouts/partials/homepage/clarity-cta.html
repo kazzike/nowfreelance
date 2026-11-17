@@ -1,0 +1,9 @@
+{{ $lang := site.Language.Lang }}
+<section class="nf-final-cta">
+  <div class="nf-container nf-final-cta-inner">
+    <p class="nf-eyebrow">{{ if eq $lang "en" }}YOUR NEXT STEP{{ else }}TU SIGUIENTE PASO{{ end }}</p>
+    <h2>{{ if eq $lang "en" }}Let's make work simpler.{{ else }}Hagamos que trabajar sea más sencillo.{{ end }}</h2>
+    <p>{{ if eq $lang "en" }}Book an initial 20-minute conversation. No commitment — just a clear look at what could work better.{{ else }}Solicita una conversación inicial de 20 minutos. Sin compromiso: solo claridad sobre qué podría funcionar mejor.{{ end }}</p>
+    <a class="nf-button nf-button-primary" href="{{ "contact/" | relLangURL }}">{{ if eq $lang "en" }}Request a Clarity Session{{ else }}Solicitar una sesión de claridad{{ end }}</a>
+  </div>
+</section>

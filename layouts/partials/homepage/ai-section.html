@@ -1,33 +1,14 @@
-<section class="ai-unified-section">
-  <div class="mw8 center ph3">
-
-    <div class="ai-unified-card">
-      <div class="ai-unified-grid">
-
-        <div class="ai-unified-intro">
-          <div class="ai-intro-icon">
-            <i data-lucide="bot"></i>
-          </div>
-          <h2 class="ai-intro-title">{{ .title }}</h2>
-          <p class="ai-intro-description">{{ .description }}</p>
-        </div>
-
-        <div class="ai-unified-levels">
-          <ul>
-            {{ range .levels }}
-            <li>
-              <div class="level-icon"><i data-lucide="{{ .icon }}"></i></div>
-              <div class="level-content">
-                <h4 class="level-title">{{ .title }}</h4>
-                <p class="level-description">{{ .description }}</p>
-              </div>
-            </li>
-            {{ end }}
-          </ul>
-        </div>
-
-      </div>
+<section class="nf-section nf-ai">
+  <div class="nf-container nf-ai-inner">
+    <div>
+      <p class="nf-eyebrow">{{ if eq site.Language.Lang "en" }}ARTIFICIAL INTELLIGENCE{{ else }}INTELIGENCIA ARTIFICIAL{{ end }}</p>
+      <h2>{{ .title }}</h2>
+      <p>{{ .description }}</p>
     </div>
-    
+    <div class="nf-ai-list">
+      {{ range .levels }}
+      <article><span aria-hidden="true">+</span><div><h3>{{ .title }}</h3><p>{{ .description }}</p></div></article>
+      {{ end }}
+    </div>
   </div>
 </section>
