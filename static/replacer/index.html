@@ -49,6 +49,17 @@
         .header h1 { font-size: 2rem; margin-bottom: 10px; }
         .header p { opacity: 0.9; font-size: 1rem; }
 
+        .storage-notice {
+            max-width: 760px;
+            margin: 10px auto 0;
+            padding: 8px 12px;
+            border-radius: 6px;
+            background: rgba(255,255,255,.16);
+            color: #fff;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
         .main-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -271,7 +282,8 @@
     <div class="container">
         <div class="header">
             <h1>🔄 Reemplazador Bidireccional</h1>
-            <p>Anonimiza textos y restaura los datos originales cuando los necesites</p>
+            <p>Sustituye datos en textos y restaura los valores originales cuando lo necesites.</p>
+            <p class="storage-notice" role="note">Aviso: las correspondencias se guardan en este navegador sin cifrar. No introduzcas información confidencial real en esta versión.</p>
         </div>
 
         <div class="main-content">
@@ -347,15 +359,9 @@
         </div>
     </div>
 
+    <script src="replacer-core.js"></script>
     <script>
-        // --- CONFIGURACIÓN Y DATOS ---
-        const dictionary = {
-            names: ['Julián', 'Adriana', 'Marcos', 'Elena', 'Roberto', 'Sonia', 'Ricardo', 'Paola', 'Fernando', 'Marta'],
-            places: ['Madrid', 'Barcelona', 'México', 'Bogotá', 'Santiago', 'Lima', 'Buenos Aires', 'Valencia'],
-            companies: ['TechCorp', 'GlobalSoft', 'Innovatech', 'DataSystems', 'AlphaGroup', 'OmegaSolutions'],
-            emails: ['usuario', 'contacto', 'info', 'admin', 'personal', 'correo', 'test', 'soporte'],
-            domains: ['gmail.com', 'outlook.com', 'empresa.com', 'servidor.net', 'webmail.org']
-        };
+        const ReplacerCore = window.ReplacerCore;
 
         let state = {
             mode: 'replace',
@@ -421,7 +427,7 @@
             } else {
                 const key = word.toLowerCase();
                 if (state.wordMappings[key]) delete state.wordMappings[key];
-                else state.wordMappings[key] = { original: word, replacement: generateRandom(word) };
+                else state.wordMappings[key] = { original: word, replacement: ReplacerCore.generateRandom(word) };
             }
             save();
             renderAll();
@@ -437,7 +443,7 @@
             } else {
                 state.wordMappings[word.toLowerCase()] = {
                     original: word,
-                    replacement: repl || generateRandom(word)
+                    replacement: repl || ReplacerCore.generateRandom(word)
                 };
             }
             document.getElementById('newWord').value = '';
@@ -468,11 +474,20 @@
             Object.entries(state.wordMappings).forEach(([key, val]) => {
                 const div = document.createElement('div');
                 div.className = 'word-item';
-                div.innerHTML = `
-                    <span><code>${val.original}</code></span>
-                    <span class="replacement">→ ${val.replacement}</span>
-                    <button class="btn-remove" onclick="removeWord('${key}')">×</button>
-                `;
+                const original = document.createElement('code');
+                original.textContent = val.original;
+                const originalWrap = document.createElement('span');
+                originalWrap.appendChild(original);
+                const replacement = document.createElement('span');
+                replacement.className = 'replacement';
+                replacement.textContent = '→ ' + val.replacement;
+                const remove = document.createElement('button');
+                remove.className = 'btn-remove';
+                remove.type = 'button';
+                remove.textContent = '×';
+                remove.setAttribute('aria-label', 'Eliminar regla ' + val.original);
+                remove.addEventListener('click', () => removeWord(key));
+                div.append(originalWrap, replacement, remove);
                 container.appendChild(div);
             });
         }
@@ -489,92 +504,46 @@
                 const div = document.createElement('div');
                 div.className = 'word-item';
                 div.style.fontSize = '11px';
-                div.innerHTML = `<span>${orig}</span> <span class="replacement">→ ${fake}</span>`;
+                const original = document.createElement('span');
+                original.textContent = orig;
+                const replacement = document.createElement('span');
+                replacement.className = 'replacement';
+                replacement.textContent = '→ ' + fake;
+                div.append(original, document.createTextNode(' '), replacement);
                 container.appendChild(div);
             });
         }
 
-        // --- NÚCLEO DEL PROCESAMIENTO ---
+        // --- PROCESAMIENTO (delegado al motor independiente) ---
         function processText() {
-            let text = document.getElementById('inputText').value;
-            if (!text) return;
-
-            const useWholeWord = document.getElementById('checkWholeWord').checked;
-            const applied = [];
-
-            if (state.mode === 'replace') {
-                // 1. Reemplazar Palabras Definidas
-                // Ordenar por longitud descendente para evitar que "Juan" pise a "Juan Pablo"
-                const sortedWords = Object.values(state.wordMappings).sort((a,b) => b.original.length - a.original.length);
-                
-                sortedWords.forEach(m => {
-                    const regex = new RegExp(useWholeWord ? `\\b${escapeRegex(m.original)}\\b` : escapeRegex(m.original), 'gi');
-                    if (regex.test(text)) {
-                        text = text.replace(regex, m.replacement);
-                        applied.push(`${m.original} → ${m.replacement}`);
-                    }
-                });
-
-                // 2. Reemplazar Emails
-                if (state.replaceAllEmails) {
-                    const emailRegex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
-                    text = text.replace(emailRegex, (match) => {
-                        if (!state.emailMappings[match]) {
-                            state.emailMappings[match] = generateFakeEmail();
-                        }
-                        applied.push(`${match} → ${state.emailMappings[match]}`);
-                        return state.emailMappings[match];
-                    });
-                }
-            } else {
-                // MODO RESTAURACIÓN
-                // 1. Restaurar Emails primero (suelen ser más específicos)
-                Object.entries(state.emailMappings).forEach(([orig, fake]) => {
-                    const regex = new RegExp(escapeRegex(fake), 'g');
-                    if (regex.test(text)) {
-                        text = text.replace(regex, orig);
-                        applied.push(`${fake} → ${orig}`);
-                    }
-                });
-
-                // 2. Restaurar Palabras
-                Object.values(state.wordMappings).forEach(m => {
-                    const regex = new RegExp(useWholeWord ? `\\b${escapeRegex(m.replacement)}\\b` : escapeRegex(m.replacement), 'gi');
-                    if (regex.test(text)) {
-                        text = text.replace(regex, m.original);
-                        applied.push(`${m.replacement} → ${m.original}`);
-                    }
-                });
-            }
-
-            // Mostrar Resultados
-            document.getElementById('resultBox').textContent = text;
+            const input = document.getElementById('inputText').value;
+            if (!input) return;
+            const options = {
+                text: input,
+                wordMappings: state.wordMappings,
+                emailMappings: state.emailMappings,
+                replaceAllEmails: state.replaceAllEmails,
+                wholeWord: document.getElementById('checkWholeWord').checked
+            };
+            const result = state.mode === 'replace'
+                ? ReplacerCore.replace(options)
+                : ReplacerCore.restore(options);
+            state.emailMappings = result.emailMappings;
+            document.getElementById('resultBox').textContent = result.text;
             const infoBox = document.getElementById('mappingInfo');
-            if (applied.length > 0) {
+            const details = document.getElementById('mappingDetails');
+            details.replaceChildren();
+            if (result.applied.length) {
                 infoBox.style.display = 'block';
-                document.getElementById('mappingDetails').innerHTML = [...new Set(applied)].join('<br>');
+                [...new Set(result.applied)].forEach((item, index) => {
+                    if (index) details.appendChild(document.createElement('br'));
+                    details.appendChild(document.createTextNode(item));
+                });
             } else {
                 infoBox.style.display = 'none';
             }
             save();
             renderHistory();
-        }
-
-        // --- HELPERS ---
-        function generateRandom(base) {
-            const type = base.includes('.') ? 'companies' : (base === base.toUpperCase() ? 'companies' : 'names');
-            const list = dictionary[type] || dictionary.names;
-            return list[Math.floor(Math.random() * list.length)];
-        }
-
-        function generateFakeEmail() {
-            const user = dictionary.emails[Math.floor(Math.random() * dictionary.emails.length)] + Math.floor(Math.random()*99);
-            const domain = dictionary.domains[Math.floor(Math.random() * dictionary.domains.length)];
-            return `${user}@${domain}`;
-        }
-
-        function escapeRegex(string) {
-            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         }
 
         function updateStats() {
