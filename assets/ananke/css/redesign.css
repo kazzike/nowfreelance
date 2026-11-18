@@ -48,3 +48,23 @@ main[role=main]{padding-bottom:0!important}
 @media(max-width:700px){.nf-container{width:min(var(--nf-width),calc(100% - 36px))}.nav-content{min-height:68px}.nav-toggle{display:flex;flex-direction:column;gap:5px;border:0;background:transparent;padding:10px}.hamburger-line{display:block;width:23px;height:2px;background:var(--nf-ink)}.header-nav{display:none;position:absolute;top:68px;left:0;right:0;padding:20px 24px 26px;background:var(--nf-bg);border-bottom:1px solid var(--nf-line)}.nav-open .header-nav{display:block}.nav-links{align-items:stretch;flex-direction:column;gap:0}.nav-links li{padding:11px 0;border-bottom:1px solid var(--nf-line)}.lang-switcher{justify-content:flex-start}.nf-hero{padding:65px 0 65px}.nf-hero h1{font-size:clamp(2.8rem,13vw,4.4rem)}.nf-hero-art{min-height:390px}.nf-art-orbit-one{width:330px;height:330px}.nf-art-orbit-two{width:390px;height:390px}.nf-flow-card{width:min(100%,370px);padding:17px}.nf-chip-one{right:-2px;top:10%}.nf-chip-two{left:-3px;bottom:9%}.nf-art-label-top{top:1%;left:0}.nf-art-label-bottom{right:0;bottom:0}.nf-section{padding:72px 0}.nf-section-heading{margin-bottom:34px}.nf-audience-grid,.nf-process-grid,.nf-post-grid{grid-template-columns:1fr}.nf-audience-card{padding:27px 24px}.nf-pain-grid{grid-template-columns:1fr 1fr;gap:10px}.nf-pain-item{padding:20px 16px}.nf-pain-item h3{font-size:1rem}.nf-service{grid-template-columns:42px 1fr;gap:12px;padding:24px 4px}.nf-service h3{font-size:1.25rem}.nf-approach-points>div{grid-template-columns:54px 1fr}.nf-final-cta:after{right:-260px}.footer-grid{grid-template-columns:1fr 1fr;gap:28px}.brand-column{grid-column:1/-1}.footer-bottom-bar{flex-direction:column;gap:6px}}
 @media(max-width:390px){.nf-pain-grid{grid-template-columns:1fr}.nf-hero-art{min-height:350px}.nf-art-orbit-one{width:280px;height:280px}.nf-art-orbit-two{width:330px;height:330px}.nf-float-chip{font-size:.65rem;padding:8px 10px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+
+/* Secondary pages */
+.nf-page-hero{padding:clamp(70px,9vw,112px) 0 82px;border-bottom:1px solid var(--nf-line);background:radial-gradient(ellipse at 82% 45%,rgba(49,94,232,.065),transparent 36%),var(--nf-bg)}
+.nf-page-hero h1{color:var(--nf-ink);font-size:clamp(3rem,6vw,5.4rem);font-weight:720;letter-spacing:-.078em;line-height:1;margin:0 0 22px}
+.nf-page-lead{max-width:660px;color:var(--nf-ink);font-size:clamp(1.2rem,2vw,1.55rem);line-height:1.45;letter-spacing:-.035em}
+.nf-page-hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:8%;align-items:center}
+.nf-contact-card{padding:32px;border:1px solid var(--nf-line);border-radius:18px;background:#fff;box-shadow:0 22px 60px rgba(20,25,35,.07)}
+.nf-contact-icon,.nf-tool-symbol{display:grid;place-items:center;width:48px;height:48px;margin-bottom:26px;border-radius:13px;background:var(--nf-accent-soft);color:var(--nf-accent);font-size:1.4rem;font-weight:800}
+.nf-contact-card h2,.nf-tool-copy h2{color:var(--nf-ink);font-size:1.8rem;letter-spacing:-.055em;line-height:1.1;margin:0 0 12px}
+.nf-contact-card .nf-button{margin:12px 0}.nf-contact-card small{display:block;color:#9299a4;font-size:.78rem}
+.nf-contact-steps{background:#f3f5f8}
+.nf-tools-hero .nf-page-lead{max-width:700px}
+.nf-tool-card{display:grid;grid-template-columns:60px 1.1fr .9fr;gap:28px;align-items:center;padding:38px;border:1px solid var(--nf-line);border-radius:20px;background:#fff;box-shadow:0 18px 50px rgba(20,25,35,.05)}
+.nf-tool-copy h2{font-size:2rem}.nf-tool-copy>p:not(.nf-eyebrow){max-width:570px}
+.nf-tool-preview{padding:22px;border:1px solid #e7ebf3;border-radius:14px;background:#f8f9fc}
+.nf-preview-top{display:flex;gap:5px;margin-bottom:25px}.nf-preview-top span{width:7px;height:7px;border-radius:50%;background:#cbd2df}
+.nf-preview-line{height:8px;width:72%;margin:12px 0;border-radius:8px;background:#dfe4ed}.nf-preview-line.wide{width:95%}.nf-preview-line.short{width:48%}.nf-preview-line.blue{background:#9db4ff}
+.nf-preview-arrow{color:var(--nf-accent);font-size:1.3rem;font-weight:800;margin:8px 0}.nf-tool-preview small{display:block;margin-top:22px;color:#8b929c;font-size:.7rem}
+@media(max-width:800px){.nf-page-hero-grid{grid-template-columns:1fr;gap:34px}.nf-tool-card{grid-template-columns:1fr;padding:26px}.nf-tool-symbol{margin-bottom:0}.nf-tool-preview{max-width:460px;width:100%}}
