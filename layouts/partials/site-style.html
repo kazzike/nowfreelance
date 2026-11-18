@@ -1,9 +1,14 @@
-{{- $custom := resources.Get "ananke/css/custom.css" -}}
-{{- $redesign := resources.Get "ananke/css/redesign.css" -}}
-{{- if and $custom $redesign -}}
-  {{- $styles := slice $custom $redesign | resources.Concat "css/nowfreelance.css" | minify | fingerprint -}}
-  <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
-{{- else if $custom -}}
-  {{- $styles := $custom | minify | fingerprint -}}
-  <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
+{{- $styles := slice -}}
+{{- with resources.Get "ananke/css/main.css" -}}
+  {{- $styles = $styles | append . -}}
+{{- end -}}
+{{- with resources.Get "ananke/css/custom.css" -}}
+  {{- $styles = $styles | append . -}}
+{{- end -}}
+{{- with resources.Get "ananke/css/redesign.css" -}}
+  {{- $styles = $styles | append . -}}
+{{- end -}}
+{{- if gt (len $styles) 0 -}}
+  {{- $bundle := $styles | resources.Concat "css/nowfreelance.css" | minify | fingerprint -}}
+  <link rel="stylesheet" href="{{ $bundle.RelPermalink }}" integrity="{{ $bundle.Data.Integrity }}">
 {{- end -}}
