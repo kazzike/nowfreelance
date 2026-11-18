@@ -356,3 +356,11 @@ main[role=main]>article blockquote{margin:2rem 0;padding:20px 25px;border-left:3
 .nf-pe-hero .nf-text-link{color:#fff!important}
 @media(max-width:900px){.nf-pe-hero-grid,.nf-pe-architecture{grid-template-columns:1fr}.nf-pe-hero-art{min-height:300px}.nf-pe-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.nf-pe-grid{grid-template-columns:1fr}.nf-pe-hero{padding:65px 0}.nf-pe-demo iframe{height:1050px}.nf-pe-flow{padding:17px}}
+
+/* Privacy Engine refinements */
+.nf-pe-roadmap-title{color:#fff!important}
+.nf-pe-hero-art{min-height:unset}
+.nf-pe-hero-visual{display:block;width:100%;max-width:660px;height:auto;overflow:visible;filter:drop-shadow(0 28px 48px rgba(3,10,24,.28))}
+.nf-pe-demo iframe{display:block;width:100%;height:1200px;border:0;overflow:hidden;background:#fff}
+.nf-pe-demo{overflow:visible}
+@media(max-width:700px){.nf-pe-demo iframe{height:1650px}}
