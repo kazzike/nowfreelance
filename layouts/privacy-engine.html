@@ -152,7 +152,18 @@
     <div class="nf-pe-compliance-note" style="margin-bottom:22px"><p><strong>{{ if $en }}Prototype safety notice:{{ else }}Aviso de seguridad del prototipo:{{ end }}</strong> {{ if $en }}This browser demo stores mapping data in localStorage without encryption. Use fictional sample data only. Do not paste real personal, confidential or regulated information. This prototype must not be treated as a production security control.{{ else }}Esta demostración guarda las correspondencias en el almacenamiento local del navegador (localStorage) sin cifrar. Utiliza únicamente datos ficticios. No pegues información personal, confidencial o regulada real. Este prototipo no debe considerarse un control de seguridad para producción.{{ end }}</p></div>
     <div class="nf-pe-demo">
       <div class="nf-pe-demo-head"><h3>Replacer / {{ if $en }}Manual prototype{{ else }}Prototipo manual{{ end }}</h3><p>{{ if $en }}Explore reversible text substitution using fictional examples.{{ else }}Explora la sustitución reversible de texto con ejemplos ficticios.{{ end }}</p></div>
-      <iframe src="/replacer/" title="{{ if $en }}Replacer manual prototype{{ else }}Prototipo manual Replacer{{ end }}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <iframe src="/replacer/" title="{{ if $en }}Replacer manual prototype{{ else }}Prototipo manual Replacer{{ end }}" loading="eager" scrolling="no" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <script>
+        (() => {
+          const frame = document.currentScript.previousElementSibling;
+          window.addEventListener("message", event => {
+            if (event.origin !== window.location.origin || event.source !== frame.contentWindow) return;
+            const data = event.data;
+            if (!data || data.type !== "nowfreelance-replacer-height" || !Number.isFinite(data.height)) return;
+            frame.style.height = Math.max(650, Math.min(5000, Math.ceil(data.height))) + "px";
+          });
+        })();
+      </script>
     </div>
   </div>
 </section>
