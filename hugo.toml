@@ -119,9 +119,9 @@ footer_tagline = "Clearer operations. Technology that works for you."
     url = "/contact/"
     weight = 40
   [[languages.en.menu.main]]
-    name = "Tools"
-    url = "/tools/"
-    identifier = "tools"
+    name = "Privacy Engine"
+    url = "/privacy-engine/"
+    identifier = "privacy-engine"
     weight = 50
 
   [[languages.en.menu.footer_nav]]
