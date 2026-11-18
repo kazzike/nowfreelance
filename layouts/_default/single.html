@@ -1,0 +1,43 @@
+{{ define "main" }}
+  {{- $cover := "" -}}
+  {{- with .Resources.GetMatch "cover*" }}{{ $cover = .RelPermalink }}{{ end -}}
+  {{- if eq $cover "" }}{{ with .Params.cover }}{{ $cover = . | relURL }}{{ end }}{{ end -}}
+  {{- if eq $cover "" }}{{ with .Params.image }}{{ $cover = . | relURL }}{{ end }}{{ end -}}
+  <article class="nf-article">
+    <header class="nf-article-header">
+      <div class="nf-container nf-article-container">
+        <a class="nf-article-back" href="{{ "/posts/" | relLangURL }}">← Volver a Insights</a>
+        <p class="nf-blog-eyebrow">NOWFREELANCE / INSIGHTS</p>
+        <div class="nf-article-meta">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
+          <span aria-hidden="true">·</span>
+          <span>{{ .ReadingTime }} min de lectura</span>
+        </div>
+        <h1>{{ .Title }}</h1>
+        {{ with .Description }}<p class="nf-article-lead">{{ . }}</p>{{ end }}
+        {{ with .GetTerms "tags" }}
+          <div class="nf-article-tags">
+            {{ range first 5 . }}<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}
+          </div>
+        {{ end }}
+      </div>
+      {{- if $cover -}}
+        <figure class="nf-article-cover nf-container"><img src="{{ $cover }}" alt="{{ $.Title }}" loading="eager"></figure>
+      {{- end -}}
+    </header>
+
+    <div class="nf-container nf-article-layout">
+      <div class="nf-article-content">
+        {{ .Content }}
+        <footer class="nf-article-footer">
+          <a class="nf-article-back" href="{{ "/posts/" | relLangURL }}">← Volver a todos los artículos</a>
+        </footer>
+      </div>
+      <aside class="nf-article-aside">
+        <span class="nf-article-aside-label">UNA IDEA DE NOWFREELANCE</span>
+        <p>Menos fricción operativa. Más claridad para decidir y avanzar.</p>
+        <a href="{{ "/contact/" | relLangURL }}">Hablemos de tu proyecto <span>↗</span></a>
+      </aside>
+    </div>
+  </article>
+{{ end }}
