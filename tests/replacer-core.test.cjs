@@ -25,3 +25,24 @@ test('escapes regex metacharacters', () => {
   const r = core.replace({text:'Company (A+B)',wordMappings:{x:{original:'Company (A+B)',replacement:'ORG_001'}},wholeWord:true});
   assert.equal(r.text,'ORG_001');
 });
+
+test('whole-word matching supports accented words and punctuation', () => {
+  const result = core.replace({
+    text: 'José, Josefa; Company (A+B)',
+    wordMappings: {
+      jose: { original: 'José', replacement: 'PERSON_001' },
+      company: { original: 'Company (A+B)', replacement: 'ORG_001' }
+    },
+    wholeWord: true
+  });
+  assert.equal(result.text, 'PERSON_001, Josefa; ORG_001');
+});
+
+test('replacement strings are treated literally', () => {
+  const result = core.replace({
+    text: 'Name: Juan',
+    wordMappings: { juan: { original: 'Juan', replacement: '$&-TOKEN' } },
+    wholeWord: true
+  });
+  assert.equal(result.text, 'Name: $&-TOKEN');
+});
