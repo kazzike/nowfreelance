@@ -55,7 +55,7 @@
     Object.entries(emailMappings).forEach(([original, fake]) => {
       const re = new RegExp(escapeRegex(fake), 'g');
       if (re.test(text)) {
-        text = text.replace(re, original);
+        text = text.replace(re, () => original);
         applied.push(fake + ' → ' + original);
       }
     });
@@ -63,7 +63,7 @@
       if (!m || typeof m.replacement !== 'string' || !m.replacement.length) return;
       const re = regex(m.replacement, options.wholeWord !== false);
       if (re.test(text)) {
-        text = text.replace(re, m.original);
+        text = text.replace(re, () => m.original);
         applied.push(m.replacement + ' → ' + m.original);
       }
     });
