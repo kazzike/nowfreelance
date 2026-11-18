@@ -1,0 +1,14 @@
+{{ define "main" }}
+  {{- $isEnglish := eq site.Language.Lang "en" -}}
+  <article class="nf-page">
+    <header class="nf-page-header nf-container">
+      <p class="nf-blog-eyebrow">NOWFREELANCE</p>
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p class="nf-article-lead">{{ . }}</p>{{ end }}
+      <div class="nf-blog-header-rule"><span></span></div>
+    </header>
+    <div class="nf-container nf-page-content">
+      {{ .Content }}
+    </div>
+  </article>
+{{ end }}

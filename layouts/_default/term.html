@@ -1,0 +1,26 @@
+{{ define "main" }}
+  {{- $isEnglish := eq site.Language.Lang "en" -}}
+  <section class="nf-blog-index">
+    <div class="nf-container">
+      <header class="nf-blog-header">
+        <a class="nf-article-back" href="{{ "/tags/" | relLangURL }}">← {{ cond $isEnglish "All topics" "Todas las temáticas" }}</a>
+        <p class="nf-blog-eyebrow">NOWFREELANCE / INSIGHTS</p>
+        <h1>{{ .Title }}</h1>
+        <p class="nf-blog-intro">{{ len .Pages }} {{ cond $isEnglish "articles on this topic" "artículos sobre esta temática" }}</p>
+        <div class="nf-blog-header-rule"><span></span></div>
+      </header>
+      <div class="nf-blog-grid">
+        {{ range .Paginator.Pages }}
+          {{ .Render "summary" }}
+        {{ end }}
+      </div>
+      {{ if gt .Paginator.TotalPages 1 }}
+        <nav class="nf-blog-pagination" aria-label="{{ cond $isEnglish "Topic pagination" "Paginación de temática" }}">
+          {{ with .Paginator.Prev }}<a class="nf-blog-page-link" href="{{ .URL }}">← {{ cond $isEnglish "Newer" "Más recientes" }}</a>{{ end }}
+          <span class="nf-blog-page-count">{{ .Paginator.PageNumber }} / {{ .Paginator.TotalPages }}</span>
+          {{ with .Paginator.Next }}<a class="nf-blog-page-link" href="{{ .URL }}">{{ cond $isEnglish "Older" "Más artículos" }} →</a>{{ end }}
+        </nav>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}
