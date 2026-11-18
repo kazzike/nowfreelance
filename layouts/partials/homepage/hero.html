@@ -1,5 +1,4 @@
-<section class="nf-hero nf-hero-dark">
-  <div class="nf-hero-atmosphere" aria-hidden="true"></div>
+<section class="nf-hero nf-hero-dark nf-hero-editorial">
   <div class="nf-container nf-hero-inner">
     <div class="nf-hero-content">
       <p class="nf-eyebrow">{{ .eyebrow }}</p>
@@ -11,85 +10,20 @@
       </div>
       <p class="nf-hero-note">{{ .audience_note }}</p>
     </div>
-
-    <div class="nf-hero-art nf-hero-visual">
-      <svg class="nf-hero-svg" viewBox="0 0 620 560" role="img" aria-labelledby="nf-hero-svg-title nf-hero-svg-desc" xmlns="http://www.w3.org/2000/svg">
-        <title id="nf-hero-svg-title">{{ if eq site.Language.Lang "en" }}From disconnected work to one clear flow{{ else }}Del trabajo desconectado a un flujo claro{{ end }}</title>
-        <desc id="nf-hero-svg-desc">{{ if eq site.Language.Lang "en" }}A central workflow connects enquiries, tools and delivery, reducing repetitive manual work.{{ else }}Un flujo central conecta consultas, herramientas y tareas para reducir el trabajo manual repetitivo.{{ end }}</desc>
-        <defs>
-          <linearGradient id="nf-core-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#557cff"/><stop offset="1" stop-color="#315ee8"/></linearGradient>
-          <linearGradient id="nf-panel-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#26364f"/><stop offset="1" stop-color="#1c293d"/></linearGradient>
-          <filter id="nf-glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="16" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-          <filter id="nf-shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#050b16" flood-opacity=".35"/></filter>
-        </defs>
-
-        <circle cx="314" cy="274" r="220" fill="none" stroke="#819bca" stroke-opacity=".16" stroke-dasharray="3 9"/>
-        <circle cx="314" cy="274" r="172" fill="none" stroke="#819bca" stroke-opacity=".12"/>
-        <circle cx="314" cy="274" r="122" fill="#315ee8" opacity=".09" filter="url(#nf-glow)"/>
-
-        <!-- Connected workflow paths -->
-        <g fill="none" stroke="#7895d4" stroke-width="2" stroke-opacity=".7">
-          <path d="M166 143 C215 143 220 202 267 226"/>
-          <path d="M454 143 C405 143 399 202 361 226"/>
-          <path d="M166 414 C215 414 220 355 267 332"/>
-          <path d="M454 414 C405 414 399 355 361 332"/>
-        </g>
-        <g fill="#8db0ff">
-          <circle cx="214" cy="168" r="4"/><circle cx="408" cy="168" r="4"/>
-          <circle cx="214" cy="389" r="4"/><circle cx="408" cy="389" r="4"/>
-        </g>
-
-        <!-- Outer system cards -->
-        <g filter="url(#nf-shadow)">
-          <rect x="24" y="91" width="176" height="104" rx="16" fill="url(#nf-panel-gradient)" stroke="#60718d" stroke-opacity=".55"/>
-          <rect x="420" y="91" width="176" height="104" rx="16" fill="url(#nf-panel-gradient)" stroke="#60718d" stroke-opacity=".55"/>
-          <rect x="24" y="362" width="176" height="104" rx="16" fill="url(#nf-panel-gradient)" stroke="#60718d" stroke-opacity=".55"/>
-          <rect x="420" y="362" width="176" height="104" rx="16" fill="url(#nf-panel-gradient)" stroke="#60718d" stroke-opacity=".55"/>
-        </g>
-        <g font-family="Inter,system-ui,sans-serif">
-          <g transform="translate(45 113)">
-            <rect width="34" height="34" rx="10" fill="#31496c"/><path d="M9 11h16v12H9z M10 12l7 6 7-6" fill="none" stroke="#a9c2ff" stroke-width="1.5"/>
-            <text x="0" y="58" fill="#f1f5ff" font-size="13" font-weight="700">{{ if eq site.Language.Lang "en" }}Enquiries{{ else }}Consultas{{ end }}</text>
-            <text x="0" y="76" fill="#a7b5cb" font-size="10">{{ if eq site.Language.Lang "en" }}Captured once{{ else }}Registradas una vez{{ end }}</text>
-          </g>
-          <g transform="translate(441 113)">
-            <rect width="34" height="34" rx="10" fill="#31496c"/><rect x="9" y="9" width="16" height="16" rx="3" fill="none" stroke="#a9c2ff" stroke-width="1.5"/><path d="M12 14h10M12 18h10M12 22h6" stroke="#a9c2ff" stroke-width="1.3"/>
-            <text x="0" y="58" fill="#f1f5ff" font-size="13" font-weight="700">{{ if eq site.Language.Lang "en" }}Your tools{{ else }}Tus herramientas{{ end }}</text>
-            <text x="0" y="76" fill="#a7b5cb" font-size="10">{{ if eq site.Language.Lang "en" }}Working together{{ else }}Conectadas entre sí{{ end }}</text>
-          </g>
-          <g transform="translate(45 384)">
-            <rect width="34" height="34" rx="10" fill="#31496c"/><path d="M10 17h14M17 10v14M11 11l12 12M23 11L11 23" stroke="#a9c2ff" stroke-width="1.5" stroke-linecap="round"/>
-            <text x="0" y="58" fill="#f1f5ff" font-size="13" font-weight="700">{{ if eq site.Language.Lang "en" }}Operations{{ else }}Operaciones{{ end }}</text>
-            <text x="0" y="76" fill="#a7b5cb" font-size="10">{{ if eq site.Language.Lang "en" }}Less repetition{{ else }}Menos tareas repetidas{{ end }}</text>
-          </g>
-          <g transform="translate(441 384)">
-            <rect width="34" height="34" rx="10" fill="#31496c"/><path d="M10 18l5 5 10-12" fill="none" stroke="#8ee0bb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <text x="0" y="58" fill="#f1f5ff" font-size="13" font-weight="700">{{ if eq site.Language.Lang "en" }}Delivery{{ else }}Entrega{{ end }}</text>
-            <text x="0" y="76" fill="#a7b5cb" font-size="10">{{ if eq site.Language.Lang "en" }}Clear next steps{{ else }}Siguientes pasos claros{{ end }}</text>
-          </g>
-        </g>
-
-        <!-- Central operating system -->
-        <g filter="url(#nf-shadow)">
-          <rect x="208" y="205" width="212" height="140" rx="22" fill="#f8faff" stroke="#b8caff" stroke-width="1.2"/>
-          <rect x="225" y="222" width="38" height="38" rx="12" fill="url(#nf-core-gradient)"/>
-          <path d="M236 241h16M244 233v16M237 234l14 14M251 234l-14 14" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/>
-          <text x="275" y="237" fill="#25324a" font-size="10" font-weight="800" letter-spacing="1.4">NOWFREELANCE</text>
-          <text x="225" y="286" fill="#192438" font-size="20" font-weight="750" letter-spacing="-.7">{{ if eq site.Language.Lang "en" }}One clear flow.{{ else }}Un flujo claro.{{ end }}</text>
-          <text x="225" y="307" fill="#65738a" font-size="11">{{ if eq site.Language.Lang "en" }}People, tools and work in sync{{ else }}Personas, herramientas y trabajo{{ end }}</text>
-          <rect x="225" y="320" width="178" height="5" rx="2.5" fill="#e3e9f4"/>
-          <rect x="225" y="320" width="132" height="5" rx="2.5" fill="#4e78ef"/>
-        </g>
-
-        <g font-family="Inter,system-ui,sans-serif">
-          <rect x="223" y="34" width="174" height="32" rx="16" fill="#24334a" stroke="#526782"/>
-          <circle cx="240" cy="50" r="4" fill="#7be0b4"/>
-          <text x="253" y="54" fill="#d9e4f5" font-size="9" font-weight="750" letter-spacing="1">{{ if eq site.Language.Lang "en" }}LESS FRICTION{{ else }}MENOS FRICCIÓN{{ end }}</text>
-          <rect x="224" y="496" width="172" height="32" rx="16" fill="#24334a" stroke="#526782"/>
-          <path d="M241 512l4 4 8-9" fill="none" stroke="#8ee0bb" stroke-width="1.7" stroke-linecap="round"/>
-          <text x="261" y="516" fill="#d9e4f5" font-size="9" font-weight="750" letter-spacing="1">{{ if eq site.Language.Lang "en" }}MORE FOCUS{{ else }}MÁS ENFOQUE{{ end }}</text>
-        </g>
-      </svg>
+    <div class="nf-hero-art nf-hero-editorial-art" aria-hidden="true">
+      <div class="nf-editorial-topline"><span>NOWFREELANCE / STUDIO</span><span>01 — 03</span></div>
+      <div class="nf-editorial-composition">
+        <div class="nf-editorial-index">DIGITAL<br>OPERATIONS</div>
+        <div class="nf-editorial-rule"></div>
+        <div class="nf-editorial-statement">{{ if eq site.Language.Lang "en" }}Make work<br><em>flow better.</em>{{ else }}Haz que el trabajo<br><em>fluya mejor.</em>{{ end }}</div>
+        <div class="nf-editorial-bottom">
+          <span>{{ if eq site.Language.Lang "en" }}STRATEGY{{ else }}ESTRATEGIA{{ end }}</span>
+          <span>{{ if eq site.Language.Lang "en" }}SYSTEMS{{ else }}SISTEMAS{{ end }}</span>
+          <span>{{ if eq site.Language.Lang "en" }}AUTOMATION{{ else }}AUTOMATIZACIÓN{{ end }}</span>
+        </div>
+      </div>
+      <div class="nf-editorial-caption">{{ if eq site.Language.Lang "en" }}Less noise. Better connected work.{{ else }}Menos ruido. Trabajo mejor conectado.{{ end }}</div>
+      <div class="nf-editorial-accent" aria-hidden="true"></div>
     </div>
   </div>
   <div class="nf-hero-bottom-rule" aria-hidden="true"><span></span></div>
