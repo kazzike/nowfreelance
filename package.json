@@ -1,6 +1,5 @@
 {
   "scripts": {
-    "build": "hugo",
-    "test:replacer": "node --test tests/replacer-core.test.cjs"
+    "build": "hugo"
   }
 }
