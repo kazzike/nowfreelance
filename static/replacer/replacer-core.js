@@ -21,7 +21,9 @@
   }
   function regex(value, wholeWord) {
     const escaped = escapeRegex(value);
-    return new RegExp(wholeWord ? '\\b' + escaped + '\\b' : escaped, 'gi');
+    return new RegExp(wholeWord
+      ? '(?<![\\p{L}\\p{N}_])' + escaped + '(?![\\p{L}\\p{N}_])'
+      : escaped, 'giu');
   }
   function replace(options) {
     let text = String(options.text || '');
@@ -32,7 +34,7 @@
       .sort((a,b) => b.original.length - a.original.length).forEach(m => {
         const re = regex(m.original, options.wholeWord !== false);
         if (re.test(text)) {
-          text = text.replace(re, m.replacement);
+          text = text.replace(re, () => m.replacement);
           applied.push(m.original + ' → ' + m.replacement);
         }
       });
