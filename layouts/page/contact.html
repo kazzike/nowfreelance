@@ -1,85 +1,85 @@
-{{ define "header" }}
-  {{ partial "site-header.html" . }}
-{{ end }}
-
 {{ define "main" }}
-{{ $data := index site.Data site.Language.Lang "homepage" "contact" }}
-<section class="contact-section spaciado-xl">
-  <div class="mw8 center ph3">
-    
-    <div class="contact-intro">
-      <p class="contact-intro-subtitle">{{ $data.subtitle }}</p>
-      <p class="contact-intro-question">
-        {{ $data.question }}
-      </p>
-      <p class="contact-intro-cta">{{ $data.cta }}</p>
-    </div>
+{{ $copy := index site.Data site.Language.Lang "homepage" "contact" }}
+{{ $en := eq site.Language.Lang "en" }}
 
-    <div class="contact-methods-grid">
-      <a href="mailto:{{ .Site.Params.contact_email | default `hola@nowfreelance.com` }}" class="contact-method-card">
-        <div class="contact-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-          </svg>
-        </div>
-        <h3 class="contact-method-title">{{ $data.method_title }}</h3>
-        <p class="contact-method-description">
-          {{ $data.method_description }}
-        </p>
-        <span class="contact-method-link">{{ .Site.Params.contact_email | default "hola@nowfreelance.com" }}</span>
-        <div class="contact-card-arrow">→</div>
+<section class="nf-contact-stage">
+  <div class="nf-contact-glow" aria-hidden="true"></div>
+  <div class="nf-container nf-contact-stage-inner">
+    <div class="nf-contact-intro">
+      <p class="nf-contact-kicker"><span></span>{{ if $en }}A CLEAR START FOR BETTER WORK{{ else }}UN PRIMER PASO HACIA UN TRABAJO MEJOR{{ end }}</p>
+      <h1>{{ .Title }}</h1>
+      <p class="nf-contact-lead">{{ $copy.subtitle }}</p>
+      <p class="nf-contact-explainer">{{ $copy.question }}</p>
+      <a class="nf-contact-main-cta" href="mailto:{{ site.Params.contact_email }}?subject={{ if $en }}Clarity%20Session{{ else }}Sesion%20de%20claridad{{ end }}">
+        {{ if $en }}Start a conversation{{ else }}Empezar una conversación{{ end }} <span aria-hidden="true">↗</span>
       </a>
-    </div>
-
-    <div class="what-happens-next spaciado-top-xl">
-      <div class="what-happens-header">
-        <h2 class="what-happens-title">{{ $data.next_steps_title }}</h2>
-        <p class="what-happens-subtitle">
-          {{ $data.next_steps_subtitle }}
-        </p>
-      </div>
-      
-      <div class="next-steps-grid">
-        <div class="next-step-item">
-          <div class="next-step-number">1</div>
-          <h4 class="next-step-title">{{ $data.step1_title }}</h4>
-          <p class="next-step-description">
-            {{ $data.step1_desc }}
-          </p>
-        </div>
-
-        <div class="next-step-item">
-          <div class="next-step-number">2</div>
-          <h4 class="next-step-title">{{ $data.step2_title }}</h4>
-          <p class="next-step-description">
-            {{ $data.step2_desc }}
-          </p>
-        </div>
-
-        <div class="next-step-item">
-          <div class="next-step-number">3</div>
-          <h4 class="next-step-title">{{ $data.step3_title }}</h4>
-          <p class="next-step-description">
-            {{ $data.step3_desc }}
-          </p>
-        </div>
+      <div class="nf-contact-assurance">
+        <span aria-hidden="true">✓</span>
+        {{ if $en }}20 minutes · No commitment · No sales pressure{{ else }}20 minutos · Sin compromiso · Sin presión comercial{{ end }}
       </div>
     </div>
 
-    <div class="contact-final-cta spaciado-top-xl">
-      <p class="final-cta-main">
-        {{ $data.final_cta_main }} <strong class="final-cta-highlight">{{ $data.final_cta_highlight }}</strong>.
-      </p>
-      <p class="final-cta-note">
-        {{ $data.final_cta_note }}
-      </p>
-    </div>
+    <aside class="nf-contact-agenda" aria-label="{{ if $en }}What the first conversation looks like{{ else }}Cómo será la primera conversación{{ end }}">
+      <div class="nf-agenda-topline">
+        <span class="nf-agenda-status"><i></i>{{ if $en }}YOUR FIRST CONVERSATION{{ else }}TU PRIMERA CONVERSACIÓN{{ end }}</span>
+        <span class="nf-agenda-duration">20′</span>
+      </div>
+      <h2>{{ if $en }}A useful conversation. Not a sales pitch.{{ else }}Una conversación útil. No una presentación comercial.{{ end }}</h2>
+      <p class="nf-agenda-intro">{{ if $en }}A simple structure to make those 20 minutes count.{{ else }}Una estructura sencilla para aprovechar esos 20 minutos.{{ end }}</p>
+      <div class="nf-agenda-list">
+        <div class="nf-agenda-item"><span>01</span><div><b>{{ if $en }}Your day-to-day{{ else }}Tu día a día{{ end }}</b><small>{{ if $en }}What takes time and creates friction{{ else }}Qué te quita tiempo y genera fricción{{ end }}</small></div><em>05′</em></div>
+        <div class="nf-agenda-item"><span>02</span><div><b>{{ if $en }}The real bottleneck{{ else }}El problema de fondo{{ end }}</b><small>{{ if $en }}Where a change could make a difference{{ else }}Dónde un cambio puede marcar la diferencia{{ end }}</small></div><em>10′</em></div>
+        <div class="nf-agenda-item"><span>03</span><div><b>{{ if $en }}A sensible next step{{ else }}Un siguiente paso razonable{{ end }}</b><small>{{ if $en }}Options, priorities and fit{{ else }}Opciones, prioridades y encaje{{ end }}</small></div><em>05′</em></div>
+      </div>
+      <div class="nf-agenda-foot"><span class="nf-agenda-check">✓</span>{{ if $en }}You leave with more clarity, even if we don't work together.{{ else }}Te llevas más claridad, incluso si no trabajamos juntos.{{ end }}</div>
+    </aside>
+  </div>
+  <div class="nf-contact-scroll-cue"><span></span>{{ if $en }}HOW IT WORKS{{ else }}CÓMO FUNCIONA{{ end }}</div>
+</section>
 
+<section class="nf-contact-how">
+  <div class="nf-container">
+    <div class="nf-contact-section-head">
+      <p class="nf-eyebrow">{{ if $en }}SIMPLE BY DESIGN{{ else }}SENCILLO DESDE EL PRINCIPIO{{ end }}</p>
+      <h2>{{ if $en }}From first message to a clear next step.{{ else }}Del primer mensaje a un siguiente paso claro.{{ end }}</h2>
+      <p>{{ if $en }}No long forms, no complicated process. Just three straightforward steps.{{ else }}Sin formularios interminables ni procesos complicados. Solo tres pasos sencillos.{{ end }}</p>
+    </div>
+    <div class="nf-contact-timeline">
+      <article class="nf-contact-timeline-step">
+        <span class="nf-timeline-index">01</span>
+        <div class="nf-timeline-symbol" aria-hidden="true">↗</div>
+        <h3>{{ $copy.step1_title }}</h3>
+        <p>{{ $copy.step1_desc }}</p>
+      </article>
+      <article class="nf-contact-timeline-step">
+        <span class="nf-timeline-index">02</span>
+        <div class="nf-timeline-symbol" aria-hidden="true">◎</div>
+        <h3>{{ $copy.step2_title }}</h3>
+        <p>{{ $copy.step2_desc }}</p>
+      </article>
+      <article class="nf-contact-timeline-step">
+        <span class="nf-timeline-index">03</span>
+        <div class="nf-timeline-symbol" aria-hidden="true">↗</div>
+        <h3>{{ $copy.step3_title }}</h3>
+        <p>{{ $copy.step3_desc }}</p>
+      </article>
+    </div>
   </div>
 </section>
-{{ end }}
 
-{{ define "footer" }}
-  {{ partial "site-footer.html" . }}
+<section class="nf-contact-ready">
+  <div class="nf-container nf-contact-ready-inner">
+    <div>
+      <p class="nf-eyebrow">{{ if $en }}NO NEED TO PREPARE A PRESENTATION{{ else }}NO HACE FALTA PREPARAR NINGUNA PRESENTACIÓN{{ end }}</p>
+      <h2>{{ if $en }}Just bring the thing that isn't working.{{ else }}Solo tienes que contarnos qué no está funcionando.{{ end }}</h2>
+      <p>{{ if $en }}A short email is enough. Tell us what you do, what feels harder than it should, and what you'd like to improve. We'll take it from there.{{ else }}Un email breve es suficiente. Cuéntanos a qué te dedicas, qué resulta más complicado de lo que debería y qué te gustaría mejorar. Nosotros seguimos desde ahí.{{ end }}</p>
+    </div>
+    <div class="nf-contact-email-card">
+      <span class="nf-contact-email-icon" aria-hidden="true">✉</span>
+      <span class="nf-contact-email-label">{{ if $en }}WRITE TO US{{ else }}ESCRÍBENOS{{ end }}</span>
+      <a href="mailto:{{ site.Params.contact_email }}">{{ site.Params.contact_email }}</a>
+      <a class="nf-contact-email-link" href="mailto:{{ site.Params.contact_email }}?subject={{ if $en }}Clarity%20Session{{ else }}Sesion%20de%20claridad{{ end }}">{{ if $en }}Send an email{{ else }}Enviar un email{{ end }} <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
 {{ end }}

@@ -1,0 +1,22 @@
+<section class="nf-section nf-audiences" id="audiences">
+  <div class="nf-container">
+    <div class="nf-section-heading">
+      <p class="nf-eyebrow">{{ if eq site.Language.Lang "en" }}WHO WE HELP{{ else }}A QUIÉN AYUDAMOS{{ end }}</p>
+      <h2>{{ .title }}</h2>
+      <p>{{ .subtitle }}</p>
+    </div>
+    <div class="nf-audience-grid">
+      {{ range .items }}
+      <article class="nf-audience-card">
+        <p class="nf-eyebrow">{{ .eyebrow }}</p>
+        <h3>{{ .title }}</h3>
+        <p>{{ .description }}</p>
+        <ul>
+          {{ range .points }}<li>{{ . }}</li>{{ end }}
+        </ul>
+        <a class="nf-text-link" href="{{ .link | relLangURL }}">{{ .link_text }} <span aria-hidden="true">→</span></a>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>

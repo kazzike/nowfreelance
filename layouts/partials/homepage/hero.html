@@ -1,27 +1,30 @@
-<!-- <article class="flex-l flex-wrap justify-between mw8 center ph3">
-  <header class="mt4 w-100">
-    <div class="custom-hero-section">
-      <div class="hero-content">
-        <h1 class="f1 athelas mt3 mb1">{{ .title | default "Automatiza tu trabajho" }}</h1>
-        <p class="f4 mt0 mb3 lh-title measure-wide">{{ .description | default "Crea sitios web hermosos y funcionales con nuestro sistema de bloques reutilizables." }}</p>
-        <a href="{{ .cta_link | default "#" }}" class="custom-cta-button">{{ .cta_text | default "Empezar Ahora" }}</a>
+<section class="nf-hero nf-hero-dark nf-hero-editorial">
+  <div class="nf-container nf-hero-inner">
+    <div class="nf-hero-content">
+      <p class="nf-eyebrow">{{ .eyebrow }}</p>
+      <h1>{{ .title }}</h1>
+      <p class="nf-hero-copy">{{ .description }}</p>
+      <div class="nf-actions">
+        <a class="nf-button nf-button-primary" href="{{ "contact/" | relLangURL }}">{{ .primary_cta }}</a>
+        <a class="nf-text-link" href="#services">{{ .secondary_cta }} <span aria-hidden="true">→</span></a>
       </div>
+      <p class="nf-hero-note">{{ .audience_note }}</p>
     </div>
-  </header>
-</article> -->
-
-<!-- layouts/partials/homepage/hero.html (CORREGIDO) -->
-
-<section class="hero-section spaciado">
-  <div class="hero-content mw8 center ph3 tc">
-    <h1 class="hero-title mt3 mb1">
-      {{ .title | default "Escala tu negocio, no el caos." }}
-    </h1>
-    <p class="hero-description measure-wide center spaciado">
-      {{ .description | default "móvil." }}
-    </p>
-    <a href='{{ .cta_link | default "/contact" }}' class="spaciado custom-cta-button mt3">
-      {{ .cta_text | default "Agendar mi Sesión de Claridad Gratuita" }}
-    </a>
+    <div class="nf-hero-art nf-hero-editorial-art" aria-hidden="true">
+      <div class="nf-editorial-topline"><span>NOWFREELANCE / STUDIO</span><span>01 — 03</span></div>
+      <div class="nf-editorial-composition">
+        <div class="nf-editorial-index">DIGITAL<br>OPERATIONS</div>
+        <div class="nf-editorial-rule"></div>
+        <div class="nf-editorial-statement">{{ if eq site.Language.Lang "en" }}Make work<br><em>flow better.</em>{{ else }}Haz que el trabajo<br><em>fluya mejor.</em>{{ end }}</div>
+        <div class="nf-editorial-bottom">
+          <span>{{ if eq site.Language.Lang "en" }}STRATEGY{{ else }}ESTRATEGIA{{ end }}</span>
+          <span>{{ if eq site.Language.Lang "en" }}SYSTEMS{{ else }}SISTEMAS{{ end }}</span>
+          <span>{{ if eq site.Language.Lang "en" }}AUTOMATION{{ else }}AUTOMATIZACIÓN{{ end }}</span>
+        </div>
+      </div>
+      <div class="nf-editorial-caption">{{ if eq site.Language.Lang "en" }}Less noise. Better connected work.{{ else }}Menos ruido. Trabajo mejor conectado.{{ end }}</div>
+      <div class="nf-editorial-accent" aria-hidden="true"></div>
+    </div>
   </div>
+  <div class="nf-hero-bottom-rule" aria-hidden="true"><span></span></div>
 </section>

@@ -605,5 +605,24 @@
             }
         }
     </script>
+
+    <script>
+      (() => {
+        const reportHeight = () => {
+          const height = Math.max(
+            document.documentElement.scrollHeight,
+            document.body ? document.body.scrollHeight : 0
+          );
+          window.parent.postMessage({ type: 'nowfreelance-replacer-height', height }, window.location.origin);
+        };
+        window.addEventListener('load', reportHeight);
+        window.addEventListener('resize', reportHeight);
+        if ('ResizeObserver' in window) {
+          new ResizeObserver(reportHeight).observe(document.documentElement);
+        }
+        setTimeout(reportHeight, 250);
+        setTimeout(reportHeight, 900);
+      })();
+    </script>
 </body>
 </html>

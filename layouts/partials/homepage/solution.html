@@ -1,34 +1,13 @@
-
-<section class="solution-v2-section spaciado-mega">
-  <div class="solution-v2-container mw8 center ph3">
-
-    <div class="solution-v2-main-content">
-      <span class="solution-v2-pre-title">{{ .pre_title }}</span>
-      <h2 class="solution-v2-title">{{ .title }}</h2>
-      <p class="solution-v2-subtitle">{{ .subtitle }}</p>
+<section class="nf-section nf-approach">
+  <div class="nf-container nf-approach-grid">
+    <div>
+      <p class="nf-eyebrow">{{ .pre_title }}</p>
+      <h2>{{ .title }}</h2>
+      <p>{{ .subtitle }}</p>
     </div>
-
-    <div class="solution-v2-highlight-card">
-      <div class="insight-item">
-        <span class="insight-number">{{ .tech_perc }}</span>
-        <div class="insight-text">
-          <h4 class="insight-title">{{ .tech_title }}</h4>
-          <p class="insight-description">{{ .tech_desc }}</p>
-        </div>
-      </div>
-      
-      <hr class="insight-divider">
-
-      <div class="insight-item">
-        <span class="insight-number">{{ .strat_perc }}</span>
-        <div class="insight-text">
-          <h4 class="insight-title">{{ .strat_title }}</h4>
-          <p class="insight-description">{{ .strat_desc }}</p>
-        </div>
-      </div>
-
-    
+    <div class="nf-approach-points">
+      <div><span>{{ .tech_perc }}</span><div><h3>{{ .tech_title }}</h3><p>{{ .tech_desc }}</p></div></div>
+      <div><span>{{ .strat_perc }}</span><div><h3>{{ .strat_title }}</h3><p>{{ .strat_desc }}</p></div></div>
     </div>
-
   </div>
 </section>

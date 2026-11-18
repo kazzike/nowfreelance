@@ -1,0 +1,203 @@
+{{ define "main" }}
+{{ $en := eq site.Language.Lang "en" }}
+<section class="nf-pe-hero">
+  <div class="nf-container nf-pe-hero-grid">
+    <div>
+      <p class="nf-eyebrow">{{ if $en }}NOWFREELANCE TECHNOLOGY / IN DEVELOPMENT{{ else }}TECNOLOGÍA NOWFREELANCE / EN DESARROLLO{{ end }}</p>
+      <h1>{{ if $en }}Transform sensitive data before it travels.{{ else }}Transforma los datos sensibles antes de que viajen.{{ end }}</h1>
+      <p class="nf-pe-lead">{{ if $en }}A privacy-focused data transformation layer designed to help organisations reduce unnecessary exposure across AI tools, applications and automated workflows.{{ else }}Una capa de transformación de datos orientada a la privacidad, diseñada para ayudar a las organizaciones a reducir la exposición innecesaria de información en herramientas de IA, aplicaciones y flujos automatizados.{{ end }}</p>
+      <div class="nf-actions" style="margin-top:30px">
+        <a class="nf-button nf-button-primary" href="#demo">{{ if $en }}Try the prototype{{ else }}Probar el prototipo{{ end }}</a>
+        <a class="nf-text-link" href="#architecture">{{ if $en }}Explore the architecture{{ else }}Conocer la arquitectura{{ end }} <span>→</span></a>
+      </div>
+      <p style="margin-top:20px;color:#aebbd0;font-size:.82rem">{{ if $en }}Designed for organisations adopting AI, automation and data-driven operations.{{ else }}Pensado para organizaciones que incorporan IA, automatización y operaciones basadas en datos.{{ end }}</p>
+    </div>
+    <div class="nf-pe-hero-art" role="img" aria-label="{{ if $en }}A visualisation of sensitive data being transformed before flowing into business systems, with a protected identity vault kept separate.{{ else }}Visualización de datos sensibles transformándose antes de llegar a los sistemas empresariales, con un vault de identidades protegido y separado.{{ end }}">
+      <svg class="nf-pe-hero-visual" viewBox="0 0 680 520" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="peLine" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#83a8ff"/><stop offset="1" stop-color="#4c6ee8"/></linearGradient>
+          <linearGradient id="peCore" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#5c83f2"/><stop offset="1" stop-color="#263e83"/></linearGradient>
+          <radialGradient id="peGlow"><stop stop-color="#5b83f5" stop-opacity=".42"/><stop offset="1" stop-color="#5b83f5" stop-opacity="0"/></radialGradient>
+          <filter id="peBlur"><feGaussianBlur stdDeviation="22"/></filter>
+          <filter id="peShadow" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#020916" flood-opacity=".35"/></filter>
+        </defs>
+        <circle cx="355" cy="250" r="220" fill="url(#peGlow)" filter="url(#peBlur)"/>
+        <g fill="none" stroke="#91aef5" stroke-opacity=".22" stroke-width="1">
+          <circle cx="350" cy="250" r="204" stroke-dasharray="2 9"/><circle cx="350" cy="250" r="166" stroke-dasharray="2 12"/>
+          <path d="M25 115H655M25 405H655M90 35V480M590 35V480" opacity=".45"/>
+        </g>
+        <g stroke="url(#peLine)" stroke-width="2" fill="none" stroke-linecap="round" opacity=".85">
+          <path d="M115 160C190 160 190 215 270 215"/><path d="M115 350C190 350 190 285 270 285"/>
+          <path d="M430 215C510 215 510 160 570 160"/><path d="M430 285C510 285 510 350 570 350"/>
+          <path d="M350 325V390" stroke-dasharray="4 7"/>
+        </g>
+        <g filter="url(#peShadow)">
+          <rect x="25" y="120" width="145" height="82" rx="15" fill="#263953" stroke="#9cb6ed" stroke-opacity=".4"/>
+          <rect x="25" y="310" width="145" height="82" rx="15" fill="#263953" stroke="#9cb6ed" stroke-opacity=".4"/>
+          <rect x="510" y="120" width="145" height="82" rx="15" fill="#263953" stroke="#9cb6ed" stroke-opacity=".4"/>
+          <rect x="510" y="310" width="145" height="82" rx="15" fill="#263953" stroke="#9cb6ed" stroke-opacity=".4"/>
+        </g>
+        <g fill="#dce7ff" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="650">
+          <text x="48" y="154">{{ if $en }}CUSTOMER DATA{{ else }}DATOS DE CLIENTES{{ end }}</text>
+          <text x="48" y="177" fill="#9fb2d1" font-size="10" font-weight="450">{{ if $en }}Names · emails · IDs{{ else }}Nombres · emails · IDs{{ end }}</text>
+          <text x="48" y="344">{{ if $en }}DOCUMENTS{{ else }}DOCUMENTOS{{ end }}</text>
+          <text x="48" y="367" fill="#9fb2d1" font-size="10" font-weight="450">{{ if $en }}Contracts · support{{ else }}Contratos · soporte{{ end }}</text>
+          <text x="533" y="154">{{ if $en }}AI SYSTEMS{{ else }}SISTEMAS DE IA{{ end }}</text>
+          <text x="533" y="177" fill="#9fb2d1" font-size="10" font-weight="450">{{ if $en }}Prompts · models{{ else }}Prompts · modelos{{ end }}</text>
+          <text x="533" y="344">{{ if $en }}WORKFLOWS{{ else }}FLUJOS DE TRABAJO{{ end }}</text>
+          <text x="533" y="367" fill="#9fb2d1" font-size="10" font-weight="450">{{ if $en }}CRM · automation{{ else }}CRM · automatización{{ end }}</text>
+        </g>
+        <g filter="url(#peShadow)">
+          <circle cx="350" cy="250" r="100" fill="#1b2d4b" stroke="#89a9ff" stroke-opacity=".55" stroke-width="1.5"/>
+          <circle cx="350" cy="250" r="83" fill="url(#peCore)" stroke="#a9c0ff" stroke-opacity=".6"/>
+          <circle cx="350" cy="250" r="66" fill="none" stroke="#d9e4ff" stroke-opacity=".22" stroke-dasharray="3 7"/>
+        </g>
+        <g transform="translate(350 222)" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M0-23L20-15V1C20 15 10 25 0 30C-10 25-20 15-20 1V-15Z" fill="#e8efff" fill-opacity=".08"/>
+          <path d="M-9 1L-2 8L11-7"/>
+        </g>
+        <g fill="#fff" font-family="Inter,system-ui,sans-serif" text-anchor="middle">
+          <text x="350" y="278" font-size="16" font-weight="750">PRIVACY ENGINE</text>
+          <text x="350" y="297" font-size="9" letter-spacing="1.7" fill="#c5d5ff">{{ if $en }}TRANSFORM · CONTROL · PROTECT{{ else }}TRANSFORMAR · CONTROLAR · PROTEGER{{ end }}</text>
+        </g>
+        <g filter="url(#peShadow)">
+          <rect x="250" y="405" width="200" height="66" rx="13" fill="#17263e" stroke="#83a8ff" stroke-opacity=".55"/>
+          <g transform="translate(276 427)" stroke="#a9c2ff" stroke-width="2" fill="none"><rect x="-9" y="-7" width="18" height="17" rx="3"/><path d="M-5-7V-12A5 5 0 0 1 5-12V-7"/></g>
+          <text x="300" y="432" fill="#f4f7ff" font-size="11" font-weight="700">{{ if $en }}PROTECTED VAULT{{ else }}VAULT PROTEGIDO{{ end }}</text>
+          <text x="300" y="450" fill="#aabbd8" font-size="9">{{ if $en }}Identity mapping kept separate{{ else }}Correspondencias separadas{{ end }}</text>
+        </g>
+        <g fill="#9db9ff"><circle cx="115" cy="160" r="3"/><circle cx="115" cy="350" r="3"/><circle cx="570" cy="160" r="3"/><circle cx="570" cy="350" r="3"/><circle cx="350" cy="390" r="3"/></g>
+      </svg>
+    </div>
+
+  </div>
+</section>
+
+<section class="nf-pe-section">
+  <div class="nf-container">
+    <div class="nf-pe-heading"><p class="nf-eyebrow">{{ if $en }}THE BUSINESS CHALLENGE{{ else }}EL RETO EMPRESARIAL{{ end }}</p>
+      <h2>{{ if $en }}Adopting AI should not mean losing control of sensitive information.{{ else }}Adoptar IA no debería significar perder el control de la información sensible.{{ end }}</h2>
+      <p>{{ if $en }}Customer support, CRM platforms, analytics, external AI services and automation tools can all process information that identifies people or reveals confidential business context. The challenge is to make useful workflows possible while limiting unnecessary data exposure.{{ else }}Atención al cliente, CRM, analítica, servicios externos de IA y automatizaciones pueden procesar información que identifica a personas o revela contexto empresarial confidencial. El reto es habilitar procesos útiles limitando la exposición innecesaria de esos datos.{{ end }}</p>
+    </div>
+    <div class="nf-pe-grid">
+      <article class="nf-pe-card"><div class="nf-pe-card-icon">01</div><h3>{{ if $en }}Personal information{{ else }}Datos personales{{ end }}</h3><p>{{ if $en }}Names, contact details, identifiers and customer records move between systems.{{ else }}Nombres, datos de contacto, identificadores y expedientes de clientes circulan entre sistemas.{{ end }}</p></article>
+      <article class="nf-pe-card"><div class="nf-pe-card-icon">02</div><h3>{{ if $en }}AI adoption{{ else }}Adopción de IA{{ end }}</h3><p>{{ if $en }}Teams want to use AI capabilities without copying unnecessary personal or confidential data into prompts.{{ else }}Los equipos quieren aprovechar la IA sin copiar información personal o confidencial innecesaria en los prompts.{{ end }}</p></article>
+      <article class="nf-pe-card"><div class="nf-pe-card-icon">03</div><h3>{{ if $en }}Fragmented workflows{{ else }}Procesos fragmentados{{ end }}</h3><p>{{ if $en }}Different tools apply different controls, making consistent handling and traceability harder.{{ else }}Cada herramienta aplica controles distintos, lo que dificulta un tratamiento coherente y trazable.{{ end }}</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="nf-pe-section nf-pe-section-alt">
+  <div class="nf-container">
+    <div class="nf-pe-heading"><p class="nf-eyebrow">{{ if $en }}WHAT THE ENGINE IS DESIGNED TO DO{{ else }}QUÉ PRETENDE HACER EL MOTOR{{ end }}</p>
+      <h2>{{ if $en }}A reusable privacy layer between data and the systems that use it.{{ else }}Una capa de privacidad reutilizable entre los datos y los sistemas que los utilizan.{{ end }}</h2>
+      <p>{{ if $en }}The intended engine goes beyond manual find-and-replace. It is being designed around repeatable transformation, protected mappings, configurable rules and controlled restoration.{{ else }}El motor que queremos construir va más allá de buscar y reemplazar manualmente. Se diseña alrededor de transformaciones repetibles, correspondencias protegidas, reglas configurables y restauración controlada.{{ end }}</p>
+    </div>
+    <div class="nf-pe-grid">
+      <article class="nf-pe-card"><div class="nf-pe-card-icon">⌕</div><h3>{{ if $en }}Detection{{ else }}Detección{{ end }}</h3><p>{{ if $en }}Identify candidate sensitive information using configurable patterns and, as the product evolves, specialised detection methods.{{ else }}Identificar información potencialmente sensible mediante patrones configurables y, a medida que evolucione el producto, métodos de detección especializados.{{ end }}</p></article>
+      <article class="nf-pe-card"><div class="nf-pe-card-icon">⇄</div><h3>{{ if $en }}Transformation{{ else }}Transformación{{ end }}</h3><p>{{ if $en }}Replace direct identifiers with consistent tokens or pseudonyms while preserving the structure needed by a workflow.{{ else }}Sustituir identificadores directos por tokens o seudónimos consistentes, conservando la estructura necesaria para el proceso.{{ end }}</p></article>
+      <article class="nf-pe-card"><div class="nf-pe-card-icon">▤</div><h3>{{ if $en }}Protected mappings{{ else }}Correspondencias protegidas{{ end }}</h3><p>{{ if $en }}Keep the relationship between original and transformed values separate, with encryption and access controls as core design requirements.{{ else }}Mantener separada la relación entre valores originales y transformados, con cifrado y controles de acceso como requisitos centrales de diseño.{{ end }}</p></article>
+      <article class="nf-pe-card"><div class="nf-pe-card-icon">✓</div><h3>{{ if $en }}Policy controls{{ else }}Políticas y controles{{ end }}</h3><p>{{ if $en }}Apply rules according to data type, purpose, workspace and authorised role.{{ else }}Aplicar reglas según el tipo de dato, la finalidad, el espacio de trabajo y el rol autorizado.{{ end }}</p></article>
+      <article class="nf-pe-card"><div class="nf-pe-card-icon">↺</div><h3>{{ if $en }}Controlled restoration{{ else }}Restauración controlada{{ end }}</h3><p>{{ if $en }}Restore original values only in approved contexts and through an explicitly authorised process.{{ else }}Restaurar los valores originales solo en contextos aprobados y mediante un proceso expresamente autorizado.{{ end }}</p></article>
+      <article class="nf-pe-card"><div class="nf-pe-card-icon">⌁</div><h3>{{ if $en }}Integration{{ else }}Integración{{ end }}</h3><p>{{ if $en }}Expose reusable capabilities through SDKs and APIs so the engine can sit inside existing business workflows.{{ else }}Exponer capacidades reutilizables mediante SDK y API para incorporar el motor a los flujos empresariales existentes.{{ end }}</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="nf-pe-section nf-pe-section-dark" id="architecture">
+  <div class="nf-container">
+    <div class="nf-pe-heading"><p class="nf-eyebrow">{{ if $en }}UNDER THE HOOD{{ else }}BAJO EL CAPÓ{{ end }}</p>
+      <h2>{{ if $en }}Designed as infrastructure, not as a standalone text utility.{{ else }}Diseñado como infraestructura, no como una utilidad aislada de texto.{{ end }}</h2>
+      <p>{{ if $en }}The target architecture separates transformation logic from user interfaces and keeps identity mappings, policy decisions and integrations as distinct concerns. These are design goals, not a claim that every component is already implemented.{{ else }}La arquitectura objetivo separa la lógica de transformación de las interfaces y trata las correspondencias de identidad, las decisiones de política y las integraciones como componentes diferenciados. Son objetivos de diseño, no una afirmación de que todos estén ya implementados.{{ end }}</p>
+    </div>
+    <div class="nf-pe-architecture">
+      <div class="nf-pe-arch-panel"><h3>{{ if $en }}Core processing layer{{ else }}Capa de procesamiento{{ end }}</h3>
+        <div class="nf-pe-arch-item"><strong>Detection & classification</strong><small>{{ if $en }}Patterns, entity types and confidence handling{{ else }}Patrones, tipos de entidad y gestión de confianza{{ end }}</small></div>
+        <div class="nf-pe-arch-item"><strong>Transformation core</strong><small>{{ if $en }}Deterministic mappings and reversible tokenisation{{ else }}Correspondencias deterministas y tokenización reversible{{ end }}</small></div>
+        <div class="nf-pe-arch-item"><strong>Policy engine</strong><small>{{ if $en }}Purpose, workspace, roles and permissions{{ else }}Finalidad, espacios de trabajo, roles y permisos{{ end }}</small></div>
+      </div>
+      <div class="nf-pe-arch-panel"><h3>{{ if $en }}Security & integration layer{{ else }}Capa de seguridad e integración{{ end }}</h3>
+        <div class="nf-pe-arch-item"><strong>Encrypted mapping vault</strong><small>{{ if $en }}Key management, separation and access control{{ else }}Gestión de claves, separación y control de acceso{{ end }}</small></div>
+        <div class="nf-pe-arch-item"><strong>Audit and governance</strong><small>{{ if $en }}Traceable events without unnecessary sensitive payloads{{ else }}Eventos trazables sin registrar datos sensibles innecesarios{{ end }}</small></div>
+        <div class="nf-pe-arch-item"><strong>SDK / API connectors</strong><small>{{ if $en }}Applications, AI providers and workflow platforms{{ else }}Aplicaciones, proveedores de IA y plataformas de automatización{{ end }}</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="nf-pe-section">
+  <div class="nf-container">
+    <div class="nf-pe-heading"><p class="nf-eyebrow">{{ if $en }}SECURITY, PRIVACY & COMPLIANCE{{ else }}SEGURIDAD, PRIVACIDAD Y CUMPLIMIENTO{{ end }}</p>
+      <h2>{{ if $en }}Built to support responsible data handling and stronger controls.{{ else }}Pensado para apoyar un tratamiento responsable de los datos y controles más sólidos.{{ end }}</h2>
+      <p>{{ if $en }}Privacy Engine is being designed to support privacy and security practices relevant to regulated organisations. Its role is to provide technical capabilities that can contribute to a wider compliance programme.{{ else }}Privacy Engine se está diseñando para apoyar prácticas de privacidad y seguridad relevantes para organizaciones sujetas a regulación. Su función es aportar capacidades técnicas que puedan contribuir a un programa de cumplimiento más amplio.{{ end }}</p>
+    </div>
+    <div class="nf-pe-grid">
+      <article class="nf-pe-card"><div class="nf-pe-card-icon">EU</div><h3>GDPR / RGPD</h3><p>{{ if $en }}Relevant design areas include data protection by design and by default, security of processing, data minimisation and pseudonymisation where appropriate.{{ else }}Ámbitos relevantes: protección de datos desde el diseño y por defecto, seguridad del tratamiento, minimización de datos y seudonimización cuando proceda.{{ end }}</p></article>
+      <article class="nf-pe-card"><div class="nf-pe-card-icon">27001</div><h3>ISO/IEC 27001</h3><p>{{ if $en }}An information security management system standard. The engine may support selected technical controls within an organisation's wider ISMS.{{ else }}Norma de sistemas de gestión de seguridad de la información. El motor podría apoyar determinados controles técnicos dentro del SGSI de una organización.{{ end }}</p></article>
+      <article class="nf-pe-card"><div class="nf-pe-card-icon">27701</div><h3>ISO/IEC 27701</h3><p>{{ if $en }}Privacy information management. Relevant to organisations establishing governance and controls for personal information.{{ else }}Gestión de información de privacidad. Relevante para organizaciones que establecen gobierno y controles sobre información personal.{{ end }}</p></article>
+      <article class="nf-pe-card"><div class="nf-pe-card-icon">27017</div><h3>ISO/IEC 27017</h3><p>{{ if $en }}Cloud security controls that may be relevant when the engine is deployed in cloud environments.{{ else }}Controles de seguridad en la nube que pueden ser relevantes cuando el motor se despliegue en entornos cloud.{{ end }}</p></article>
+      <article class="nf-pe-card"><div class="nf-pe-card-icon">27018</div><h3>ISO/IEC 27018</h3><p>{{ if $en }}Protection of personally identifiable information in public cloud services, where that deployment model applies.{{ else }}Protección de información personal identificable en servicios de nube pública, cuando ese modelo de despliegue resulte aplicable.{{ end }}</p></article>
+      <article class="nf-pe-card"><div class="nf-pe-card-icon">42001</div><h3>ISO/IEC 42001</h3><p>{{ if $en }}AI management systems. Relevant to governance around AI use, risk and operational accountability.{{ else }}Sistemas de gestión de IA. Relevante para el gobierno del uso de IA, sus riesgos y la responsabilidad operativa.{{ end }}</p></article>
+    </div>
+    <div class="nf-pe-compliance-note" style="margin-top:24px"><p><strong>{{ if $en }}Important compliance statement:{{ else }}Importante sobre cumplimiento:{{ end }}</strong> {{ if $en }}Privacy Engine is a technology in development. It is not a certification, legal opinion or guarantee of GDPR or ISO compliance. Pseudonymised data can remain personal data under GDPR if it can be attributed to an individual using additional information. Compliance depends on the organisation's context, configuration, processes, contracts and wider technical and organisational measures.{{ else }}Privacy Engine es una tecnología en desarrollo. No constituye una certificación, asesoramiento jurídico ni garantía de cumplimiento del RGPD o de normas ISO. Los datos seudonimizados pueden seguir siendo datos personales conforme al RGPD si es posible atribuirlos a una persona utilizando información adicional. El cumplimiento depende del contexto, la configuración, los procesos, los contratos y el conjunto de medidas técnicas y organizativas de cada organización.{{ end }}</p></div>
+  </div>
+</section>
+
+<section class="nf-pe-section nf-pe-section-alt" id="demo">
+  <div class="nf-container">
+    <div class="nf-pe-heading"><span class="nf-pe-status">{{ if $en }}Current prototype{{ else }}Prototipo actual{{ end }}</span>
+      <h2 style="margin-top:18px">{{ if $en }}Try the first manual transformation workflow.{{ else }}Prueba el primer flujo manual de transformación.{{ end }}</h2>
+      <p>{{ if $en }}The Replacer demonstrates the basic idea: define replacements, transform text and restore mapped values. It is an early interface for exploring the concept—not the automated Privacy Engine described above.{{ else }}Replacer demuestra el concepto básico: definir sustituciones, transformar texto y restaurar valores asociados. Es una interfaz inicial para explorar la idea, no el Privacy Engine automatizado descrito anteriormente.{{ end }}</p>
+    </div>
+    <div class="nf-pe-compliance-note" style="margin-bottom:22px"><p><strong>{{ if $en }}Prototype safety notice:{{ else }}Aviso de seguridad del prototipo:{{ end }}</strong> {{ if $en }}This browser demo stores mapping data in localStorage without encryption. Use fictional sample data only. Do not paste real personal, confidential or regulated information. This prototype must not be treated as a production security control.{{ else }}Esta demostración guarda las correspondencias en el almacenamiento local del navegador (localStorage) sin cifrar. Utiliza únicamente datos ficticios. No pegues información personal, confidencial o regulada real. Este prototipo no debe considerarse un control de seguridad para producción.{{ end }}</p></div>
+    <div class="nf-pe-demo">
+      <div class="nf-pe-demo-head"><h3>Replacer / {{ if $en }}Manual prototype{{ else }}Prototipo manual{{ end }}</h3><p>{{ if $en }}Explore reversible text substitution using fictional examples.{{ else }}Explora la sustitución reversible de texto con ejemplos ficticios.{{ end }}</p></div>
+      <iframe src="/replacer/" title="{{ if $en }}Replacer manual prototype{{ else }}Prototipo manual Replacer{{ end }}" loading="eager" scrolling="no" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <script>
+        (() => {
+          const frame = document.currentScript.previousElementSibling;
+          window.addEventListener("message", event => {
+            if (event.origin !== window.location.origin || event.source !== frame.contentWindow) return;
+            const data = event.data;
+            if (!data || data.type !== "nowfreelance-replacer-height" || !Number.isFinite(data.height)) return;
+            frame.style.height = Math.max(650, Math.min(5000, Math.ceil(data.height))) + "px";
+          });
+        })();
+      </script>
+    </div>
+  </div>
+</section>
+
+<section class="nf-pe-section">
+  <div class="nf-container">
+    <div class="nf-pe-heading"><p class="nf-eyebrow">{{ if $en }}WHO IT IS FOR{{ else }}A QUIÉN SE DIRIGE{{ end }}</p><h2>{{ if $en }}One engine. Different ways to create value.{{ else }}Un motor. Distintas formas de aportar valor.{{ end }}</h2></div>
+    <div class="nf-pe-grid">
+      <article class="nf-pe-card"><div class="nf-pe-card-icon">↗</div><h3>{{ if $en }}For businesses{{ else }}Para empresas{{ end }}</h3><p>{{ if $en }}Assess where sensitive information flows through AI, customer operations and automation. Explore how a transformation layer could reduce unnecessary exposure in a specific workflow.{{ else }}Analizar por dónde circula la información sensible en IA, atención al cliente y automatización. Explorar cómo una capa de transformación podría reducir la exposición innecesaria en un proceso concreto.{{ end }}</p></article>
+      <article class="nf-pe-card"><div class="nf-pe-card-icon">{ }</div><h3>{{ if $en }}For developers & technology teams{{ else }}Para desarrolladores y equipos tecnológicos{{ end }}</h3><p>{{ if $en }}Explore a reusable core, SDK and API approach for integrating privacy-aware transformation into applications and data pipelines.{{ else }}Explorar un enfoque basado en un núcleo reutilizable, SDK y API para integrar transformaciones orientadas a la privacidad en aplicaciones y flujos de datos.{{ end }}</p></article>
+      <article class="nf-pe-card"><div class="nf-pe-card-icon">◎</div><h3>{{ if $en }}For privacy & security teams{{ else }}Para equipos de privacidad y seguridad{{ end }}</h3><p>{{ if $en }}Discuss data flows, threat models, access boundaries, retention and evidence needed to assess whether the technology fits an organisation's control framework.{{ else }}Analizar flujos de datos, modelos de amenazas, límites de acceso, conservación y evidencias necesarias para valorar si la tecnología encaja en el marco de control de una organización.{{ end }}</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="nf-pe-section nf-pe-section-dark">
+  <div class="nf-container">
+    <div class="nf-pe-heading"><p class="nf-eyebrow">{{ if $en }}DEVELOPMENT ROADMAP{{ else }}HOJA DE RUTA{{ end }}</p><h2 class="nf-pe-roadmap-title">{{ if $en }}From manual proof of concept to reusable privacy infrastructure.{{ else }}De una prueba manual a una infraestructura de privacidad reutilizable.{{ end }}</h2><p>{{ if $en }}The current prototype validates a narrow interaction. The roadmap makes the distinction between what exists and what still needs engineering, security design and validation.{{ else }}El prototipo actual valida una interacción limitada. La hoja de ruta distingue lo que existe de lo que todavía necesita desarrollo, diseño de seguridad y validación.{{ end }}</p></div>
+    <div class="nf-pe-grid">
+      <article class="nf-pe-card"><span class="nf-pe-status">{{ if $en }}Prototype exists{{ else }}Existe prototipo{{ end }}</span><h3 style="margin-top:14px">01 · {{ if $en }}Core extraction{{ else }}Extracción del núcleo{{ end }}</h3><p>{{ if $en }}A standalone transformation core and manual browser interface.{{ else }}Un núcleo de transformación independiente y una interfaz manual en navegador.{{ end }}</p></article>
+      <article class="nf-pe-card"><span class="nf-pe-status">{{ if $en }}Planned{{ else }}Planificado{{ end }}</span><h3 style="margin-top:14px">02 · {{ if $en }}Secure vault & policies{{ else }}Vault seguro y políticas{{ end }}</h3><p>{{ if $en }}Encryption, key lifecycle, tenant isolation, permissions and governed restoration.{{ else }}Cifrado, ciclo de vida de claves, aislamiento entre clientes, permisos y restauración gobernada.{{ end }}</p></article>
+      <article class="nf-pe-card"><span class="nf-pe-status">{{ if $en }}Planned{{ else }}Planificado{{ end }}</span><h3 style="margin-top:14px">03 · {{ if $en }}Detection & integrations{{ else }}Detección e integraciones{{ end }}</h3><p>{{ if $en }}Automated detection, APIs, SDKs, audit events, testing and independent security review.{{ else }}Detección automática, API, SDK, eventos de auditoría, pruebas y revisión de seguridad independiente.{{ end }}</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="nf-pe-section">
+  <div class="nf-container">
+    <div class="nf-pe-cta">
+      <p class="nf-eyebrow">{{ if $en }}LET'S EXPLORE YOUR USE CASE{{ else }}ANALICEMOS TU CASO DE USO{{ end }}</p>
+      <h2>{{ if $en }}Where does sensitive data move in your organisation?{{ else }}¿Por dónde circulan los datos sensibles en tu organización?{{ end }}</h2>
+      <p>{{ if $en }}Tell us about an AI, application or automation workflow. We can map the data exposure points and explore whether Privacy Engine could become part of the solution.{{ else }}Cuéntanos cómo funciona un proceso de IA, una aplicación o una automatización. Podemos identificar los puntos de exposición y estudiar si Privacy Engine puede formar parte de la solución.{{ end }}</p>
+      <a class="nf-button nf-button-primary" href="{{ "/contact/" | relLangURL }}">{{ if $en }}Discuss your workflow{{ else }}Hablar de mi proceso{{ end }} →</a>
+    </div>
+  </div>
+</section>
+{{ end }}
