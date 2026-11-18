@@ -1,0 +1,15 @@
+{{ define "main" }}
+{{ $copy := index site.Data site.Language.Lang "homepage" "contact" }}
+<section class="nf-page-hero nf-contact-hero">
+  <div class="nf-container nf-page-hero-grid">
+    <div><p class="nf-eyebrow">{{ if eq site.Language.Lang "en" }}LET'S TALK{{ else }}HABLEMOS{{ end }}</p><h1>{{ .Title }}</h1><p class="nf-page-lead">{{ $copy.subtitle }}</p><p>{{ $copy.question }}</p></div>
+    <aside class="nf-contact-card"><span class="nf-contact-icon" aria-hidden="true">↗</span><p class="nf-eyebrow">{{ $copy.method_title }}</p><h2>{{ if eq site.Language.Lang "en" }}A simple first step.{{ else }}Un primer paso sencillo.{{ end }}</h2><p>{{ $copy.method_description }}</p><a class="nf-button nf-button-primary" href="mailto:{{ site.Params.contact_email }}?subject={{ if eq site.Language.Lang "en" }}Clarity%20Session{{ else }}Sesión%20de%20claridad{{ end }}">{{ if eq site.Language.Lang "en" }}Email us{{ else }}Escribir por email{{ end }} <span aria-hidden="true">→</span></a><small>{{ site.Params.contact_email }}</small></aside>
+  </div>
+</section>
+<section class="nf-section nf-contact-steps"><div class="nf-container"><div class="nf-section-heading"><p class="nf-eyebrow">{{ if eq site.Language.Lang "en" }}WHAT HAPPENS NEXT{{ else }}QUÉ OCURRE DESPUÉS{{ end }}</p><h2>{{ $copy.next_steps_title }}</h2><p>{{ $copy.next_steps_subtitle }}</p></div><div class="nf-process-grid">
+  <article class="nf-process-step"><span class="nf-step-number">01</span><h3>{{ $copy.step1_title }}</h3><p>{{ $copy.step1_desc }}</p></article>
+  <article class="nf-process-step"><span class="nf-step-number">02</span><h3>{{ $copy.step2_title }}</h3><p>{{ $copy.step2_desc }}</p></article>
+  <article class="nf-process-step"><span class="nf-step-number">03</span><h3>{{ $copy.step3_title }}</h3><p>{{ $copy.step3_desc }}</p></article>
+</div></div></section>
+<section class="nf-final-cta"><div class="nf-container nf-final-cta-inner"><p class="nf-eyebrow">{{ if eq site.Language.Lang "en" }}NO PRESSURE{{ else }}SIN PRESIÓN{{ end }}</p><h2>{{ $copy.final_cta_main }}</h2><p>{{ $copy.final_cta_note }}</p><a class="nf-button nf-button-primary" href="mailto:{{ site.Params.contact_email }}">{{ if eq site.Language.Lang "en" }}Get in touch{{ else }}Ponte en contacto{{ end }}</a></div></section>
+{{ end }}
