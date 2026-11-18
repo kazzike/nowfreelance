@@ -1,12 +1,33 @@
 <section class="nf-hero">
   <div class="nf-container nf-hero-inner">
-    <p class="nf-eyebrow">{{ .eyebrow }}</p>
-    <h1>{{ .title }}</h1>
-    <p class="nf-hero-copy">{{ .description }}</p>
-    <div class="nf-actions">
-      <a class="nf-button nf-button-primary" href="{{ "contact/" | relLangURL }}">{{ .primary_cta }}</a>
-      <a class="nf-text-link" href="#services">{{ .secondary_cta }} <span aria-hidden="true">→</span></a>
+    <div class="nf-hero-content">
+      <p class="nf-eyebrow">{{ .eyebrow }}</p>
+      <h1>{{ .title }}</h1>
+      <p class="nf-hero-copy">{{ .description }}</p>
+      <div class="nf-actions">
+        <a class="nf-button nf-button-primary" href="{{ "contact/" | relLangURL }}">{{ .primary_cta }}</a>
+        <a class="nf-text-link" href="#services">{{ .secondary_cta }} <span aria-hidden="true">→</span></a>
+      </div>
+      <p class="nf-hero-note">{{ .audience_note }}</p>
     </div>
-    <p class="nf-hero-note">{{ .audience_note }}</p>
+    <div class="nf-hero-art" aria-label="{{ if eq site.Language.Lang "en" }}Illustration of connected business workflows{{ else }}Ilustración de flujos de trabajo conectados{{ end }}">
+      <div class="nf-art-orbit nf-art-orbit-one"></div>
+      <div class="nf-art-orbit nf-art-orbit-two"></div>
+      <div class="nf-art-grid"></div>
+      <div class="nf-art-label nf-art-label-top"><span></span>{{ if eq site.Language.Lang "en" }}A clearer way to work{{ else }}Una forma más clara de trabajar{{ end }}</div>
+      <div class="nf-flow-card nf-flow-main">
+        <div class="nf-flow-card-head"><span class="nf-window-dots"><i></i><i></i><i></i></span><span>{{ if eq site.Language.Lang "en" }}WORKFLOW OVERVIEW{{ else }}RESUMEN DEL PROCESO{{ end }}</span><b>•••</b></div>
+        <div class="nf-flow-title">{{ if eq site.Language.Lang "en" }}Your business, in sync.{{ else }}Tu negocio, en sincronía.{{ end }}</div>
+        <div class="nf-flow-row"><span class="nf-flow-icon">↗</span><span><b>{{ if eq site.Language.Lang "en" }}New enquiry{{ else }}Nueva consulta{{ end }}</b><small>{{ if eq site.Language.Lang "en" }}Information captured{{ else }}Información registrada{{ end }}</small></span><em>01</em></div>
+        <div class="nf-flow-connector"></div>
+        <div class="nf-flow-row"><span class="nf-flow-icon nf-flow-icon-blue">⌘</span><span><b>{{ if eq site.Language.Lang "en" }}Tools connected{{ else }}Herramientas conectadas{{ end }}</b><small>{{ if eq site.Language.Lang "en" }}Tasks organised{{ else }}Tareas organizadas{{ end }}</small></span><em>02</em></div>
+        <div class="nf-flow-connector"></div>
+        <div class="nf-flow-row"><span class="nf-flow-icon nf-flow-icon-dark">✓</span><span><b>{{ if eq site.Language.Lang "en" }}Work moves forward{{ else }}El trabajo avanza{{ end }}</b><small>{{ if eq site.Language.Lang "en" }}Less manual follow-up{{ else }}Menos seguimiento manual{{ end }}</small></span><em>03</em></div>
+        <div class="nf-flow-footer"><span></span>{{ if eq site.Language.Lang "en" }}A system designed around you{{ else }}Un sistema diseñado para ti{{ end }}</div>
+      </div>
+      <div class="nf-float-chip nf-chip-one"><span>✳</span>{{ if eq site.Language.Lang "en" }}Automation{{ else }}Automatización{{ end }}</div>
+      <div class="nf-float-chip nf-chip-two"><span>↔</span>{{ if eq site.Language.Lang "en" }}Integration{{ else }}Integración{{ end }}</div>
+      <div class="nf-art-label nf-art-label-bottom">{{ if eq site.Language.Lang "en" }}Less friction. More focus.{{ else }}Menos fricción. Más enfoque.{{ end }}</div>
+    </div>
   </div>
 </section>
