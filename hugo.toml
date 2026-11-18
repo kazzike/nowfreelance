@@ -56,9 +56,9 @@ footer_tagline = "Operaciones más claras. Tecnología que trabaja para ti."
     url = "/contact/"
     weight = 40
   [[languages.es.menu.main]]
-    name = "Tools"
-    url = "/tools/"
-    identifier = "tools"
+    name = "Privacy Engine"
+    url = "/privacy-engine/"
+    identifier = "privacy-engine"
     weight = 50
 
   [[languages.es.menu.footer_nav]]
