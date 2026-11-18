@@ -1,0 +1,29 @@
+name: Hugo build
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - fix/editorial-blog-preflight
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository and theme submodules
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install Hugo Extended
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.147.7'
+          extended: true
+
+      - name: Build production site
+        run: hugo --minify --environment production
