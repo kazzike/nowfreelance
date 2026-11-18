@@ -1,61 +1,44 @@
-<article class="post-card has-hover-effect mv4">
+<article class="post-card has-hover-effect">
+  {{- $isEnglish := eq site.Language.Lang "en" -}}
   {{- $cover := "" -}}
   {{- with .Resources.GetMatch "cover*" }}{{ $cover = .RelPermalink }}{{ end -}}
   {{- if eq $cover "" }}{{ with .Params.cover }}{{ $cover = . | relURL }}{{ end }}{{ end -}}
   {{- if eq $cover "" }}{{ with .Params.image }}{{ $cover = . | relURL }}{{ end }}{{ end -}}
-  {{- if eq $cover "" }}{{ with .Params.images }}{{ $first := index . 0 }}{{ $cover = $first | relURL }}{{ end }}{{ end -}}
+  {{- if eq $cover "" }}{{ with .Params.images }}{{ $cover = (index . 0) | relURL }}{{ end }}{{ end -}}
 
   {{- $showUpdated := gt .Lastmod .Date -}}
-  {{- $isNew := and (not $showUpdated) (lt (sub now.Unix .Date.Unix) 1209600) -}} <!-- 14 días -->
-
-  <a href="{{ .RelPermalink }}" class="post-card-link-wrapper" aria-label="Leer el artículo completo: {{ .Title }}">
-
+  {{- $isNew := and (not $showUpdated) (lt (sub now.Unix .Date.Unix) 1209600) -}}
+  <a href="{{ .RelPermalink }}" class="post-card-link-wrapper" aria-label="{{ cond $isEnglish "Read the full article: " "Leer el artículo completo: " }}{{ .Title }}">
     {{- if $cover -}}
     <figure class="post-card-cover">
-      <img
-        class="post-card-image"
-        src="{{ $cover }}"
-        alt="{{ .Title }}"
-        loading="lazy"
-        decoding="async"
-      >
+      <img class="post-card-image" src="{{ $cover }}" alt="{{ .Title }}" loading="lazy" decoding="async">
       {{- if $showUpdated -}}
-        <span class="post-card-badge">Actualizado</span>
+        <span class="post-card-badge">{{ cond $isEnglish "Updated" "Actualizado" }}</span>
       {{- else if $isNew -}}
-        <span class="post-card-badge">Nuevo</span>
+        <span class="post-card-badge">{{ cond $isEnglish "New" "Nuevo" }}</span>
       {{- end -}}
     </figure>
     {{- end -}}
 
     <div class="post-card-content">
       <div class="post-card-meta">
-        <time class="post-card-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 de Enero, 2006" }}</time>
-        <span class="meta-separator" aria-hidden="true">•</span>
-        <span class="post-card-reading-time">{{ .ReadingTime }} min</span>
+        <time class="post-card-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
+        <span class="meta-separator" aria-hidden="true">·</span>
+        <span class="post-card-reading-time">{{ .ReadingTime }} {{ cond $isEnglish "min" "min" }}</span>
       </div>
 
-      <h3 class="post-card-title f3">{{ .Title }}</h3>
-
-      <p class="post-card-description">
-        {{ with .Description }}
-          {{ . }}
-        {{ else }}
-          {{ .Summary | plainify | truncate 160 }}
-        {{ end }}
-      </p>
+      <h3 class="post-card-title">{{ .Title }}</h3>
+      <p class="post-card-description">{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 160 }}{{ end }}</p>
 
       {{ with .GetTerms "tags" }}
         <div class="post-card-tags">
-          {{ range first 3 . }}
-            <span class="post-tag">{{ .LinkTitle }}</span>
-          {{ end }}
+          {{ range first 3 . }}<span class="post-tag">{{ .LinkTitle }}</span>{{ end }}
         </div>
       {{ end }}
 
       <footer class="post-card-footer">
-        <span class="post-card-readmore">Leer más <span class="arrow">&rarr;</span></span>
+        <span class="post-card-readmore">{{ cond $isEnglish "Read article" "Leer artículo" }} <span class="arrow" aria-hidden="true">→</span></span>
       </footer>
     </div>
-
   </a>
 </article>

@@ -1,0 +1,36 @@
+{{ define "main" }}
+  {{- $isEnglish := eq site.Language.Lang "en" -}}
+  {{- $title := .Title | default (cond $isEnglish "Insights" "Blog") -}}
+  <section class="nf-blog-index">
+    <div class="nf-container">
+      <header class="nf-blog-header">
+        <p class="nf-blog-eyebrow">NOWFREELANCE / INSIGHTS</p>
+        <h1>{{ $title }}</h1>
+        <p class="nf-blog-intro">{{ .Description | default (cond $isEnglish "Practical ideas on operations, automation, privacy and artificial intelligence to help you work with greater clarity." "Ideas prácticas sobre operaciones, automatización, privacidad e inteligencia artificial para trabajar con más claridad.") }}</p>
+        <div class="nf-blog-header-rule"><span></span></div>
+      </header>
+
+      {{- $pages := .Paginator.Pages -}}
+      {{- if gt (len $pages) 0 -}}
+        <div class="nf-blog-grid">
+          {{- range $pages -}}
+            {{ .Render "summary" }}
+          {{- end -}}
+        </div>
+        {{- if gt .Paginator.TotalPages 1 -}}
+          <nav class="nf-blog-pagination" aria-label="{{ cond $isEnglish "Blog pagination" "Paginación del blog" }}">
+            {{- with .Paginator.Prev -}}
+              <a class="nf-blog-page-link" href="{{ .URL }}">{{ cond $isEnglish "← Newer articles" "← Más recientes" }}</a>
+            {{- end -}}
+            <span class="nf-blog-page-count">{{ $.Paginator.PageNumber }} / {{ $.Paginator.TotalPages }}</span>
+            {{- with .Paginator.Next -}}
+              <a class="nf-blog-page-link" href="{{ .URL }}">{{ cond $isEnglish "Older articles →" "Más artículos →" }}</a>
+            {{- end -}}
+          </nav>
+        {{- end -}}
+      {{- else -}}
+        <p class="nf-blog-empty">{{ cond $isEnglish "New articles are on the way. Check back soon." "Estamos preparando nuevos artículos. Vuelve pronto." }}</p>
+      {{- end -}}
+    </div>
+  </section>
+{{ end }}
