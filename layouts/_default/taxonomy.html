@@ -1,0 +1,26 @@
+{{ define "main" }}
+  {{- $isEnglish := eq site.Language.Lang "en" -}}
+  <section class="nf-blog-index">
+    <div class="nf-container">
+      <header class="nf-blog-header">
+        <p class="nf-blog-eyebrow">NOWFREELANCE / INSIGHTS</p>
+        <h1>{{ .Title }}</h1>
+        <p class="nf-blog-intro">{{ cond $isEnglish "Explore articles by topic." "Explora los artículos por temática." }}</p>
+        <div class="nf-blog-header-rule"><span></span></div>
+      </header>
+      <div class="nf-blog-grid">
+        {{ range .Data.Terms.Alphabetical }}
+          <article class="post-card">
+            <a class="post-card-link-wrapper" href="{{ .Page.RelPermalink }}">
+              <div class="post-card-content">
+                <h2 class="post-card-title">{{ .Page.LinkTitle }}</h2>
+                <p class="post-card-description">{{ .Count }} {{ cond $isEnglish "articles" "artículos" }}</p>
+                <span class="post-card-readmore">{{ cond $isEnglish "Explore topic" "Ver temática" }} →</span>
+              </div>
+            </a>
+          </article>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}
