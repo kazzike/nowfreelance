@@ -1,27 +1,32 @@
-# Sensitive Data Replacer architecture
+# Privacy Engine architecture and prototype
 
-## Current state
-The browser tool in `static/replacer/index.html` supports manually configured text mappings, optional email replacement, and restoration. It does not provide general-purpose automatic PII detection.
+## Prototype v0.1
+An isolated browser demo is available at `/privacy-engine/demo/` after deployment. It supports text input and plain-text upload (1 MB max), rule-based detection of email, phone-like numbers, Spanish DNI/NIE and IBAN, human review, per-finding selection, consistent session-scoped pseudonyms, copy/download and restoration.
 
-The mapping dictionary is persisted in browser `localStorage` as plaintext. This prototype is not suitable for confidential or regulated data. Do not market it as secure anonymization until storage, key management, and threat-model work is complete.
+All processing runs in the browser. No backend or AI provider is called. Mapping data exists only in JavaScript memory and is lost on refresh/close. This is a demonstration, not a secure vault or production service.
 
-## First extraction
-- `static/replacer/replacer-core.js` contains processing logic without DOM access.
-- The HTML page remains the UI and delegates processing to `window.ReplacerCore`.
-- User-provided mapping values must be rendered through DOM text APIs, never interpolated into `innerHTML`.
-- The existing localStorage key and data shape are retained for compatibility; plaintext storage remains a known limitation.
+## Detection limitations
+Pattern-based detection is not general PII recognition. Names, addresses, free-form health details, contextual identifiers and many other sensitive values are not automatically detected. Phone patterns can produce false positives. Users must review every result.
 
-## Next steps
-1. Add versioned storage adapters and an encrypted vault with explicit key lifecycle.
-2. Add tested detectors for specific data types, with configurable confidence and user review.
-3. Define a stable SDK interface and package metadata.
-4. Build a BlyntLabs adapter that invokes the same core locally where possible.
-5. Add a local service/API only when a non-browser integration requires it.
-
-## Security boundaries
-- Never send original values or mapping dictionaries to an AI provider.
-- Isolate vault scope by user, workspace, and session.
-- Require explicit authorization before restoration.
+## Production security principles
+- Define a threat model before persistence.
+- Separate detection, policy, transformation, vault, restoration and audit.
+- Use versioned mapping records and stable identifiers scoped to tenant/workspace/session.
+- Encrypt vault data with explicit key lifecycle and tenant isolation.
+- Require identity, permission and purpose checks before restoration.
+- Never send originals or mapping dictionaries to an AI provider.
+- Never log source text, replacements or vault contents.
 - Fail closed if protection is enabled but unavailable.
-- Do not log source text, replacements, or vault contents.
-- Treat pseudonymized content as potentially personal data; token replacement alone does not establish anonymization.
+- Pseudonymised data may remain personal data; token replacement is not anonymisation.
+
+## Roadmap
+1. [Prototype] Demonstrate local detection, review, protection and restoration.
+2. [Next] Harden a standalone transformation core, versioned records and comprehensive tests.
+3. [Next] Define threat model, encrypted vault interface, key lifecycle and tenant boundaries.
+4. Add configurable detectors, confidence levels and human review.
+5. Add policy profiles and permission-controlled restoration.
+6. Define SDK/API contracts and integrations.
+7. Add privacy-preserving audit events and enterprise administration.
+
+## Legacy Replacer
+The older `static/replacer/index.html` persists mappings in plaintext localStorage. It is not suitable for confidential or regulated data.
