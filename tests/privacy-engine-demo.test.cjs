@@ -1,0 +1,6 @@
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');const ctx={globalThis:{}};vm.runInNewContext(fs.readFileSync(require('node:path').join(__dirname,'../static/privacy-engine/privacy-engine-core.js'),'utf8'),ctx);const c=ctx.globalThis.PrivacyEngineCore;
+test('detects email, phone and DNI',()=>assert.deepEqual(Array.from(c.detect('a@b.com +34 612 345 678 12345678Z'),x=>x.type).sort(),['EMAIL','PHONE','SPANISH_ID']));
+test('same value gets same token',()=>{let s='a@b.com then a@b.com',r=c.protect(s,c.detect(s),{});assert.equal((r.text.match(/\[EMAIL_001\]/g)||[]).length,2);});
+test('unselected value stays unchanged',()=>{let s='a@b.com',d=c.detect(s);d[0].selected=false;assert.equal(c.protect(s,d,{}).text,s);});
+test('restores original text',()=>{let s='a@b.com +34 612 345 678',r=c.protect(s,c.detect(s),{});assert.equal(c.restore(r.text,r.mappings),s);});
+test('keeps existing token numbering',()=>{let p={EMAIL_004:{original:'old@b.com',type:'EMAIL'}},r=c.protect('new@b.com',c.detect('new@b.com'),p);assert.ok(r.mappings.EMAIL_005);assert.equal(Object.keys(p).length,1);});
